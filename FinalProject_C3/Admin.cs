@@ -115,5 +115,10 @@ namespace FinalProject_C3
             pn_Center.Controls.Add(staff);
             staff.Show();
         } // 직원관리 폼 열기
+
+        private void Admin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

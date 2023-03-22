@@ -292,6 +292,7 @@
             this.Controls.Add(this.pn_Top);
             this.Name = "Admin";
             this.Text = "Admin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Admin_FormClosed);
             this.Load += new System.EventHandler(this.Admin_Load);
             this.pn_Top.ResumeLayout(false);
             this.pn_Top.PerformLayout();

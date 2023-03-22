@@ -47,7 +47,7 @@
             this.BT_JOIN.BackColor = System.Drawing.Color.Teal;
             this.BT_JOIN.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.BT_JOIN.ForeColor = System.Drawing.Color.LightCyan;
-            this.BT_JOIN.Location = new System.Drawing.Point(36, 399);
+            this.BT_JOIN.Location = new System.Drawing.Point(37, 354);
             this.BT_JOIN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BT_JOIN.Name = "BT_JOIN";
             this.BT_JOIN.Size = new System.Drawing.Size(140, 43);
@@ -124,13 +124,14 @@
             // 
             this.TB_NUM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_NUM.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_NUM.Location = new System.Drawing.Point(19, 265);
+            this.TB_NUM.Location = new System.Drawing.Point(19, 320);
             this.TB_NUM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TB_NUM.MaximumSize = new System.Drawing.Size(175, 30);
             this.TB_NUM.MinimumSize = new System.Drawing.Size(175, 30);
             this.TB_NUM.Name = "TB_NUM";
-            this.TB_NUM.Size = new System.Drawing.Size(175, 26);
+            this.TB_NUM.Size = new System.Drawing.Size(175, 30);
             this.TB_NUM.TabIndex = 10;
+            this.TB_NUM.Visible = false;
             // 
             // CB_AUTHOR
             // 
@@ -140,7 +141,7 @@
             this.CB_AUTHOR.Items.AddRange(new object[] {
             "관리자",
             "직원"});
-            this.CB_AUTHOR.Location = new System.Drawing.Point(19, 326);
+            this.CB_AUTHOR.Location = new System.Drawing.Point(19, 288);
             this.CB_AUTHOR.Name = "CB_AUTHOR";
             this.CB_AUTHOR.Size = new System.Drawing.Size(175, 27);
             this.CB_AUTHOR.TabIndex = 12;
@@ -150,12 +151,12 @@
             // 
             this.TB_AUTHOR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_AUTHOR.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_AUTHOR.Location = new System.Drawing.Point(19, 358);
+            this.TB_AUTHOR.Location = new System.Drawing.Point(19, 320);
             this.TB_AUTHOR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TB_AUTHOR.MaximumSize = new System.Drawing.Size(175, 30);
             this.TB_AUTHOR.MinimumSize = new System.Drawing.Size(175, 30);
             this.TB_AUTHOR.Name = "TB_AUTHOR";
-            this.TB_AUTHOR.Size = new System.Drawing.Size(175, 26);
+            this.TB_AUTHOR.Size = new System.Drawing.Size(175, 30);
             this.TB_AUTHOR.TabIndex = 13;
             this.TB_AUTHOR.Text = "직급(숨김)";
             this.TB_AUTHOR.Visible = false;
@@ -164,7 +165,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(16, 308);
+            this.label2.Location = new System.Drawing.Point(16, 270);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 15);
             this.label2.TabIndex = 14;
@@ -185,7 +186,7 @@
             this.PNL_JOIN.Controls.Add(this.TB_NUM);
             this.PNL_JOIN.Location = new System.Drawing.Point(12, 12);
             this.PNL_JOIN.Name = "PNL_JOIN";
-            this.PNL_JOIN.Size = new System.Drawing.Size(215, 453);
+            this.PNL_JOIN.Size = new System.Drawing.Size(215, 406);
             this.PNL_JOIN.TabIndex = 15;
             // 
             // Join
@@ -194,7 +195,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(239, 475);
+            this.ClientSize = new System.Drawing.Size(239, 430);
             this.Controls.Add(this.PNL_JOIN);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
