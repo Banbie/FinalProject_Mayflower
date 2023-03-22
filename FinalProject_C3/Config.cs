@@ -13,7 +13,7 @@ namespace LoginTest
         public static string Database = "mayflower";
         public static string Server = "192.168.0.3";
         public static string UserID = "edu";
-        public static string UserPassword = "1234";
+        public static string UserPassword = "12345";
 
         public static string[] Tables = { "tb_user" };
 
