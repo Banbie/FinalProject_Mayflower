@@ -120,7 +120,7 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tab_State.cs">
+    <Compile Include="Tab_Data.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Tab_State.Designer.cs">
@@ -170,8 +170,8 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tab_State.resx">
-      <DependentUpon>Tab_State.cs</DependentUpon>
+    <EmbeddedResource Include="Tab_Data.resx">
+      <DependentUpon>Tab_Data.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tab_Device.resx">
       <DependentUpon>Tab_Device.cs</DependentUpon>
