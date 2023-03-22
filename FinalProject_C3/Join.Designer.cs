@@ -34,11 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TB_PW2 = new System.Windows.Forms.TextBox();
             this.TB_NAME = new System.Windows.Forms.TextBox();
+            this.TB_NUM = new System.Windows.Forms.TextBox();
             this.CB_AUTHOR = new System.Windows.Forms.ComboBox();
             this.TB_AUTHOR = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.PNL_JOIN = new System.Windows.Forms.Panel();
-            this.TB_NUM = new System.Windows.Forms.TextBox();
             this.PNL_JOIN.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             this.BT_JOIN.BackColor = System.Drawing.Color.Teal;
             this.BT_JOIN.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.BT_JOIN.ForeColor = System.Drawing.Color.LightCyan;
-            this.BT_JOIN.Location = new System.Drawing.Point(36, 361);
+            this.BT_JOIN.Location = new System.Drawing.Point(36, 399);
             this.BT_JOIN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BT_JOIN.Name = "BT_JOIN";
             this.BT_JOIN.Size = new System.Drawing.Size(140, 43);
@@ -120,6 +120,18 @@
             this.TB_NAME.TabIndex = 9;
             this.TB_NAME.Text = "이름";
             // 
+            // TB_NUM
+            // 
+            this.TB_NUM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_NUM.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_NUM.Location = new System.Drawing.Point(19, 265);
+            this.TB_NUM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TB_NUM.MaximumSize = new System.Drawing.Size(175, 30);
+            this.TB_NUM.MinimumSize = new System.Drawing.Size(175, 30);
+            this.TB_NUM.Name = "TB_NUM";
+            this.TB_NUM.Size = new System.Drawing.Size(175, 26);
+            this.TB_NUM.TabIndex = 10;
+            // 
             // CB_AUTHOR
             // 
             this.CB_AUTHOR.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -128,7 +140,7 @@
             this.CB_AUTHOR.Items.AddRange(new object[] {
             "관리자",
             "직원"});
-            this.CB_AUTHOR.Location = new System.Drawing.Point(19, 294);
+            this.CB_AUTHOR.Location = new System.Drawing.Point(19, 326);
             this.CB_AUTHOR.Name = "CB_AUTHOR";
             this.CB_AUTHOR.Size = new System.Drawing.Size(175, 27);
             this.CB_AUTHOR.TabIndex = 12;
@@ -138,12 +150,12 @@
             // 
             this.TB_AUTHOR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_AUTHOR.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_AUTHOR.Location = new System.Drawing.Point(19, 326);
+            this.TB_AUTHOR.Location = new System.Drawing.Point(19, 358);
             this.TB_AUTHOR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TB_AUTHOR.MaximumSize = new System.Drawing.Size(175, 30);
             this.TB_AUTHOR.MinimumSize = new System.Drawing.Size(175, 30);
             this.TB_AUTHOR.Name = "TB_AUTHOR";
-            this.TB_AUTHOR.Size = new System.Drawing.Size(175, 30);
+            this.TB_AUTHOR.Size = new System.Drawing.Size(175, 26);
             this.TB_AUTHOR.TabIndex = 13;
             this.TB_AUTHOR.Text = "직급(숨김)";
             this.TB_AUTHOR.Visible = false;
@@ -152,7 +164,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(16, 276);
+            this.label2.Location = new System.Drawing.Point(16, 308);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 15);
             this.label2.TabIndex = 14;
@@ -173,21 +185,8 @@
             this.PNL_JOIN.Controls.Add(this.TB_NUM);
             this.PNL_JOIN.Location = new System.Drawing.Point(12, 12);
             this.PNL_JOIN.Name = "PNL_JOIN";
-            this.PNL_JOIN.Size = new System.Drawing.Size(215, 415);
+            this.PNL_JOIN.Size = new System.Drawing.Size(215, 453);
             this.PNL_JOIN.TabIndex = 15;
-            // 
-            // TB_NUM
-            // 
-            this.TB_NUM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_NUM.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_NUM.Location = new System.Drawing.Point(19, 326);
-            this.TB_NUM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_NUM.MaximumSize = new System.Drawing.Size(175, 30);
-            this.TB_NUM.MinimumSize = new System.Drawing.Size(175, 30);
-            this.TB_NUM.Name = "TB_NUM";
-            this.TB_NUM.Size = new System.Drawing.Size(175, 30);
-            this.TB_NUM.TabIndex = 10;
-            this.TB_NUM.Visible = false;
             // 
             // Join
             // 
@@ -195,7 +194,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(239, 437);
+            this.ClientSize = new System.Drawing.Size(239, 475);
             this.Controls.Add(this.PNL_JOIN);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -216,10 +215,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TB_PW2;
         private System.Windows.Forms.TextBox TB_NAME;
+        private System.Windows.Forms.TextBox TB_NUM;
         private System.Windows.Forms.ComboBox CB_AUTHOR;
         private System.Windows.Forms.TextBox TB_AUTHOR;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel PNL_JOIN;
-        private System.Windows.Forms.TextBox TB_NUM;
     }
 }
