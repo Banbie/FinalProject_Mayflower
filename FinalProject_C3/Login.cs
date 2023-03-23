@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LoginTest;
 using Org.BouncyCastle.Asn1.Ocsp;
+using MySql.Data;
 
 namespace FinalProject_C3
 {
@@ -124,45 +125,93 @@ namespace FinalProject_C3
             //데이터베이스에서 사용자 정보 가져오기
             Config.user_ds = _db.SelectAll(Config.Tables[(int)eTName._user]);
         }
-
-        private void CheckID_PW(string id, string pw)
+        public void CheckID_PW(string id, string pw)
         {
-            //사용자 정보와 비교해서 ID / Password 일치하는 지 확인
-            if (Config.user_ds.Tables[0].Rows.Count > 0)
+            string query = $"SELECT * FROM tb_user WHERE userid='{id}'";
+            DataTable result = _db.Select(query);
+
+            if (result != null && result.Rows.Count > 0)
             {
-                foreach (DataRow row in Config.user_ds.Tables[0].Rows)
+                DataRow row = result.Rows[0];
+                string savedPw = row["userpw"].ToString();
+
+                if (pw.Equals(savedPw))
                 {
-                    if (id == row["userid"].ToString())
-                    {
-                        if (pw == row["userpw"].ToString()) { 
-                            MessageBox.Show("로그인에 성공했습니다.");
-
-                            //// 로그인 성공 시, 해당 사용자 정보 추출하기
-                            //string username = row["username"].ToString();
-                            //string author = row["author"].ToString();
-
-                            //// 다른 폼으로 전달할 값을 Dictionary에 저장하기
-                            //Dictionary<string, string> userData = new Dictionary<string, string>();
-                            //userData.Add("username", username);
-                            //userData.Add("author", author);
-
-                            //// 다른 폼으로 이동하면서 데이터 전달하기
-                            //Admin admin = new Admin(userData);
-                            Admin admin = new Admin();
-                            admin.Show();
-                            this.Close();
-                        }
-                        else MessageBox.Show("비밀번호가 일치하지 않습니다. 확인 후 다시 입력해주세요.");
-                    }
+                    MessageBox.Show("로그인 성공");
+                    this.Hide();
+                    string userName = row["username"].ToString();
+                    string author = row["author"].ToString();
+                    Dictionary<string, string> userData = new Dictionary<string, string>();
+                    userData.Add("username", userName);
+                    userData.Add("author", author);
+                    Admin adminForm = new Admin(userData);
+                    adminForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("비밀번호가 틀렸습니다.");
                 }
             }
             else
             {
-                MessageBox.Show("사용자 정보가 없습니다.");
+                MessageBox.Show("존재하지 않는 아이디입니다.");
             }
         }
+
+        //private void CheckID_PW(string id, string pw)
+        //{
+        //    //사용자 정보와 비교해서 ID / Password 일치하는 지 확인
+        //    if (Config.user_ds.Tables[0].Rows.Count > 0)
+        //    {
+        //        foreach (DataRow row in Config.user_ds.Tables[0].Rows)
+        //        {
+        //            if (id == row["userid"].ToString())
+        //            {
+        //                if (pw == row["userpw"].ToString())
+        //                {
+        //                    MessageBox.Show("로그인에 성공했습니다.");
+
+        //                    string query = $"SELECT * FROM tb_user WHERE userid='{id}'";
+        //                    DataSet result = _db.Select(query);
+        //                    if (result.Tables.Count > 0)
+        //                    {
+        //                        DataTable userData = result.Tables[0];
+
+        //                        // 로그인 성공 시, 해당 사용자 정보 추출하기
+        //                        string username = userData.Rows[0]["username"].ToString();
+        //                        string author = userData.Rows[0]["author"].ToString();
+
+        //                        // 다른 폼으로 전달할 값을 Dictionary에 저장하기
+        //                        Dictionary<string, string> userDataDict = new Dictionary<string, string>();
+        //                        userDataDict.Add("username", username);
+        //                        userDataDict.Add("author", author);
+
+        //                        // 다른 폼으로 이동하면서 데이터 전달하기
+        //                        Admin adminForm = new Admin(userDataDict);
+        //                        adminForm.Show();
+        //                        this.Close();
+        //                    }
+        //                    else
+        //                    {
+        //                        MessageBox.Show("사용자 정보를 가져올 수 없습니다.");
+        //                    }
+        //                }
+        //                else
+        //                {
+        //                    MessageBox.Show("비밀번호가 일치하지 않습니다. 확인 후 다시 입력해주세요.");
+        //                }
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("사용자 정보가 없습니다.");
+        //    }
+        }
+
     }
-}
+
+
 
 
     

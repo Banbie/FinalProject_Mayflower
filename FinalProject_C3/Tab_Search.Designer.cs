@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Tab_Search";
-            this.Text = "실적검색";
+            this.Text = "실적확인";
             this.Load += new System.EventHandler(this.Tab_Search_Load);
             this.ResumeLayout(false);
 

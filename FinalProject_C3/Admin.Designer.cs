@@ -30,35 +30,36 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pn_Top = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lb_UserName = new System.Windows.Forms.Label();
             this.lb_Position = new System.Windows.Forms.Label();
             this.lb_접속시간 = new System.Windows.Forms.Label();
             this.lb_LogTime = new System.Windows.Forms.Label();
-            this.lb_현재시간 = new System.Windows.Forms.Label();
             this.lb_NowTime = new System.Windows.Forms.Label();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.cb_Hide = new System.Windows.Forms.CheckBox();
-            this.bt_Staff = new System.Windows.Forms.Button();
-            this.bt_Data = new System.Windows.Forms.Button();
+            this.bt_Monitor = new System.Windows.Forms.Button();
+            this.bt_State = new System.Windows.Forms.Button();
             this.bt_Device = new System.Windows.Forms.Button();
-            this.bt_Poor = new System.Windows.Forms.Button();
+            this.bt_Defect = new System.Windows.Forms.Button();
             this.bt_Search = new System.Windows.Forms.Button();
             this.bt_Plan = new System.Windows.Forms.Button();
             this.timerSliding = new System.Windows.Forms.Timer(this.components);
             this.pn_Center = new System.Windows.Forms.Panel();
             this.timerDate = new System.Windows.Forms.Timer(this.components);
             this.pn_Top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSideMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pn_Top
             // 
-            this.pn_Top.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pn_Top.BackColor = System.Drawing.SystemColors.Menu;
+            this.pn_Top.Controls.Add(this.pictureBox1);
             this.pn_Top.Controls.Add(this.lb_UserName);
             this.pn_Top.Controls.Add(this.lb_Position);
             this.pn_Top.Controls.Add(this.lb_접속시간);
             this.pn_Top.Controls.Add(this.lb_LogTime);
-            this.pn_Top.Controls.Add(this.lb_현재시간);
             this.pn_Top.Controls.Add(this.lb_NowTime);
             this.pn_Top.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn_Top.Location = new System.Drawing.Point(0, 0);
@@ -66,11 +67,22 @@
             this.pn_Top.Size = new System.Drawing.Size(1264, 100);
             this.pn_Top.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FinalProject_C3.Properties.Resources.mayflower__1_;
+            this.pictureBox1.InitialImage = global::FinalProject_C3.Properties.Resources.mayflower__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(197, 94);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // lb_UserName
             // 
             this.lb_UserName.AutoSize = true;
             this.lb_UserName.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_UserName.Location = new System.Drawing.Point(915, 66);
+            this.lb_UserName.Location = new System.Drawing.Point(262, 75);
             this.lb_UserName.Name = "lb_UserName";
             this.lb_UserName.Size = new System.Drawing.Size(63, 13);
             this.lb_UserName.TabIndex = 5;
@@ -80,7 +92,7 @@
             // 
             this.lb_Position.AutoSize = true;
             this.lb_Position.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_Position.Location = new System.Drawing.Point(872, 66);
+            this.lb_Position.Location = new System.Drawing.Point(219, 75);
             this.lb_Position.Name = "lb_Position";
             this.lb_Position.Size = new System.Drawing.Size(35, 13);
             this.lb_Position.TabIndex = 4;
@@ -90,39 +102,29 @@
             // 
             this.lb_접속시간.AutoSize = true;
             this.lb_접속시간.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_접속시간.Location = new System.Drawing.Point(844, 22);
+            this.lb_접속시간.Location = new System.Drawing.Point(219, 54);
             this.lb_접속시간.Name = "lb_접속시간";
-            this.lb_접속시간.Size = new System.Drawing.Size(63, 13);
+            this.lb_접속시간.Size = new System.Drawing.Size(35, 13);
             this.lb_접속시간.TabIndex = 3;
-            this.lb_접속시간.Text = "접속시간";
+            this.lb_접속시간.Text = "접속";
             // 
             // lb_LogTime
             // 
             this.lb_LogTime.AutoSize = true;
             this.lb_LogTime.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_LogTime.Location = new System.Drawing.Point(913, 22);
+            this.lb_LogTime.Location = new System.Drawing.Point(260, 54);
             this.lb_LogTime.Name = "lb_LogTime";
             this.lb_LogTime.Size = new System.Drawing.Size(65, 13);
             this.lb_LogTime.TabIndex = 2;
             this.lb_LogTime.Text = "09:00:00";
             // 
-            // lb_현재시간
-            // 
-            this.lb_현재시간.AutoSize = true;
-            this.lb_현재시간.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_현재시간.Location = new System.Drawing.Point(844, 44);
-            this.lb_현재시간.Name = "lb_현재시간";
-            this.lb_현재시간.Size = new System.Drawing.Size(63, 13);
-            this.lb_현재시간.TabIndex = 1;
-            this.lb_현재시간.Text = "현재시간";
-            // 
             // lb_NowTime
             // 
             this.lb_NowTime.AutoSize = true;
-            this.lb_NowTime.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_NowTime.Location = new System.Drawing.Point(913, 44);
+            this.lb_NowTime.Font = new System.Drawing.Font("HY견고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lb_NowTime.Location = new System.Drawing.Point(219, 19);
             this.lb_NowTime.Name = "lb_NowTime";
-            this.lb_NowTime.Size = new System.Drawing.Size(65, 13);
+            this.lb_NowTime.Size = new System.Drawing.Size(81, 15);
             this.lb_NowTime.TabIndex = 0;
             this.lb_NowTime.Text = "09:00:00";
             // 
@@ -130,10 +132,10 @@
             // 
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelSideMenu.Controls.Add(this.cb_Hide);
-            this.panelSideMenu.Controls.Add(this.bt_Staff);
-            this.panelSideMenu.Controls.Add(this.bt_Data);
+            this.panelSideMenu.Controls.Add(this.bt_Monitor);
+            this.panelSideMenu.Controls.Add(this.bt_State);
             this.panelSideMenu.Controls.Add(this.bt_Device);
-            this.panelSideMenu.Controls.Add(this.bt_Poor);
+            this.panelSideMenu.Controls.Add(this.bt_Defect);
             this.panelSideMenu.Controls.Add(this.bt_Search);
             this.panelSideMenu.Controls.Add(this.bt_Plan);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -161,41 +163,41 @@
             this.cb_Hide.UseVisualStyleBackColor = true;
             this.cb_Hide.CheckedChanged += new System.EventHandler(this.cb_Hide_CheckedChanged);
             // 
-            // bt_Staff
+            // bt_Monitor
             // 
-            this.bt_Staff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bt_Staff.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bt_Staff.FlatAppearance.BorderSize = 0;
-            this.bt_Staff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.bt_Staff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.bt_Staff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Staff.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
-            this.bt_Staff.ForeColor = System.Drawing.Color.White;
-            this.bt_Staff.Location = new System.Drawing.Point(0, 250);
-            this.bt_Staff.Name = "bt_Staff";
-            this.bt_Staff.Size = new System.Drawing.Size(200, 50);
-            this.bt_Staff.TabIndex = 8;
-            this.bt_Staff.Text = "모니터링";
-            this.bt_Staff.UseVisualStyleBackColor = false;
-            this.bt_Staff.Click += new System.EventHandler(this.bt_Staff_Click);
+            this.bt_Monitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_Monitor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bt_Monitor.FlatAppearance.BorderSize = 0;
+            this.bt_Monitor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.bt_Monitor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.bt_Monitor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Monitor.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
+            this.bt_Monitor.ForeColor = System.Drawing.Color.White;
+            this.bt_Monitor.Location = new System.Drawing.Point(0, 250);
+            this.bt_Monitor.Name = "bt_Monitor";
+            this.bt_Monitor.Size = new System.Drawing.Size(200, 50);
+            this.bt_Monitor.TabIndex = 8;
+            this.bt_Monitor.Text = "모니터링";
+            this.bt_Monitor.UseVisualStyleBackColor = false;
+            this.bt_Monitor.Click += new System.EventHandler(this.bt_Staff_Click);
             // 
-            // bt_Data
+            // bt_State
             // 
-            this.bt_Data.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bt_Data.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bt_Data.FlatAppearance.BorderSize = 0;
-            this.bt_Data.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.bt_Data.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.bt_Data.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Data.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
-            this.bt_Data.ForeColor = System.Drawing.Color.White;
-            this.bt_Data.Location = new System.Drawing.Point(0, 200);
-            this.bt_Data.Name = "bt_Data";
-            this.bt_Data.Size = new System.Drawing.Size(200, 50);
-            this.bt_Data.TabIndex = 7;
-            this.bt_Data.Text = "설비 데이터";
-            this.bt_Data.UseVisualStyleBackColor = false;
-            this.bt_Data.Click += new System.EventHandler(this.bt_Data_Click);
+            this.bt_State.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_State.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bt_State.FlatAppearance.BorderSize = 0;
+            this.bt_State.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.bt_State.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.bt_State.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_State.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
+            this.bt_State.ForeColor = System.Drawing.Color.White;
+            this.bt_State.Location = new System.Drawing.Point(0, 200);
+            this.bt_State.Name = "bt_State";
+            this.bt_State.Size = new System.Drawing.Size(200, 50);
+            this.bt_State.TabIndex = 7;
+            this.bt_State.Text = "설비 데이터";
+            this.bt_State.UseVisualStyleBackColor = false;
+            this.bt_State.Click += new System.EventHandler(this.bt_Data_Click);
             // 
             // bt_Device
             // 
@@ -215,23 +217,23 @@
             this.bt_Device.UseVisualStyleBackColor = false;
             this.bt_Device.Click += new System.EventHandler(this.bt_Device_Click);
             // 
-            // bt_Poor
+            // bt_Defect
             // 
-            this.bt_Poor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bt_Poor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bt_Poor.FlatAppearance.BorderSize = 0;
-            this.bt_Poor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.bt_Poor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.bt_Poor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Poor.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
-            this.bt_Poor.ForeColor = System.Drawing.Color.White;
-            this.bt_Poor.Location = new System.Drawing.Point(0, 100);
-            this.bt_Poor.Name = "bt_Poor";
-            this.bt_Poor.Size = new System.Drawing.Size(200, 50);
-            this.bt_Poor.TabIndex = 4;
-            this.bt_Poor.Text = "불량 추적";
-            this.bt_Poor.UseVisualStyleBackColor = false;
-            this.bt_Poor.Click += new System.EventHandler(this.bt_Poor_Click);
+            this.bt_Defect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_Defect.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bt_Defect.FlatAppearance.BorderSize = 0;
+            this.bt_Defect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.bt_Defect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.bt_Defect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Defect.Font = new System.Drawing.Font("굴림", 11F, System.Drawing.FontStyle.Bold);
+            this.bt_Defect.ForeColor = System.Drawing.Color.White;
+            this.bt_Defect.Location = new System.Drawing.Point(0, 100);
+            this.bt_Defect.Name = "bt_Defect";
+            this.bt_Defect.Size = new System.Drawing.Size(200, 50);
+            this.bt_Defect.TabIndex = 4;
+            this.bt_Defect.Text = "불량 추적";
+            this.bt_Defect.UseVisualStyleBackColor = false;
+            this.bt_Defect.Click += new System.EventHandler(this.bt_Poor_Click);
             // 
             // bt_Search
             // 
@@ -301,6 +303,7 @@
             this.Load += new System.EventHandler(this.Admin_Load);
             this.pn_Top.ResumeLayout(false);
             this.pn_Top.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSideMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -310,10 +313,10 @@
         private System.Windows.Forms.Panel pn_Top;
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.CheckBox cb_Hide;
-        private System.Windows.Forms.Button bt_Staff;
-        private System.Windows.Forms.Button bt_Data;
+        private System.Windows.Forms.Button bt_Monitor;
+        private System.Windows.Forms.Button bt_State;
         private System.Windows.Forms.Button bt_Device;
-        private System.Windows.Forms.Button bt_Poor;
+        private System.Windows.Forms.Button bt_Defect;
         private System.Windows.Forms.Button bt_Search;
         private System.Windows.Forms.Button bt_Plan;
         private System.Windows.Forms.Timer timerSliding;
@@ -321,9 +324,9 @@
         private System.Windows.Forms.Label lb_Position;
         private System.Windows.Forms.Label lb_접속시간;
         private System.Windows.Forms.Label lb_LogTime;
-        private System.Windows.Forms.Label lb_현재시간;
         private System.Windows.Forms.Label lb_NowTime;
         private System.Windows.Forms.Panel pn_Center;
         private System.Windows.Forms.Timer timerDate;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -18,7 +18,8 @@ namespace FinalProject_C3
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
 
-            (new Admin()).Show();
+            (new Admin(new Dictionary<string, string>())).Show();
+            //(new Admin()).Show();
             Application.Run();
         }
     }

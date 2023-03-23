@@ -51,6 +51,23 @@ namespace LoginTest
                 throw;
             }
         }
+        public DataTable Select(string query)
+        {
+            try
+            {
+                DataTable ds = new DataTable();
+
+                adpt = new MySqlDataAdapter(query, conn);
+                adpt.Fill(ds);
+
+                return ds;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                throw;
+            }
+        }
 
         public DataSet SelectDetail(string condition, string table, string where = "")
         {
@@ -148,5 +165,6 @@ namespace LoginTest
                 throw;
             }
         }
+
     }
 }

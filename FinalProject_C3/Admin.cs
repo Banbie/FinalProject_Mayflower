@@ -22,26 +22,36 @@ namespace FinalProject_C3
         //private Dictionary<string, string> userData;
 
         //public Admin(Dictionary<string, string> userData)
-        public Admin()
+
+        private readonly Dictionary<string, string> userData;
+
+        public Admin(Dictionary<string, string> userData)
         {
             InitializeComponent();
+            //로그인 할때 로그인 user테이블의 id를 검색해 그 행의 이름,직급을 가져와 라벨에 씌우는 코드인데
+            //작동은 정상적으로 하는데 프로그램 종료 시 key값이 없다는 오류가 떠서 어차피 끄는거니 오류뜨면 종료하게 만듬
+            try
+            {
+                this.userData = userData;
 
-            //// 다른 폼에서 전달받은 데이터 활용하기
-            //this.userData = userData;
-
-            //string username = userData["username"];
-            //string author = userData["author"];
-
-            //// 라벨에 값을 표시하기
-            //lb_UserName.Text = username;
-            //lb_Position.Text = author;
+                // userData 변수를 이용하여 원하는 작업을 수행합니다.
+                // 예를 들어, 아래와 같이 라벨에 값을 설정할 수 있습니다.
+                lb_UserName.Text = userData["username"];
+                lb_Position.Text = userData["author"];
+            }
+            catch (KeyNotFoundException ex)
+            {
+                //MessageBox.Show("사용자 정보를 찾을 수 없습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
+
         private void Admin_Load(object sender, EventArgs e)
         {
-            bt_Plan.PerformClick(); // 기본적으로 생산계획 폼 열어놓기
+            bt_Monitor.PerformClick(); // 기본적으로 생산계획 폼 열어놓기
             timerDate.Interval = 100; //타이머 간격 100ms
             timerDate.Start();  //타이머 시작            
-            lb_LogTime.Text = DateTime.Now.ToString("F"); // label1에 현재날짜시간 표시, F:자세한 전체 날짜/시간
+            lb_LogTime.Text = DateTime.Now.ToString("T"); // label1에 현재날짜시간 표시, F:자세한 전체 날짜/시간
         }
         private void cb_Hide_CheckedChanged(object sender, EventArgs e)
         {
@@ -50,10 +60,10 @@ namespace FinalProject_C3
                 //슬라이딩 메뉴가 접혔을 때, 메뉴 버튼의 표시
                 bt_Plan.Text = "1";
                 bt_Search.Text = "2";
-                bt_Poor.Text = "3";
+                bt_Defect.Text = "3";
                 bt_Device.Text = "4";
-                bt_Data.Text = "5";
-                bt_Staff.Text = "6";
+                bt_State.Text = "5";
+                bt_Monitor.Text = "6";
                 cb_Hide.Text = ">";
             }
             else
@@ -61,10 +71,10 @@ namespace FinalProject_C3
                 //슬라이딩 메뉴가 보였을 때, 메뉴 버튼의 표시
                 bt_Plan.Text = "생산 계획";
                 bt_Search.Text = "실적 검색";
-                bt_Poor.Text = "불량 추적";
+                bt_Defect.Text = "불량 추적";
                 bt_Device.Text = "디바이스 관리";
-                bt_Data.Text = "설비 데이터";
-                bt_Staff.Text = "직원 관리";
+                bt_State.Text = "설비 데이터";
+                bt_Monitor.Text = "직원 관리";
                 cb_Hide.Text = "<";
             }
             //타이머 시작
@@ -138,7 +148,9 @@ namespace FinalProject_C3
 
         private void timerDate_Tick(object sender, EventArgs e)
         {
-            lb_NowTime.Text = DateTime.Now.ToString("F"); // label1에 현재날짜시간 표시, F:자세한 전체 날짜/시간
+            lb_NowTime.Text = DateTime.Now.ToString("F");
+            // label1에 현재날짜시간 표시, F:자세한 전체 날짜/시간
+            // T:시간만 표시
         }
     }
 }
