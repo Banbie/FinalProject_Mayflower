@@ -121,10 +121,10 @@
             // lb_NowTime
             // 
             this.lb_NowTime.AutoSize = true;
-            this.lb_NowTime.Font = new System.Drawing.Font("HY견고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lb_NowTime.Font = new System.Drawing.Font("HY견고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lb_NowTime.Location = new System.Drawing.Point(219, 19);
             this.lb_NowTime.Name = "lb_NowTime";
-            this.lb_NowTime.Size = new System.Drawing.Size(81, 15);
+            this.lb_NowTime.Size = new System.Drawing.Size(87, 16);
             this.lb_NowTime.TabIndex = 0;
             this.lb_NowTime.Text = "09:00:00";
             // 
