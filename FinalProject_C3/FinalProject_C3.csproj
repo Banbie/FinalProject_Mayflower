@@ -114,12 +114,15 @@
     <Compile Include="Join.Designer.cs">
       <DependentUpon>Join.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tab_State.cs">
       <SubType>Form</SubType>
     </Compile>
-=======
->>>>>>> 988ec70ee1d73e627c6b75711e7fa251cffa4096
     <Compile Include="Tab_State.Designer.cs">
       <DependentUpon>Tab_State.cs</DependentUpon>
     </Compile>
@@ -164,12 +167,12 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tab_State.resx">
       <DependentUpon>Tab_State.cs</DependentUpon>
     </EmbeddedResource>
-=======
->>>>>>> 988ec70ee1d73e627c6b75711e7fa251cffa4096
     <EmbeddedResource Include="Tab_Device.resx">
       <DependentUpon>Tab_Device.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,12 +227,34 @@
   <ItemGroup>
     <None Include="Resources\mayflower %281%29.png" />
     <None Include="Resources\mayflower.png" />
-<<<<<<< HEAD
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\" />
-=======
->>>>>>> 988ec70ee1d73e627c6b75711e7fa251cffa4096
+    <Content Include="Scripts\cldr.js" />
+    <Content Include="Scripts\cldr\event.js" />
+    <Content Include="Scripts\cldr\supplemental.js" />
+    <Content Include="Scripts\cldr\unresolved.js" />
+    <Content Include="Scripts\dx.viz.debug.js" />
+    <Content Include="Scripts\dx.viz.js" />
+    <Content Include="Scripts\globalize.js" />
+    <Content Include="Scripts\globalize\currency.js" />
+    <Content Include="Scripts\globalize\date.js" />
+    <Content Include="Scripts\globalize\message.js" />
+    <Content Include="Scripts\globalize\number.js" />
+    <Content Include="Scripts\globalize\plural.js" />
+    <Content Include="Scripts\globalize\relative-time.js" />
+    <Content Include="Scripts\globalize\unit.js" />
+    <Content Include="Scripts\jquery-3.5.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.1.js" />
+    <Content Include="Scripts\jquery-3.5.1.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
+    <Content Include="Scripts\vectormap-data\africa.js" />
+    <Content Include="Scripts\vectormap-data\canada.js" />
+    <Content Include="Scripts\vectormap-data\eurasia.js" />
+    <Content Include="Scripts\vectormap-data\europe.js" />
+    <Content Include="Scripts\vectormap-data\usa.js" />
+    <Content Include="Scripts\vectormap-data\world.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.debug.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.node.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
