@@ -114,15 +114,6 @@
     <Compile Include="Join.Designer.cs">
       <DependentUpon>Join.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tab_Data.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Tab_State.Designer.cs">
       <DependentUpon>Tab_State.cs</DependentUpon>
     </Compile>
@@ -166,12 +157,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tab_Data.resx">
-      <DependentUpon>Tab_Data.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tab_Device.resx">
       <DependentUpon>Tab_Device.cs</DependentUpon>
