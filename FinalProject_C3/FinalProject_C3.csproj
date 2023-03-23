@@ -114,9 +114,12 @@
     <Compile Include="Join.Designer.cs">
       <DependentUpon>Join.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Tab_State.cs">
       <SubType>Form</SubType>
     </Compile>
+=======
+>>>>>>> 988ec70ee1d73e627c6b75711e7fa251cffa4096
     <Compile Include="Tab_State.Designer.cs">
       <DependentUpon>Tab_State.cs</DependentUpon>
     </Compile>
@@ -161,9 +164,12 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Tab_State.resx">
       <DependentUpon>Tab_State.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> 988ec70ee1d73e627c6b75711e7fa251cffa4096
     <EmbeddedResource Include="Tab_Device.resx">
       <DependentUpon>Tab_Device.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,9 +224,12 @@
   <ItemGroup>
     <None Include="Resources\mayflower %281%29.png" />
     <None Include="Resources\mayflower.png" />
+<<<<<<< HEAD
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\" />
+=======
+>>>>>>> 988ec70ee1d73e627c6b75711e7fa251cffa4096
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
