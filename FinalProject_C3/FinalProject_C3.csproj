@@ -208,8 +208,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Scripts\jquery-3.5.1.min.map" />
-    <None Include="Scripts\jquery-3.5.1.slim.min.map" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -233,30 +231,6 @@
     <Content Include="Scripts\cldr\event.js" />
     <Content Include="Scripts\cldr\supplemental.js" />
     <Content Include="Scripts\cldr\unresolved.js" />
-    <Content Include="Scripts\dx.viz.debug.js" />
-    <Content Include="Scripts\dx.viz.js" />
-    <Content Include="Scripts\globalize.js" />
-    <Content Include="Scripts\globalize\currency.js" />
-    <Content Include="Scripts\globalize\date.js" />
-    <Content Include="Scripts\globalize\message.js" />
-    <Content Include="Scripts\globalize\number.js" />
-    <Content Include="Scripts\globalize\plural.js" />
-    <Content Include="Scripts\globalize\relative-time.js" />
-    <Content Include="Scripts\globalize\unit.js" />
-    <Content Include="Scripts\jquery-3.5.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.5.1.js" />
-    <Content Include="Scripts\jquery-3.5.1.min.js" />
-    <Content Include="Scripts\jquery-3.5.1.slim.js" />
-    <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
-    <Content Include="Scripts\vectormap-data\africa.js" />
-    <Content Include="Scripts\vectormap-data\canada.js" />
-    <Content Include="Scripts\vectormap-data\eurasia.js" />
-    <Content Include="Scripts\vectormap-data\europe.js" />
-    <Content Include="Scripts\vectormap-data\usa.js" />
-    <Content Include="Scripts\vectormap-data\world.js" />
-    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.debug.js" />
-    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.js" />
-    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.node.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
