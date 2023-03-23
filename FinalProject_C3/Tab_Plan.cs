@@ -43,6 +43,7 @@ namespace FinalProject_C3
                 // 예외 처리
                 MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void LoadDataToDataGridView(string query, DataGridView dataGridView)

@@ -83,6 +83,8 @@ namespace FinalProject_C3
             }
         }
 
+        //public Dictionary<string, string> userData { get; internal set; }
+
         private void BT_CLOSE_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -135,9 +137,17 @@ namespace FinalProject_C3
                         if (pw == row["userpw"].ToString()) { 
                             MessageBox.Show("로그인에 성공했습니다.");
 
-                            //Main main = new Main();
-                            //main.Show();
-                            //this.Close();
+                            //// 로그인 성공 시, 해당 사용자 정보 추출하기
+                            //string username = row["username"].ToString();
+                            //string author = row["author"].ToString();
+
+                            //// 다른 폼으로 전달할 값을 Dictionary에 저장하기
+                            //Dictionary<string, string> userData = new Dictionary<string, string>();
+                            //userData.Add("username", username);
+                            //userData.Add("author", author);
+
+                            //// 다른 폼으로 이동하면서 데이터 전달하기
+                            //Admin admin = new Admin(userData);
                             Admin admin = new Admin();
                             admin.Show();
                             this.Close();

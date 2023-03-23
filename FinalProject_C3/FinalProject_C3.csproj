@@ -120,11 +120,11 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tab_Data.cs">
+    <Compile Include="Tab_State.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tab_Data.Designer.cs">
-      <DependentUpon>Tab_Data.cs</DependentUpon>
+    <Compile Include="Tab_State.Designer.cs">
+      <DependentUpon>Tab_State.cs</DependentUpon>
     </Compile>
     <Compile Include="Tab_Device.cs">
       <SubType>Form</SubType>
@@ -132,11 +132,11 @@
     <Compile Include="Tab_Device.Designer.cs">
       <DependentUpon>Tab_Device.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tab_Poor.cs">
+    <Compile Include="Tab_Defect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tab_Poor.Designer.cs">
-      <DependentUpon>Tab_Poor.cs</DependentUpon>
+    <Compile Include="Tab_Defect.Designer.cs">
+      <DependentUpon>Tab_Defect.cs</DependentUpon>
     </Compile>
     <Compile Include="Tab_Plan.cs">
       <SubType>Form</SubType>
@@ -152,11 +152,11 @@
     <Compile Include="Tab_Search.Designer.cs">
       <DependentUpon>Tab_Search.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tab_Staff.cs">
+    <Compile Include="Tab_Monitor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tab_Staff.Designer.cs">
-      <DependentUpon>Tab_Staff.cs</DependentUpon>
+    <Compile Include="Tab_Monitor.Designer.cs">
+      <DependentUpon>Tab_Monitor.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
@@ -170,8 +170,8 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tab_Data.resx">
-      <DependentUpon>Tab_Data.cs</DependentUpon>
+    <EmbeddedResource Include="Tab_State.resx">
+      <DependentUpon>Tab_State.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tab_Device.resx">
       <DependentUpon>Tab_Device.cs</DependentUpon>
@@ -189,14 +189,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Tab_Poor.resx">
-      <DependentUpon>Tab_Poor.cs</DependentUpon>
+    <EmbeddedResource Include="Tab_Defect.resx">
+      <DependentUpon>Tab_Defect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tab_Search.resx">
       <DependentUpon>Tab_Search.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tab_Staff.resx">
-      <DependentUpon>Tab_Staff.cs</DependentUpon>
+    <EmbeddedResource Include="Tab_Monitor.resx">
+      <DependentUpon>Tab_Monitor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -208,6 +208,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Scripts\jquery-3.5.1.min.map" />
+    <None Include="Scripts\jquery-3.5.1.slim.min.map" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -223,6 +225,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\free-icon-cancel-130888 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\cldr.js" />
+    <Content Include="Scripts\cldr\event.js" />
+    <Content Include="Scripts\cldr\supplemental.js" />
+    <Content Include="Scripts\cldr\unresolved.js" />
+    <Content Include="Scripts\dx.viz.debug.js" />
+    <Content Include="Scripts\dx.viz.js" />
+    <Content Include="Scripts\globalize.js" />
+    <Content Include="Scripts\globalize\currency.js" />
+    <Content Include="Scripts\globalize\date.js" />
+    <Content Include="Scripts\globalize\message.js" />
+    <Content Include="Scripts\globalize\number.js" />
+    <Content Include="Scripts\globalize\plural.js" />
+    <Content Include="Scripts\globalize\relative-time.js" />
+    <Content Include="Scripts\globalize\unit.js" />
+    <Content Include="Scripts\jquery-3.5.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.1.js" />
+    <Content Include="Scripts\jquery-3.5.1.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
+    <Content Include="Scripts\vectormap-data\africa.js" />
+    <Content Include="Scripts\vectormap-data\canada.js" />
+    <Content Include="Scripts\vectormap-data\eurasia.js" />
+    <Content Include="Scripts\vectormap-data\europe.js" />
+    <Content Include="Scripts\vectormap-data\usa.js" />
+    <Content Include="Scripts\vectormap-data\world.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.debug.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.js" />
+    <Content Include="Scripts\vectormap-utils\dx.vectormaputils.node.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

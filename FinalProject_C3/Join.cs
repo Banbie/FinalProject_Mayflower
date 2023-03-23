@@ -78,15 +78,8 @@ namespace FinalProject_C3
                 else if (txt == TB_PW2) { txt.Text = Pw2Placeholder; TB_PW.PasswordChar = default; }
                 else if (txt == TB_NAME) txt.Text = NamePlaceholder;
                 else if (txt == TB_AUTHOR) txt.Text = AuthorPlaceholder;
-                
             }
         }
-
-        private void BT_CLOSE_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-    
 
     public void ClearTextBox()
         {
