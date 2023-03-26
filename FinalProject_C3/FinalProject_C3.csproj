@@ -123,6 +123,12 @@
     <Compile Include="Join.Designer.cs">
       <DependentUpon>Join.cs</DependentUpon>
     </Compile>
+    <Compile Include="Plan_DML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plan_DML.Designer.cs">
+      <DependentUpon>Plan_DML.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tab_State.cs">
       <SubType>Form</SubType>
     </Compile>

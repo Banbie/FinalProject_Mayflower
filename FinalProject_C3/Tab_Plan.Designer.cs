@@ -29,37 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.label2 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dg_plan = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.donut = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dg_now = new System.Windows.Forms.DataGridView();
+            this.planManager = new MetroFramework.Drawing.Html.HtmlPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dg_plan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dg_now)).BeginInit();
             this.SuspendLayout();
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(13, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 16);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "주문/생산 현황";
-            // 
             // dg_plan
             // 
             this.dg_plan.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dg_plan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_plan.Location = new System.Drawing.Point(12, 128);
+            this.dg_plan.Location = new System.Drawing.Point(462, 392);
             this.dg_plan.Name = "dg_plan";
             this.dg_plan.RowTemplate.Height = 23;
-            this.dg_plan.Size = new System.Drawing.Size(456, 199);
+            this.dg_plan.Size = new System.Drawing.Size(218, 132);
             this.dg_plan.TabIndex = 6;
             // 
             // timer1
@@ -68,19 +58,19 @@
             // 
             // donut
             // 
-            chartArea2.Name = "ChartArea1";
-            this.donut.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.donut.Legends.Add(legend2);
-            this.donut.Location = new System.Drawing.Point(474, 128);
+            chartArea4.Name = "ChartArea1";
+            this.donut.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.donut.Legends.Add(legend4);
+            this.donut.Location = new System.Drawing.Point(786, 289);
             this.donut.Name = "donut";
             this.donut.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.donut.Series.Add(series2);
-            this.donut.Size = new System.Drawing.Size(300, 300);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.donut.Series.Add(series4);
+            this.donut.Size = new System.Drawing.Size(251, 268);
             this.donut.TabIndex = 7;
             this.donut.Text = "chart1";
             // 
@@ -88,23 +78,33 @@
             // 
             this.dg_now.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dg_now.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_now.Location = new System.Drawing.Point(12, 31);
+            this.dg_now.Location = new System.Drawing.Point(34, 396);
             this.dg_now.Name = "dg_now";
             this.dg_now.RowTemplate.Height = 23;
-            this.dg_now.Size = new System.Drawing.Size(758, 91);
+            this.dg_now.Size = new System.Drawing.Size(261, 128);
             this.dg_now.TabIndex = 9;
+            // 
+            // planManager
+            // 
+            this.planManager.AutoScroll = true;
+            this.planManager.AutoScrollMinSize = new System.Drawing.Size(1013, 18);
+            this.planManager.BackColor = System.Drawing.SystemColors.Window;
+            this.planManager.Location = new System.Drawing.Point(23, 63);
+            this.planManager.Name = "planManager";
+            this.planManager.Size = new System.Drawing.Size(1013, 234);
+            this.planManager.TabIndex = 11;
+            this.planManager.Text = "Plan Manager";
             // 
             // Tab_Plan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(782, 440);
+            this.ClientSize = new System.Drawing.Size(1060, 580);
+            this.Controls.Add(this.planManager);
             this.Controls.Add(this.dg_now);
             this.Controls.Add(this.donut);
             this.Controls.Add(this.dg_plan);
-            this.Controls.Add(this.label2);
             this.Name = "Tab_Plan";
             this.Text = "생산계획";
             this.Load += new System.EventHandler(this.Tab_Plan_Load);
@@ -112,15 +112,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.donut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dg_now)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dg_plan;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataVisualization.Charting.Chart donut;
         private System.Windows.Forms.DataGridView dg_now;
+        private MetroFramework.Drawing.Html.HtmlPanel planManager;
     }
 }
