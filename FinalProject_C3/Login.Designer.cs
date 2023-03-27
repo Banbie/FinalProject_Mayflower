@@ -57,7 +57,7 @@
             this.PNL_LOGIN.Location = new System.Drawing.Point(0, -1);
             this.PNL_LOGIN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PNL_LOGIN.Name = "PNL_LOGIN";
-            this.PNL_LOGIN.Size = new System.Drawing.Size(425, 492);
+            this.PNL_LOGIN.Size = new System.Drawing.Size(425, 481);
             this.PNL_LOGIN.TabIndex = 4;
             // 
             // pictureBox1
@@ -89,8 +89,8 @@
             // 
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            this.label1.Location = new System.Drawing.Point(103, 414);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(99, 425);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(213, 34);
             this.label1.TabIndex = 7;
@@ -189,7 +189,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.ClientSize = new System.Drawing.Size(422, 491);
+            this.ClientSize = new System.Drawing.Size(422, 476);
             this.Controls.Add(this.PNL_LOGIN);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
