@@ -44,6 +44,7 @@
             // 
             // PNL_LOGIN
             // 
+            this.PNL_LOGIN.BackgroundImage = global::FinalProject_C3.Properties.Resources.로그인화면3;
             this.PNL_LOGIN.Controls.Add(this.pictureBox1);
             this.PNL_LOGIN.Controls.Add(this.label2);
             this.PNL_LOGIN.Controls.Add(this.label1);
@@ -62,6 +63,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = global::FinalProject_C3.Properties.Resources.yacht;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(148, 94);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
