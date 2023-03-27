@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FinalProject_C3
 {
@@ -125,9 +126,10 @@ namespace FinalProject_C3
             if (TB_PW.Text != TB_PW2.Text) { MessageBox.Show("비밀번호가 일치하지 않습니다. 확인 후 다시 입력해주세요."); return; }
             if (!isValidPassword(TB_PW.Text)) { MessageBox.Show("비밀번호는 영문, 숫자, 특수문자를 포함해야합니다."); return; }
 
+            string table = "tb_user(userid, userpw, username, author)";
             string value = $"'{TB_ID.Text}', '{TB_PW.Text}', '{TB_NAME.Text}', '{TB_AUTHOR.Text}'";
             //Login._db.Insert(Config.Tables[(int)eTName._user], value);
-            Login._db.Insert(value);
+            Login._db.Insert(table, value);
             Login.LoadUserInfo();
             MessageBox.Show("회원가입을 완료했습니다. 등록한 아이디로 로그인 해주세요.");
 

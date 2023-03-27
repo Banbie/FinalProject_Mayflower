@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -130,6 +131,24 @@ namespace FinalProject_C3
             //LoadDataToDataGridView(planQuery, dg_plan);
         }
 
+        private void get_now() // 현재 실행하고있는 생산계획 불러오기
+        {
+            try
+            {
+                var limit1 = "select * from tb_cur inner join on tb_cur.plannum = tb_plan.plannum order by curnum DESC LIMIT 1";
+                var adapter = new MySqlDataAdapter(limit1, connection);
+                var dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dg_now.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리
+                MessageBox.Show(ex.Message);
+            }
+        }
+        //함수로 만들어놨으니까 삭제 얼마든지 하셔도 됩니다...
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             try
@@ -146,12 +165,14 @@ namespace FinalProject_C3
 
                 // dg_plan 데이터그리드 갱신
                 dg_plan.DataSource = dataTable;
+                //get_now(); 만들어둔 함수.
             }
             catch (Exception ex)
             {
                 // 예외 처리
                 MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void planBtn_Click(object sender, EventArgs e)
