@@ -23,42 +23,13 @@ namespace FinalProject_C3
         {
             db.Connection();
             dgv_flow.DataSource = db.SelectAll("tb_flow").Tables[0];
-            getcb_plan();
             timer1.Start();
         }
-        private void getcb_plan()
-        {
-            cb_plan.Items.Clear();
-            cb_plan.Items.Add("전체");
-            try
-            {
-                string strqry = "select plannum from tb_plan";
-                foreach (DataRow dr in db.Select(strqry).Rows)
-                {
-                    cb_plan.Items.Add(dr["plannum"]);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
-        private void timeplan_search()
-        {
-            string timeS = dtp_start.Value.ToString("d");
-            string timeE = dtp_end.Value.ToString("d");
-            string query;
-            if (cb_plan.SelectedItem == "전체")
-            { query = $"tb_flow where flowdate between '{timeS}' and '{timeE}'"; }
-            else
-            { query = $"tb_flow where plannum = {cb_plan.SelectedItem} and flowdate between '{timeS}' and '{timeE}'"; }
-            dgv_flow.DataSource = db.SelectAll(query).Tables[0];
-        }
-        
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timeplan_search();
+            dgv_flow.DataSource = db.SelectAll("tb_flow").Tables[0];
         }
     }
     
