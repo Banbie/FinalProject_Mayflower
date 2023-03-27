@@ -34,10 +34,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(500, 450);
             this.Name = "Plan_DML";
-            this.Text = "Plan_DML";
-            this.Load += new System.EventHandler(this.Plan_DML_Load);
+            this.Text = "등록/수정";
             this.ResumeLayout(false);
 
         }

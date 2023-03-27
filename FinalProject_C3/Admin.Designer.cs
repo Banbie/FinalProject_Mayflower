@@ -115,7 +115,7 @@
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(200, 1000);
+            this.panelSideMenu.Size = new System.Drawing.Size(200, 804);
             this.panelSideMenu.TabIndex = 3;
             // 
             // cb_Hide
@@ -128,7 +128,7 @@
             this.cb_Hide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_Hide.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cb_Hide.ForeColor = System.Drawing.Color.White;
-            this.cb_Hide.Location = new System.Drawing.Point(0, 950);
+            this.cb_Hide.Location = new System.Drawing.Point(0, 754);
             this.cb_Hide.Name = "cb_Hide";
             this.cb_Hide.Size = new System.Drawing.Size(200, 50);
             this.cb_Hide.TabIndex = 9;
@@ -255,7 +255,7 @@
             this.pn_Center.Dock = System.Windows.Forms.DockStyle.Left;
             this.pn_Center.Location = new System.Drawing.Point(20, 60);
             this.pn_Center.Name = "pn_Center";
-            this.pn_Center.Size = new System.Drawing.Size(0, 1000);
+            this.pn_Center.Size = new System.Drawing.Size(0, 804);
             this.pn_Center.TabIndex = 4;
             // 
             // timerDate
@@ -269,7 +269,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(20, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1880, 1000);
+            this.panel1.Size = new System.Drawing.Size(1516, 804);
             this.panel1.TabIndex = 6;
             // 
             // mt_Tap
@@ -277,7 +277,7 @@
             this.mt_Tap.Dock = System.Windows.Forms.DockStyle.Left;
             this.mt_Tap.Location = new System.Drawing.Point(200, 0);
             this.mt_Tap.Name = "mt_Tap";
-            this.mt_Tap.Size = new System.Drawing.Size(1680, 1000);
+            this.mt_Tap.Size = new System.Drawing.Size(1680, 804);
             this.mt_Tap.TabIndex = 4;
             this.mt_Tap.UseSelectable = true;
             // 
@@ -285,7 +285,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1556, 884);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lb_UserName);
             this.Controls.Add(this.pn_Center);

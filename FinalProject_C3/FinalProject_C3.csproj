@@ -222,12 +222,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ship %282%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\로그인화면3.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\회원가입화면2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +230,9 @@
   <ItemGroup>
     <None Include="Resources\mayflower %281%29.png" />
     <None Include="Resources\mayflower.png" />
+    <Content Include="Resources\yacht.png" />
+    <Content Include="Resources\로그인화면3.png" />
+    <None Include="Resources\dial.png" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
     <Content Include="Scripts\cldr\supplemental.js" />
