@@ -39,7 +39,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lb_usernum = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_flow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_flow
@@ -57,10 +60,10 @@
             // lb_name
             // 
             this.lb_name.AutoSize = true;
-            this.lb_name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_name.Location = new System.Drawing.Point(750, 336);
+            this.lb_name.Font = new System.Drawing.Font("굴림", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lb_name.Location = new System.Drawing.Point(674, 346);
             this.lb_name.Name = "lb_name";
-            this.lb_name.Size = new System.Drawing.Size(58, 16);
+            this.lb_name.Size = new System.Drawing.Size(103, 29);
             this.lb_name.TabIndex = 9;
             this.lb_name.Text = "홍길동";
             this.lb_name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -126,10 +129,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(830, 336);
+            this.label1.Font = new System.Drawing.Font("굴림", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(802, 346);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 16);
+            this.label1.Size = new System.Drawing.Size(43, 29);
             this.label1.TabIndex = 16;
             this.label1.Text = "님";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -138,7 +141,7 @@
             // 
             this.lb_usernum.AutoSize = true;
             this.lb_usernum.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_usernum.Location = new System.Drawing.Point(706, 336);
+            this.lb_usernum.Location = new System.Drawing.Point(109, 364);
             this.lb_usernum.Name = "lb_usernum";
             this.lb_usernum.Size = new System.Drawing.Size(16, 16);
             this.lb_usernum.TabIndex = 17;
@@ -146,11 +149,37 @@
             this.lb_usernum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lb_usernum.Visible = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(142, 336);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridView1.Size = new System.Drawing.Size(403, 44);
+            this.dataGridView1.TabIndex = 18;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel3.Location = new System.Drawing.Point(11, 332);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(125, 25);
+            this.metroLabel3.TabIndex = 19;
+            this.metroLabel3.Text = "현재 생산계획";
+            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Tab_Device
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 369);
+            this.ClientSize = new System.Drawing.Size(868, 395);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lb_usernum);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.metroLabel2);
@@ -165,6 +194,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tab_Device_FormClosed);
             this.Load += new System.EventHandler(this.Tab_Device_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_flow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +211,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_usernum;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }
