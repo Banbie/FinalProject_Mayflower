@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dg_plan = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.donut = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dg_now = new System.Windows.Forms.DataGridView();
             this.planManager = new MetroFramework.Drawing.Html.HtmlPanel();
-            this.testTile = new MetroFramework.Controls.MetroTile();
-            this.testLabel = new MetroFramework.Controls.MetroLabel();
+            this.testTile1 = new MetroFramework.Controls.MetroTile();
+            this.duedate1 = new MetroFramework.Controls.MetroLabel();
+            this.planea1 = new MetroFramework.Controls.MetroLabel();
+            this.nowea1 = new MetroFramework.Controls.MetroLabel();
+            this.priority1 = new MetroFramework.Controls.MetroLabel();
             this.testButton = new MetroFramework.Controls.MetroButton();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.recivedate1 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dg_plan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dg_now)).BeginInit();
             this.planManager.SuspendLayout();
-            this.testTile.SuspendLayout();
+            this.testTile1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dg_plan
@@ -67,18 +67,18 @@
             // 
             // donut
             // 
-            chartArea1.Name = "ChartArea1";
-            this.donut.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.donut.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.donut.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.donut.Legends.Add(legend2);
             this.donut.Location = new System.Drawing.Point(786, 289);
             this.donut.Name = "donut";
             this.donut.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.donut.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.donut.Series.Add(series2);
             this.donut.Size = new System.Drawing.Size(251, 268);
             this.donut.TabIndex = 7;
             this.donut.Text = "chart1";
@@ -98,36 +98,64 @@
             this.planManager.AutoScroll = true;
             this.planManager.AutoScrollMinSize = new System.Drawing.Size(1013, 18);
             this.planManager.BackColor = System.Drawing.SystemColors.Window;
-            this.planManager.Controls.Add(this.testTile);
+            this.planManager.Controls.Add(this.testTile1);
             this.planManager.Location = new System.Drawing.Point(23, 63);
             this.planManager.Name = "planManager";
             this.planManager.Size = new System.Drawing.Size(1013, 234);
             this.planManager.TabIndex = 11;
             this.planManager.Text = "Plan Manager";
             // 
-            // testTile
+            // testTile1
             // 
-            this.testTile.ActiveControl = null;
-            this.testTile.Controls.Add(this.metroLabel4);
-            this.testTile.Controls.Add(this.metroLabel3);
-            this.testTile.Controls.Add(this.metroLabel2);
-            this.testTile.Controls.Add(this.metroLabel1);
-            this.testTile.Controls.Add(this.testButton);
-            this.testTile.Controls.Add(this.testLabel);
-            this.testTile.Location = new System.Drawing.Point(10, 30);
-            this.testTile.Name = "testTile";
-            this.testTile.Size = new System.Drawing.Size(180, 180);
-            this.testTile.TabIndex = 0;
-            this.testTile.Text = "고객사";
-            this.testTile.UseSelectable = true;
+            this.testTile1.ActiveControl = null;
+            this.testTile1.Controls.Add(this.duedate1);
+            this.testTile1.Controls.Add(this.planea1);
+            this.testTile1.Controls.Add(this.nowea1);
+            this.testTile1.Controls.Add(this.priority1);
+            this.testTile1.Controls.Add(this.testButton);
+            this.testTile1.Controls.Add(this.recivedate1);
+            this.testTile1.Location = new System.Drawing.Point(10, 30);
+            this.testTile1.Name = "testTile1";
+            this.testTile1.Size = new System.Drawing.Size(180, 180);
+            this.testTile1.TabIndex = 0;
+            this.testTile1.Text = "고객사";
+            this.testTile1.UseSelectable = true;
             // 
-            // testLabel
+            // duedate1
             // 
-            this.testLabel.Location = new System.Drawing.Point(10, 10);
-            this.testLabel.Name = "testLabel";
-            this.testLabel.Size = new System.Drawing.Size(80, 20);
-            this.testLabel.TabIndex = 0;
-            this.testLabel.Text = "수주날짜";
+            this.duedate1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.duedate1.Location = new System.Drawing.Point(10, 90);
+            this.duedate1.Name = "duedate1";
+            this.duedate1.Size = new System.Drawing.Size(80, 20);
+            this.duedate1.TabIndex = 5;
+            this.duedate1.Text = "납기일자";
+            // 
+            // planea1
+            // 
+            this.planea1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.planea1.Location = new System.Drawing.Point(10, 70);
+            this.planea1.Name = "planea1";
+            this.planea1.Size = new System.Drawing.Size(80, 20);
+            this.planea1.TabIndex = 4;
+            this.planea1.Text = "수주수량";
+            // 
+            // nowea1
+            // 
+            this.nowea1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.nowea1.Location = new System.Drawing.Point(10, 50);
+            this.nowea1.Name = "nowea1";
+            this.nowea1.Size = new System.Drawing.Size(80, 20);
+            this.nowea1.TabIndex = 3;
+            this.nowea1.Text = "생산완료";
+            // 
+            // priority1
+            // 
+            this.priority1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.priority1.Location = new System.Drawing.Point(10, 30);
+            this.priority1.Name = "priority1";
+            this.priority1.Size = new System.Drawing.Size(80, 20);
+            this.priority1.TabIndex = 2;
+            this.priority1.Text = "우선순위";
             // 
             // testButton
             // 
@@ -138,37 +166,14 @@
             this.testButton.Text = "주문 취소";
             this.testButton.UseSelectable = true;
             // 
-            // metroLabel1
+            // recivedate1
             // 
-            this.metroLabel1.Location = new System.Drawing.Point(10, 30);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(80, 20);
-            this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "우선순위";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.Location = new System.Drawing.Point(10, 50);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(80, 20);
-            this.metroLabel2.TabIndex = 3;
-            this.metroLabel2.Text = "생산완료";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.Location = new System.Drawing.Point(10, 70);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(80, 20);
-            this.metroLabel3.TabIndex = 4;
-            this.metroLabel3.Text = "수주수량";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.Location = new System.Drawing.Point(10, 90);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(80, 20);
-            this.metroLabel4.TabIndex = 5;
-            this.metroLabel4.Text = "납기일자";
+            this.recivedate1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.recivedate1.Location = new System.Drawing.Point(10, 10);
+            this.recivedate1.Name = "recivedate1";
+            this.recivedate1.Size = new System.Drawing.Size(80, 20);
+            this.recivedate1.TabIndex = 0;
+            this.recivedate1.Text = "수주날짜";
             // 
             // Tab_Plan
             // 
@@ -187,7 +192,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.donut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dg_now)).EndInit();
             this.planManager.ResumeLayout(false);
-            this.testTile.ResumeLayout(false);
+            this.testTile1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -198,12 +203,12 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart donut;
         private System.Windows.Forms.DataGridView dg_now;
         private MetroFramework.Drawing.Html.HtmlPanel planManager;
-        private MetroFramework.Controls.MetroTile testTile;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroTile testTile1;
+        private MetroFramework.Controls.MetroLabel duedate1;
+        private MetroFramework.Controls.MetroLabel planea1;
+        private MetroFramework.Controls.MetroLabel nowea1;
+        private MetroFramework.Controls.MetroLabel priority1;
         private MetroFramework.Controls.MetroButton testButton;
-        private MetroFramework.Controls.MetroLabel testLabel;
+        private MetroFramework.Controls.MetroLabel recivedate1;
     }
 }

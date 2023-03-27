@@ -16,7 +16,7 @@ namespace FinalProject_C3
 {
     public partial class Tab_Plan : MetroFramework.Forms.MetroForm
     {
-        private readonly Timer timer = new Timer(); // 타이머 생성
+        //private readonly Timer timer = new Timer(); // 타이머 생성
         private static readonly string connectionString =
         //"Server=192.168.0.3;" +
         "Server=localhost;" +
