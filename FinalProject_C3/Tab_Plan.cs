@@ -131,7 +131,7 @@ namespace FinalProject_C3
             //LoadDataToDataGridView(planQuery, dg_plan);
         }
 
-        private void get_now()
+        private void get_now() // 현재 실행하고있는 생산계획 불러오기
         {
             try
             {
