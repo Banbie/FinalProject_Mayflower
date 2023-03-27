@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FinalProject_C3
 {
-    public partial class Plan_DML : Form
+    public partial class Plan_DML : Tab_Plan
     {
         public Plan_DML()
         {
