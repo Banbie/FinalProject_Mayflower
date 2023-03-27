@@ -16,29 +16,60 @@ namespace FinalProject_C3
     {
         DBMySql db = new DBMySql();
         Timer timers = new Timer();
+
         public Tab_Device(string name)
         {
             InitializeComponent();
-            lb_name.Text = name +" 님";
-            // 타이머 설정
-            timers.Interval = 1000;
-            timers.Tick += Timer_Tick;
-            timers.Start();
+            lb_name.Text = name + " 님";
         }
 
         private void Tab_Device_Load(object sender, EventArgs e)
         {
             db.Connection();
             dgv_flow.DataSource = db.SelectAll("tb_flow").Tables[0];
+            getcb_plan();
+            getcb_prod();
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
+        private void getcb_plan()
         {
-            // DB에서 데이터 가져오기
-            var table = db.SelectAll("tb_flow").Tables[0];
+            cb_plan.Items.Clear();
+            cb_plan.Items.Add("생산계획");
+            try
+            {
+                string strqry = "select plannum from tb_plan";
+                foreach (DataRow dr in db.Select(strqry).Rows)
+                {
+                    cb_plan.Items.Add(dr["plannum"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
-            // 데이터그리드 업데이트
-            dgv_flow.DataSource = table;
+        private void getcb_prod()
+        {
+            cb_prod.Items.Clear();
+            cb_prod.Items.Add("제품번호");
+            try
+            {
+                string strqry = "select prodnum from tb_prod";
+                foreach (DataRow dr in db.Select(strqry).Rows)
+                {
+                    cb_prod.Items.Add(dr["plannum"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            dgv_flow.DataSource = db.SelectAll("tb_flow").Tables[0];
         }
     }
 }

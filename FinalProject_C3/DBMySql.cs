@@ -93,12 +93,12 @@ namespace LoginTest
             }
         }
 
-        public void Insert(string value)
+        public void Insert(string table, string value)
         {
             try
             {
                 conn.Open();
-                string sql = $"INSERT tb_user(userid,userpw,username,author) VALUES ({value})";
+                string sql = $"INSERT {table} VALUES ({value})";
                 //INSERT INTO user_info VALUES ('user1', 'j', 'ella', '1993/06/18', 'user1234', 1000000000)
                 cmd = new MySqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
