@@ -26,29 +26,10 @@ namespace FinalProject_C3
         {
             db.Connection();
             dgv_flow.DataSource = db.SelectAll("tb_flow").Tables[0];
-            getcb_plan();
             getcb_prod();
             get_usernum();
             get_cur();
             timer1.Start();
-        }
-
-        private void getcb_plan()
-        {
-            cb_plan.Items.Clear();
-            cb_plan.Items.Add("생산계획");
-            try
-            {
-                string strqry = "select plannum from tb_plan";
-                foreach (DataRow dr in db.Select(strqry).Rows)
-                {
-                    cb_plan.Items.Add(dr["plannum"]);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void getcb_prod()
