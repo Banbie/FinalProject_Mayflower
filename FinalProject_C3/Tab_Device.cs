@@ -91,5 +91,10 @@ namespace FinalProject_C3
                 db.Insert(table,values);
             }
         }
+
+        private void Tab_Device_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            timer1.Stop();
+        }
     }
 }
