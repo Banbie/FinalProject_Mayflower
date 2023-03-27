@@ -20,7 +20,7 @@ namespace FinalProject_C3
         public Tab_Device(string name)
         {
             InitializeComponent();
-            lb_name.Text = name + " 님";
+            lb_name.Text = name;
         }
 
         private void Tab_Device_Load(object sender, EventArgs e)
@@ -70,6 +70,16 @@ namespace FinalProject_C3
         private void timer1_Tick(object sender, EventArgs e)
         {
             dgv_flow.DataSource = db.SelectAll("tb_flow").Tables[0];
+        }
+
+        private void bt_flowupdate_Click(object sender, EventArgs e)
+        {
+            if (cb_plan.SelectedText != "생산계획" || cb_prod.SelectedText != "제품번호")
+            {
+                string table = "tb_cur(plannum,prodnum,usernum)";
+                string values = $"{cb_plan.SelectedText},{cb_prod.SelectedText},{lb_usernum.Text}";
+                db.Insert(table,values);
+            }
         }
     }
 }
