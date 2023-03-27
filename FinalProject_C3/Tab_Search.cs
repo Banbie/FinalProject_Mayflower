@@ -26,7 +26,11 @@ namespace FinalProject_C3
             timer1.Start();
         }
 
-
+        private void time_search()
+        {
+            String timeS = dtp_start.Value.ToString("MM-dd");
+            String timeE = dtp_end.Value.ToString("MM-dd");
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             dgv_flow.DataSource = db.SelectAll("tb_flow").Tables[0];
