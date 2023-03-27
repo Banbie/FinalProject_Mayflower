@@ -26,5 +26,6 @@ namespace FinalProject_C3
             db.Connection();
             dgv_flow.DataSource = db.SelectAll("tb_flow").Tables[0];
         }
+
     }
 }

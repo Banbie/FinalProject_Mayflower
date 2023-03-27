@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // metroStyleManager1
+            // 
+            this.metroStyleManager1.Owner = null;
             // 
             // Tab_State
             // 
@@ -38,10 +45,13 @@
             this.Name = "Tab_State";
             this.Text = "설비데이터";
             this.Load += new System.EventHandler(this.Tab_State_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
     }
 }
