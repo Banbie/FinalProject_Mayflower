@@ -207,7 +207,7 @@ namespace FinalProject_C3
         //    {
         //        MessageBox.Show("사용자 정보가 없습니다.");
         //    }
-        }
+    }
 
     }
 

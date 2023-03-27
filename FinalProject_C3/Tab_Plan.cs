@@ -19,11 +19,11 @@ namespace FinalProject_C3
     {
         //private readonly Timer timer = new Timer(); // 타이머 생성
         private static readonly string connectionString =
-        //"Server=192.168.0.3;" +
-        "Server=localhost;" +
+        "Server=192.168.0.3;" +
+        //"Server=localhost;" +
         "Database=mayflower;" +
         "Port=3306;" +
-        "Uid=root;" +
+        "Uid=edu;" +
         "Pwd=1234;";
         private readonly MySqlConnection connection = new MySqlConnection(connectionString);
         private int nowea = 0; // 초기값 0으로 설정
@@ -73,6 +73,7 @@ namespace FinalProject_C3
             //timer.Tick += timer1_Tick; // 타이머 이벤트 핸들러 설정
             //timer.Start(); // 타이머 시작
 
+
         }
 
         //private void Tab_Plan_Load(object sender, EventArgs e)
@@ -96,6 +97,24 @@ namespace FinalProject_C3
             //LoadDataToDataGridView(planQuery, dg_plan);
         //}
 
+        private void get_now() // 현재 실행하고있는 생산계획 불러오기
+        {
+            try
+            {
+                var limit1 = "select * from tb_cur inner join on tb_cur.plannum = tb_plan.plannum order by curnum DESC LIMIT 1";
+                var adapter = new MySqlDataAdapter(limit1, connection);
+                var dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dg_now.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리
+                MessageBox.Show(ex.Message);
+            }
+        }
+        //함수로 만들어놨으니까 삭제 얼마든지 하셔도 됩니다...
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             try
@@ -118,6 +137,7 @@ namespace FinalProject_C3
                 // 예외 처리
                 MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void planBtn_Click(object sender, EventArgs e)

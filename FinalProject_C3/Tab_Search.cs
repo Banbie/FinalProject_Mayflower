@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FinalProject_C3
 {
-    public partial class Tab_Search : Form
+    public partial class Tab_Search : MetroFramework.Forms.MetroForm
     {
         public Tab_Search()
         {

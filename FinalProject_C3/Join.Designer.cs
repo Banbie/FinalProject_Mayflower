@@ -44,9 +44,9 @@
             // 
             // BT_JOIN
             // 
-            this.BT_JOIN.BackColor = System.Drawing.Color.Teal;
+            this.BT_JOIN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.BT_JOIN.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.BT_JOIN.ForeColor = System.Drawing.Color.LightCyan;
+            this.BT_JOIN.ForeColor = System.Drawing.Color.White;
             this.BT_JOIN.Location = new System.Drawing.Point(37, 354);
             this.BT_JOIN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BT_JOIN.Name = "BT_JOIN";
@@ -84,9 +84,9 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.Honeydew;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.label1.Location = new System.Drawing.Point(3, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(209, 49);
@@ -129,7 +129,7 @@
             this.TB_NUM.MaximumSize = new System.Drawing.Size(175, 30);
             this.TB_NUM.MinimumSize = new System.Drawing.Size(175, 30);
             this.TB_NUM.Name = "TB_NUM";
-            this.TB_NUM.Size = new System.Drawing.Size(175, 30);
+            this.TB_NUM.Size = new System.Drawing.Size(175, 26);
             this.TB_NUM.TabIndex = 10;
             this.TB_NUM.Visible = false;
             // 
@@ -156,7 +156,7 @@
             this.TB_AUTHOR.MaximumSize = new System.Drawing.Size(175, 30);
             this.TB_AUTHOR.MinimumSize = new System.Drawing.Size(175, 30);
             this.TB_AUTHOR.Name = "TB_AUTHOR";
-            this.TB_AUTHOR.Size = new System.Drawing.Size(175, 30);
+            this.TB_AUTHOR.Size = new System.Drawing.Size(175, 26);
             this.TB_AUTHOR.TabIndex = 13;
             this.TB_AUTHOR.Text = "직급(숨김)";
             this.TB_AUTHOR.Visible = false;
@@ -173,7 +173,7 @@
             // 
             // PNL_JOIN
             // 
-            this.PNL_JOIN.BackColor = System.Drawing.Color.Honeydew;
+            this.PNL_JOIN.BackColor = System.Drawing.Color.White;
             this.PNL_JOIN.Controls.Add(this.label1);
             this.PNL_JOIN.Controls.Add(this.label2);
             this.PNL_JOIN.Controls.Add(this.TB_PW2);
@@ -193,7 +193,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(239, 430);
             this.Controls.Add(this.PNL_JOIN);

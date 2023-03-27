@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.PNL_LOGIN = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,13 +57,13 @@
             this.PNL_LOGIN.Location = new System.Drawing.Point(0, -1);
             this.PNL_LOGIN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PNL_LOGIN.Name = "PNL_LOGIN";
-            this.PNL_LOGIN.Size = new System.Drawing.Size(425, 492);
+            this.PNL_LOGIN.Size = new System.Drawing.Size(425, 481);
             this.PNL_LOGIN.TabIndex = 4;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::FinalProject_C3.Properties.Resources.yacht;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(148, 94);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -76,10 +75,10 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(126, 10);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.label2.Location = new System.Drawing.Point(126, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(172, 49);
             this.label2.TabIndex = 8;
@@ -90,8 +89,8 @@
             // 
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.label1.Location = new System.Drawing.Point(103, 414);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(99, 425);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(213, 34);
             this.label1.TabIndex = 7;
@@ -100,12 +99,13 @@
             // 
             // BT_MIN
             // 
-            this.BT_MIN.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.BT_MIN.AutoEllipsis = true;
+            this.BT_MIN.BackColor = System.Drawing.Color.White;
             this.BT_MIN.FlatAppearance.BorderSize = 0;
             this.BT_MIN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_MIN.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.BT_MIN.ForeColor = System.Drawing.Color.White;
-            this.BT_MIN.Location = new System.Drawing.Point(356, 12);
+            this.BT_MIN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.BT_MIN.Location = new System.Drawing.Point(356, 21);
             this.BT_MIN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BT_MIN.Name = "BT_MIN";
             this.BT_MIN.Size = new System.Drawing.Size(24, 26);
@@ -116,12 +116,12 @@
             // 
             // BT_CLOSE
             // 
-            this.BT_CLOSE.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.BT_CLOSE.BackColor = System.Drawing.Color.White;
             this.BT_CLOSE.FlatAppearance.BorderSize = 0;
             this.BT_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_CLOSE.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.BT_CLOSE.ForeColor = System.Drawing.Color.White;
-            this.BT_CLOSE.Location = new System.Drawing.Point(386, 12);
+            this.BT_CLOSE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.BT_CLOSE.Location = new System.Drawing.Point(386, 21);
             this.BT_CLOSE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BT_CLOSE.Name = "BT_CLOSE";
             this.BT_CLOSE.Size = new System.Drawing.Size(24, 26);
@@ -159,7 +159,7 @@
             // BT_LOGIN
             // 
             this.BT_LOGIN.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.BT_LOGIN.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.BT_LOGIN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.BT_LOGIN.Location = new System.Drawing.Point(136, 339);
             this.BT_LOGIN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BT_LOGIN.Name = "BT_LOGIN";
@@ -189,7 +189,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.ClientSize = new System.Drawing.Size(422, 491);
+            this.ClientSize = new System.Drawing.Size(422, 476);
             this.Controls.Add(this.PNL_LOGIN);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

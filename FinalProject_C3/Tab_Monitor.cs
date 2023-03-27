@@ -16,5 +16,10 @@ namespace FinalProject_C3
         {
             InitializeComponent();
         }
+
+        private void Tab_Monitor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

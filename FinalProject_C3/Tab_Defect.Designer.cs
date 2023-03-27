@@ -30,13 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Tab_Poor
+            // Tab_Defect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Tab_Poor";
+            this.Name = "Tab_Defect";
             this.Text = "불량추적";
+            this.Load += new System.EventHandler(this.Tab_Defect_Load);
             this.ResumeLayout(false);
 
         }
