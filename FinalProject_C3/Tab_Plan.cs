@@ -170,6 +170,7 @@ namespace FinalProject_C3
                 // 예외 처리
                 MessageBox.Show(ex.Message);
             }
+            get_now();
         }
 
         private void planBtn_Click(object sender, EventArgs e)
