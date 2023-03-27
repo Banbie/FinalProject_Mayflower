@@ -63,6 +63,16 @@ namespace FinalProject_C3.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        public static System.Drawing.Bitmap dial {
+            get {
+                object obj = ResourceManager.GetObject("dial", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         public static System.Drawing.Bitmap free_icon_cancel_130888__1_ {
             get {
                 object obj = ResourceManager.GetObject("free-icon-cancel-130888 (1)", resourceCulture);

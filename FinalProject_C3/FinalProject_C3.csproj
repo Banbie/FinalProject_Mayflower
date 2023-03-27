@@ -236,6 +236,7 @@
   <ItemGroup>
     <None Include="Resources\mayflower %281%29.png" />
     <None Include="Resources\mayflower.png" />
+    <None Include="Resources\dial.png" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
     <Content Include="Scripts\cldr\supplemental.js" />
