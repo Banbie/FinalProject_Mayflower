@@ -25,7 +25,7 @@ namespace FinalProject_C3
         private void Tab_Device_Load(object sender, EventArgs e)
         {
             db.Connection();
-            dgv_flow.DataSource = db.SelectAll("tb_flow").Tables[0];
+            dgv_device.DataSource = db.SelectAll("tb_flow").Tables[0];
             getcb_prod();
             get_usernum();
             get_cur();
@@ -66,7 +66,7 @@ namespace FinalProject_C3
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            dgv_flow.DataSource = db.SelectAll("tb_flow").Tables[0];
+            dgv_device.DataSource = db.SelectAll("tb_flow").Tables[0];
         } 
 
         private void bt_flowupdate_Click(object sender, EventArgs e)

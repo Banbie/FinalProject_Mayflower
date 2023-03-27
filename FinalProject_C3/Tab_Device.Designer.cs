@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dgv_flow = new System.Windows.Forms.DataGridView();
+            this.dgv_device = new System.Windows.Forms.DataGridView();
             this.lb_name = new System.Windows.Forms.Label();
             this.cb_plan = new MetroFramework.Controls.MetroComboBox();
             this.cb_prod = new MetroFramework.Controls.MetroComboBox();
@@ -41,21 +41,21 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dgv_cur = new System.Windows.Forms.DataGridView();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_flow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_device)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cur)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgv_flow
+            // dgv_device
             // 
-            this.dgv_flow.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgv_flow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_flow.Location = new System.Drawing.Point(23, 63);
-            this.dgv_flow.Name = "dgv_flow";
-            this.dgv_flow.RowHeadersWidth = 51;
-            this.dgv_flow.RowTemplate.Height = 23;
-            this.dgv_flow.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_flow.Size = new System.Drawing.Size(843, 268);
-            this.dgv_flow.TabIndex = 3;
+            this.dgv_device.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgv_device.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_device.Location = new System.Drawing.Point(23, 63);
+            this.dgv_device.Name = "dgv_device";
+            this.dgv_device.RowHeadersWidth = 51;
+            this.dgv_device.RowTemplate.Height = 23;
+            this.dgv_device.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgv_device.Size = new System.Drawing.Size(843, 268);
+            this.dgv_device.TabIndex = 3;
             // 
             // lb_name
             // 
@@ -187,13 +187,13 @@
             this.Controls.Add(this.cb_prod);
             this.Controls.Add(this.cb_plan);
             this.Controls.Add(this.lb_name);
-            this.Controls.Add(this.dgv_flow);
+            this.Controls.Add(this.dgv_device);
             this.Controls.Add(this.bt_flowupdate);
             this.Name = "Tab_Device";
             this.Text = "디바이스관리";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tab_Device_FormClosed);
             this.Load += new System.EventHandler(this.Tab_Device_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_flow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_device)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -201,7 +201,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgv_flow;
+        private System.Windows.Forms.DataGridView dgv_device;
         private System.Windows.Forms.Label lb_name;
         private MetroFramework.Controls.MetroComboBox cb_plan;
         private MetroFramework.Controls.MetroComboBox cb_prod;
