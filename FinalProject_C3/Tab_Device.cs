@@ -87,7 +87,7 @@ namespace FinalProject_C3
             if (cb_plan.SelectedText != "생산계획" || cb_prod.SelectedText != "제품번호")
             {
                 string table = "tb_cur(plannum,prodnum,usernum)";
-                string values = $"{cb_plan.SelectedText},{cb_prod.SelectedText},{lb_usernum.Text}";
+                string values = $"{cb_plan.SelectedItem},{cb_prod.SelectedItem},{lb_usernum.Text}";
                 db.Insert(table,values);
             }
         }
