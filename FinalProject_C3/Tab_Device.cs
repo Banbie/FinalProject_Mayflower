@@ -15,7 +15,6 @@ namespace FinalProject_C3
     public partial class Tab_Device : MetroFramework.Forms.MetroForm
     {
         DBMySql db = new DBMySql();
-        Timer timers = new Timer();
 
         public Tab_Device(string name)
         {
@@ -30,6 +29,7 @@ namespace FinalProject_C3
             getcb_plan();
             getcb_prod();
             get_usernum();
+            timer1.Start();
         }
 
         private void getcb_plan()
@@ -80,7 +80,7 @@ namespace FinalProject_C3
         private void timer1_Tick(object sender, EventArgs e)
         {
             dgv_flow.DataSource = db.SelectAll("tb_flow").Tables[0];
-        }
+        } 
 
         private void bt_flowupdate_Click(object sender, EventArgs e)
         {

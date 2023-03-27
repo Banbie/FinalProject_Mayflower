@@ -36,9 +36,9 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.bt_flowupdate = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.lb_usernum = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_flow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,10 +123,6 @@
             this.bt_flowupdate.UseVisualStyleBackColor = false;
             this.bt_flowupdate.Click += new System.EventHandler(this.bt_flowupdate_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -181,8 +177,8 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.Button bt_flowupdate;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_usernum;
+        private System.Windows.Forms.Timer timer1;
     }
 }
