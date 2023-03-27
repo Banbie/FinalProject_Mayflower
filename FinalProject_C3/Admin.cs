@@ -114,10 +114,10 @@ namespace FinalProject_C3
         } // 실적검색 폼 열기
         private void bt_Poor_Click(object sender, EventArgs e)
         {
-            Tab_Defect poor = new Tab_Defect();
-            poor.TopLevel = false;
-            pn_Center.Controls.Add(poor);
-            poor.Show();
+            Tab_Defect defect = new Tab_Defect();
+            defect.TopLevel = false;
+            pn_Center.Controls.Add(defect);
+            defect.Show();
         } // 불량추적 폼 열기
         private void bt_Device_Click(object sender, EventArgs e)
         {
@@ -128,17 +128,17 @@ namespace FinalProject_C3
         } // 디바이스관리 폼 열기
         private void bt_Data_Click(object sender, EventArgs e)
         {
-            Tab_State data = new Tab_State();
-            data.TopLevel = false;
-            pn_Center.Controls.Add(data);
-            data.Show();
+            Tab_State state = new Tab_State();
+            state.TopLevel = false;
+            pn_Center.Controls.Add(state);
+            state.Show();
         } // 설비데이터 폼 열기
         private void bt_Staff_Click(object sender, EventArgs e)
         {
-            Tab_Monitor staff = new Tab_Monitor();
-            staff.TopLevel = false;
-            pn_Center.Controls.Add(staff);
-            staff.Show();
+            Tab_Monitor monitor = new Tab_Monitor();
+            monitor.TopLevel = false;
+            pn_Center.Controls.Add(monitor);
+            monitor.Show();
         } // 직원관리 폼 열기
 
         private void Admin_FormClosed(object sender, FormClosedEventArgs e)

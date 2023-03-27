@@ -64,7 +64,7 @@
             this.pn_Top.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn_Top.Location = new System.Drawing.Point(0, 0);
             this.pn_Top.Name = "pn_Top";
-            this.pn_Top.Size = new System.Drawing.Size(1264, 100);
+            this.pn_Top.Size = new System.Drawing.Size(1904, 100);
             this.pn_Top.TabIndex = 0;
             // 
             // pictureBox1
@@ -141,7 +141,7 @@
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 100);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(200, 581);
+            this.panelSideMenu.Size = new System.Drawing.Size(200, 941);
             this.panelSideMenu.TabIndex = 3;
             // 
             // cb_Hide
@@ -154,7 +154,7 @@
             this.cb_Hide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_Hide.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cb_Hide.ForeColor = System.Drawing.Color.White;
-            this.cb_Hide.Location = new System.Drawing.Point(0, 531);
+            this.cb_Hide.Location = new System.Drawing.Point(0, 891);
             this.cb_Hide.Name = "cb_Hide";
             this.cb_Hide.Size = new System.Drawing.Size(200, 50);
             this.cb_Hide.TabIndex = 9;
@@ -281,7 +281,7 @@
             this.pn_Center.Dock = System.Windows.Forms.DockStyle.Left;
             this.pn_Center.Location = new System.Drawing.Point(200, 100);
             this.pn_Center.Name = "pn_Center";
-            this.pn_Center.Size = new System.Drawing.Size(1064, 581);
+            this.pn_Center.Size = new System.Drawing.Size(0, 941);
             this.pn_Center.TabIndex = 4;
             // 
             // timerDate
@@ -293,7 +293,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.pn_Center);
             this.Controls.Add(this.panelSideMenu);
             this.Controls.Add(this.pn_Top);
