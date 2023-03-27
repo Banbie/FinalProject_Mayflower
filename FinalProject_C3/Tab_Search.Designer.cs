@@ -34,6 +34,8 @@
             this.dtp_start = new System.Windows.Forms.DateTimePicker();
             this.dtp_end = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.cb_plan = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_flow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,11 +81,35 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "~";
             // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.Location = new System.Drawing.Point(198, 31);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(84, 25);
+            this.metroLabel1.TabIndex = 16;
+            this.metroLabel1.Text = "생산계획";
+            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cb_plan
+            // 
+            this.cb_plan.FormattingEnabled = true;
+            this.cb_plan.ItemHeight = 23;
+            this.cb_plan.Location = new System.Drawing.Point(288, 28);
+            this.cb_plan.Name = "cb_plan";
+            this.cb_plan.Size = new System.Drawing.Size(138, 29);
+            this.cb_plan.TabIndex = 15;
+            this.cb_plan.UseSelectable = true;
+            // 
             // Tab_Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 400);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.cb_plan);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtp_end);
             this.Controls.Add(this.dtp_start);
@@ -104,5 +130,7 @@
         private System.Windows.Forms.DateTimePicker dtp_start;
         private System.Windows.Forms.DateTimePicker dtp_end;
         private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroComboBox cb_plan;
     }
 }
