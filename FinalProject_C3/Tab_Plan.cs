@@ -83,7 +83,7 @@ namespace FinalProject_C3
                     planLabel[i].AutoSize = true;
                     planLabel[i].Location = new Point(30, 27);
                     planLabel[i].Name = $"planLabel{i}";
-                    planLabel[i].Size = new Size(81, 19);
+                    planLabel[i].Size = new Size(80, 20);
                     planLabel[i].TabIndex = 0;
                     planLabel[i].Text = $"nullText{i}";
 
