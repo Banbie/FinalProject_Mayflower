@@ -90,7 +90,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(99, 425);
+            this.label1.Location = new System.Drawing.Point(101, 423);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(213, 34);
             this.label1.TabIndex = 7;
