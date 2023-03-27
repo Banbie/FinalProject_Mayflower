@@ -147,6 +147,7 @@ namespace FinalProject_C3
                 MessageBox.Show(ex.Message);
             }
         }
+        //함수로 만들어놨으니까 삭제 얼마든지 하셔도 됩니다...
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -164,7 +165,7 @@ namespace FinalProject_C3
 
                 // dg_plan 데이터그리드 갱신
                 dg_plan.DataSource = dataTable;
-                get_now();
+                //get_now(); 만들어둔 함수.
             }
             catch (Exception ex)
             {
