@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace FinalProject_C3
 {
@@ -102,44 +103,44 @@ namespace FinalProject_C3
             Tab_Plan plan = new Tab_Plan();
             plan.TopLevel = false;
             //plan.Dock = System.Windows.Forms.DockStyle.Fill;
-            pn_Center.Controls.Add(plan);
+            pnl_Center.Controls.Add(plan);
             plan.Show();
         } // 생산계획 폼 열기
         private void bt_Search_Click(object sender, EventArgs e)
         {
             Tab_Search search = new Tab_Search();
             search.TopLevel = false;
-            pn_Center.Controls.Add(search);
+            pnl_Center.Controls.Add(search);
             search.Show();
         } // 실적검색 폼 열기
         private void bt_Poor_Click(object sender, EventArgs e)
         {
             Tab_Defect defect = new Tab_Defect();
             defect.TopLevel = false;
-            pn_Center.Controls.Add(defect);
+            pnl_Center.Controls.Add(defect);
             defect.Show();
         } // 불량추적 폼 열기
         private void bt_Device_Click(object sender, EventArgs e)
         {
             Tab_Device device = new Tab_Device(lb_UserName.Text);
             device.TopLevel = false;
-            pn_Center.Controls.Add(device);
+            pnl_Center.Controls.Add(device);
             device.Show();
         } // 디바이스관리 폼 열기
         private void bt_Data_Click(object sender, EventArgs e)
         {
             Tab_State state = new Tab_State();
             state.TopLevel = false;
-            pn_Center.Controls.Add(state);
+            pnl_Center.Controls.Add(state);
             state.Show();
         } // 설비데이터 폼 열기
-        private void bt_Staff_Click(object sender, EventArgs e)
+        private void bt_Monitor_Click(object sender, EventArgs e)
         {
             Tab_Monitor monitor = new Tab_Monitor();
             monitor.TopLevel = false;
-            pn_Center.Controls.Add(monitor);
+            pnl_Center.Controls.Add(monitor);
             monitor.Show();
-        } // 직원관리 폼 열기
+        } // 모니터링 폼 열기
 
         private void Admin_FormClosed(object sender, FormClosedEventArgs e)
         {

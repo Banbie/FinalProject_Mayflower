@@ -47,6 +47,7 @@
             this.timerSliding = new System.Windows.Forms.Timer(this.components);
             this.pn_Center = new System.Windows.Forms.Panel();
             this.timerDate = new System.Windows.Forms.Timer(this.components);
+            this.pnl_Center = new System.Windows.Forms.Panel();
             this.pn_Top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSideMenu.SuspendLayout();
@@ -179,7 +180,7 @@
             this.bt_Monitor.TabIndex = 8;
             this.bt_Monitor.Text = "모니터링";
             this.bt_Monitor.UseVisualStyleBackColor = false;
-            this.bt_Monitor.Click += new System.EventHandler(this.bt_Staff_Click);
+            this.bt_Monitor.Click += new System.EventHandler(this.bt_Monitor_Click);
             // 
             // bt_State
             // 
@@ -288,12 +289,21 @@
             // 
             this.timerDate.Tick += new System.EventHandler(this.timerDate_Tick);
             // 
+            // pnl_Center
+            // 
+            this.pnl_Center.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Center.Location = new System.Drawing.Point(200, 100);
+            this.pnl_Center.Name = "pnl_Center";
+            this.pnl_Center.Size = new System.Drawing.Size(1704, 941);
+            this.pnl_Center.TabIndex = 5;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.pnl_Center);
             this.Controls.Add(this.pn_Center);
             this.Controls.Add(this.panelSideMenu);
             this.Controls.Add(this.pn_Top);
@@ -328,5 +338,6 @@
         private System.Windows.Forms.Panel pn_Center;
         private System.Windows.Forms.Timer timerDate;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel pnl_Center;
     }
 }

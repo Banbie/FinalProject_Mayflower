@@ -16,5 +16,10 @@ namespace FinalProject_C3
         {
             InitializeComponent();
         }
+
+        private void Tab_Defect_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
