@@ -41,6 +41,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dgv_cur = new System.Windows.Forms.DataGridView();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_device)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cur)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +74,7 @@
             // 
             this.cb_plan.FormattingEnabled = true;
             this.cb_plan.ItemHeight = 23;
-            this.cb_plan.Location = new System.Drawing.Point(394, 28);
+            this.cb_plan.Location = new System.Drawing.Point(273, 27);
             this.cb_plan.Name = "cb_plan";
             this.cb_plan.Size = new System.Drawing.Size(138, 29);
             this.cb_plan.TabIndex = 12;
@@ -82,7 +84,7 @@
             // 
             this.cb_prod.FormattingEnabled = true;
             this.cb_prod.ItemHeight = 23;
-            this.cb_prod.Location = new System.Drawing.Point(639, 28);
+            this.cb_prod.Location = new System.Drawing.Point(507, 26);
             this.cb_prod.Name = "cb_prod";
             this.cb_prod.Size = new System.Drawing.Size(138, 29);
             this.cb_prod.TabIndex = 13;
@@ -93,7 +95,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(304, 31);
+            this.metroLabel1.Location = new System.Drawing.Point(183, 30);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(84, 25);
             this.metroLabel1.TabIndex = 14;
@@ -105,7 +107,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.Location = new System.Drawing.Point(549, 31);
+            this.metroLabel2.Location = new System.Drawing.Point(417, 29);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(84, 25);
             this.metroLabel2.TabIndex = 15;
@@ -118,13 +120,12 @@
             this.bt_flowupdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_flowupdate.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.bt_flowupdate.ForeColor = System.Drawing.Color.White;
-            this.bt_flowupdate.Location = new System.Drawing.Point(783, 28);
+            this.bt_flowupdate.Location = new System.Drawing.Point(662, 27);
             this.bt_flowupdate.Name = "bt_flowupdate";
-            this.bt_flowupdate.Size = new System.Drawing.Size(81, 28);
+            this.bt_flowupdate.Size = new System.Drawing.Size(64, 28);
             this.bt_flowupdate.TabIndex = 0;
             this.bt_flowupdate.Text = "적용";
             this.bt_flowupdate.UseVisualStyleBackColor = false;
-            this.bt_flowupdate.Click += new System.EventHandler(this.bt_flowupdate_Click);
             // 
             // label1
             // 
@@ -173,11 +174,39 @@
             this.metroLabel3.Text = "현재 생산계획";
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(732, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(64, 28);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "적용";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(802, 27);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(64, 28);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "적용";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // Tab_Device
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 408);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.dgv_cur);
             this.Controls.Add(this.lb_usernum);
@@ -213,5 +242,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridView dgv_cur;
         private MetroFramework.Controls.MetroLabel metroLabel3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
