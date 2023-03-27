@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -128,6 +129,15 @@ namespace FinalProject_C3
             //"MAX(donetime) AS 종료시각 FROM tb_plan " +
             //"GROUP BY priority ORDER BY priority ASC;";
             //LoadDataToDataGridView(planQuery, dg_plan);
+        }
+
+        private void get_now()
+        {
+            var limit1 = "select * from tb_cur order by curnum DESC LIMIT 1";
+            var adapter = new MySqlDataAdapter(limit1, connection);
+            var dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dg_now.DataSource = dataTable;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
