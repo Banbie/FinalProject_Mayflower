@@ -133,11 +133,19 @@ namespace FinalProject_C3
 
         private void get_now()
         {
-            var limit1 = "select * from tb_cur order by curnum DESC LIMIT 1";
-            var adapter = new MySqlDataAdapter(limit1, connection);
-            var dataTable = new DataTable();
-            adapter.Fill(dataTable);
-            dg_now.DataSource = dataTable;
+            try
+            {
+                var limit1 = "select * from tb_cur inner join on tb_cur.plannum = tb_plan.plannum order by curnum DESC LIMIT 1";
+                var adapter = new MySqlDataAdapter(limit1, connection);
+                var dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dg_now.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
