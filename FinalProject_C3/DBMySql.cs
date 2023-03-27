@@ -165,5 +165,43 @@ namespace LoginTest
             }
         }
 
+        public object ExecuteScalar(string query)
+        {
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                object result = cmd.ExecuteScalar();
+                conn.Close();
+
+                return result;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                throw;
+            }
+        }
+        public DataTable ExecuteDataTable(string query)
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"쿼리 실행 중 오류가 발생하였습니다.\n{ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return dataTable;
+        }
     }
 }
