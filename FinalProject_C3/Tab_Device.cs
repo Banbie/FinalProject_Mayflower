@@ -12,7 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace FinalProject_C3
 {
-    public partial class Tab_Device : Form
+    public partial class Tab_Device : MetroFramework.Forms.MetroForm
     {
         DBMySql db = new DBMySql();
         public Tab_Device(string name)

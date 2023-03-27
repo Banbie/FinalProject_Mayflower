@@ -11,7 +11,7 @@ using MetroFramework.Forms;
 
 namespace FinalProject_C3
 {
-    public partial class Admin : Form
+    public partial class Admin : MetroFramework.Forms.MetroForm
     {
         //슬라이딩 메뉴의 최대, 최소 폭 크기
         const int MAX_SLIDING_WIDTH = 200;
@@ -101,44 +101,44 @@ namespace FinalProject_C3
         private void bt_Plan_Click(object sender, EventArgs e)
         {
             Tab_Plan plan = new Tab_Plan();
-            plan.TopLevel = false;
+            plan.TopLevel = true;
             //plan.Dock = System.Windows.Forms.DockStyle.Fill;
-            pnl_Center.Controls.Add(plan);
+            mt_Tap.Controls.Contains(plan);
             plan.Show();
         } // 생산계획 폼 열기
         private void bt_Search_Click(object sender, EventArgs e)
         {
             Tab_Search search = new Tab_Search();
-            search.TopLevel = false;
-            pnl_Center.Controls.Add(search);
+            search.TopLevel = true;
+            mt_Tap.Controls.Contains(search);
             search.Show();
         } // 실적검색 폼 열기
         private void bt_Poor_Click(object sender, EventArgs e)
         {
             Tab_Defect defect = new Tab_Defect();
-            defect.TopLevel = false;
-            pnl_Center.Controls.Add(defect);
+            defect.TopLevel = true;
+            mt_Tap.Controls.Contains(defect);
             defect.Show();
         } // 불량추적 폼 열기
         private void bt_Device_Click(object sender, EventArgs e)
         {
             Tab_Device device = new Tab_Device(lb_UserName.Text);
-            device.TopLevel = false;
-            pnl_Center.Controls.Add(device);
+            device.TopLevel = true;
+            mt_Tap.Controls.Contains(device);
             device.Show();
         } // 디바이스관리 폼 열기
         private void bt_Data_Click(object sender, EventArgs e)
         {
             Tab_State state = new Tab_State();
-            state.TopLevel = false;
-            pnl_Center.Controls.Add(state);
+            state.TopLevel = true;
+            mt_Tap.Controls.Contains(state);
             state.Show();
         } // 설비데이터 폼 열기
         private void bt_Monitor_Click(object sender, EventArgs e)
         {
             Tab_Monitor monitor = new Tab_Monitor();
-            monitor.TopLevel = false;
-            pnl_Center.Controls.Add(monitor);
+            monitor.TopLevel = true;
+            mt_Tap.Controls.Contains(monitor);
             monitor.Show();
         } // 모니터링 폼 열기
 

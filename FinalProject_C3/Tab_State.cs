@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace FinalProject_C3
 {
-    public partial class Tab_State : Form
+    public partial class Tab_State : MetroFramework.Forms.MetroForm
     {
         public Tab_State()
         {
             InitializeComponent();
+        }
+
+        private void Tab_State_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
