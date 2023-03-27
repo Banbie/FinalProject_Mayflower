@@ -28,155 +28,118 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.bt_flowupdate = new System.Windows.Forms.Button();
+            this.cb_ = new System.Windows.Forms.ComboBox();
+            this.dgv_flow = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.lb_name = new System.Windows.Forms.Label();
-            this.dgv_flow = new MetroFramework.Controls.MetroGrid();
-            this.bt_apply = new MetroFramework.Controls.MetroButton();
-            this.bt_revert = new MetroFramework.Controls.MetroButton();
-            this.bt_flowupdate = new MetroFramework.Controls.MetroButton();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.cb_plan = new MetroFramework.Controls.MetroComboBox();
-            this.cb_num = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_flow)).BeginInit();
             this.SuspendLayout();
+            // 
+            // bt_flowupdate
+            // 
+            this.bt_flowupdate.Location = new System.Drawing.Point(690, 331);
+            this.bt_flowupdate.Name = "bt_flowupdate";
+            this.bt_flowupdate.Size = new System.Drawing.Size(61, 28);
+            this.bt_flowupdate.TabIndex = 0;
+            this.bt_flowupdate.Text = "적용";
+            this.bt_flowupdate.UseVisualStyleBackColor = true;
+            // 
+            // cb_
+            // 
+            this.cb_.FormattingEnabled = true;
+            this.cb_.Location = new System.Drawing.Point(551, 336);
+            this.cb_.Name = "cb_";
+            this.cb_.Size = new System.Drawing.Size(121, 20);
+            this.cb_.TabIndex = 1;
+            // 
+            // dgv_flow
+            // 
+            this.dgv_flow.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgv_flow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_flow.Location = new System.Drawing.Point(11, 57);
+            this.dgv_flow.Name = "dgv_flow";
+            this.dgv_flow.RowHeadersWidth = 51;
+            this.dgv_flow.RowTemplate.Height = 23;
+            this.dgv_flow.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgv_flow.Size = new System.Drawing.Size(843, 268);
+            this.dgv_flow.TabIndex = 3;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(313, 336);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(654, 11);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(97, 40);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Apply";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(236, 341);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 15);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "생산계획";
             // 
             // lb_name
             // 
             this.lb_name.AutoSize = true;
             this.lb_name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_name.Location = new System.Drawing.Point(760, 315);
+            this.lb_name.Location = new System.Drawing.Point(773, 335);
             this.lb_name.Name = "lb_name";
             this.lb_name.Size = new System.Drawing.Size(81, 16);
             this.lb_name.TabIndex = 9;
             this.lb_name.Text = "ㅇㅇㅇ 님";
             this.lb_name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // dgv_flow
+            // button2
             // 
-            this.dgv_flow.AllowUserToResizeRows = false;
-            this.dgv_flow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgv_flow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_flow.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgv_flow.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_flow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_flow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_flow.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_flow.EnableHeadersVisualStyles = false;
-            this.dgv_flow.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dgv_flow.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgv_flow.Location = new System.Drawing.Point(11, 63);
-            this.dgv_flow.Name = "dgv_flow";
-            this.dgv_flow.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_flow.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_flow.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgv_flow.RowTemplate.Height = 23;
-            this.dgv_flow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_flow.Size = new System.Drawing.Size(843, 230);
-            this.dgv_flow.TabIndex = 12;
+            this.button2.Location = new System.Drawing.Point(757, 11);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(97, 40);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Revert";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // bt_apply
+            // label4
             // 
-            this.bt_apply.Location = new System.Drawing.Point(685, 34);
-            this.bt_apply.Name = "bt_apply";
-            this.bt_apply.Size = new System.Drawing.Size(75, 23);
-            this.bt_apply.TabIndex = 13;
-            this.bt_apply.Text = "Apply";
-            this.bt_apply.UseSelectable = true;
-            // 
-            // bt_revert
-            // 
-            this.bt_revert.Location = new System.Drawing.Point(766, 34);
-            this.bt_revert.Name = "bt_revert";
-            this.bt_revert.Size = new System.Drawing.Size(75, 23);
-            this.bt_revert.TabIndex = 14;
-            this.bt_revert.Text = "Revert";
-            this.bt_revert.UseSelectable = true;
-            // 
-            // bt_flowupdate
-            // 
-            this.bt_flowupdate.Location = new System.Drawing.Point(407, 308);
-            this.bt_flowupdate.Name = "bt_flowupdate";
-            this.bt_flowupdate.Size = new System.Drawing.Size(75, 23);
-            this.bt_flowupdate.TabIndex = 15;
-            this.bt_flowupdate.Text = "적용";
-            this.bt_flowupdate.UseSelectable = true;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(11, 308);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(65, 19);
-            this.metroLabel1.TabIndex = 16;
-            this.metroLabel1.Text = "생산계획";
-            // 
-            // cb_plan
-            // 
-            this.cb_plan.FormattingEnabled = true;
-            this.cb_plan.ItemHeight = 23;
-            this.cb_plan.Location = new System.Drawing.Point(82, 302);
-            this.cb_plan.Name = "cb_plan";
-            this.cb_plan.Size = new System.Drawing.Size(121, 29);
-            this.cb_plan.TabIndex = 17;
-            this.cb_plan.UseSelectable = true;
-            // 
-            // cb_num
-            // 
-            this.cb_num.FormattingEnabled = true;
-            this.cb_num.ItemHeight = 23;
-            this.cb_num.Location = new System.Drawing.Point(280, 302);
-            this.cb_num.Name = "cb_num";
-            this.cb_num.Size = new System.Drawing.Size(121, 29);
-            this.cb_num.TabIndex = 19;
-            this.cb_num.UseSelectable = true;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(209, 308);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(65, 19);
-            this.metroLabel2.TabIndex = 18;
-            this.metroLabel2.Text = "제품번호";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(474, 341);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 15);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "제품번호";
             // 
             // Tab_Device
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 342);
-            this.Controls.Add(this.cb_num);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.cb_plan);
-            this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.bt_flowupdate);
-            this.Controls.Add(this.bt_revert);
-            this.Controls.Add(this.bt_apply);
-            this.Controls.Add(this.dgv_flow);
+            this.ClientSize = new System.Drawing.Size(868, 371);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.lb_name);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dgv_flow);
+            this.Controls.Add(this.cb_);
+            this.Controls.Add(this.bt_flowupdate);
             this.Name = "Tab_Device";
             this.Text = "디바이스관리";
             this.Load += new System.EventHandler(this.Tab_Device_Load);
@@ -187,14 +150,15 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button bt_flowupdate;
+        private System.Windows.Forms.ComboBox cb_;
+        private System.Windows.Forms.DataGridView dgv_flow;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lb_name;
-        private MetroFramework.Controls.MetroGrid dgv_flow;
-        private MetroFramework.Controls.MetroButton bt_apply;
-        private MetroFramework.Controls.MetroButton bt_revert;
-        private MetroFramework.Controls.MetroButton bt_flowupdate;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroComboBox cb_plan;
-        private MetroFramework.Controls.MetroComboBox cb_num;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label4;
     }
 }
