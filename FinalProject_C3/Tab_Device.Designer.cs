@@ -148,6 +148,7 @@
             this.lb_usernum.TabIndex = 17;
             this.lb_usernum.Text = "0";
             this.lb_usernum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lb_usernum.Visible = false;
             // 
             // Tab_Device
             // 
