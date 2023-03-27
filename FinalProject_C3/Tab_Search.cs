@@ -46,11 +46,10 @@ namespace FinalProject_C3
 
         private void timeplan_search()
         {
-            string timeS = dtp_start.Value.ToString("yyyy-MM-dd");
-            string timeE = dtp_end.Value.ToString("yyyy-MM-dd");
+            string timeS = dtp_start.Value.ToString("d");
+            string timeE = dtp_end.Value.ToString("d");
             string query;
-            if (cb_plan.SelectedItem == null) { query = "tb_flow";  }
-            else if (cb_plan.SelectedItem == "전체")
+            if (cb_plan.SelectedItem == "전체")
             { query = $"tb_flow where flowdate between '{timeS}' and '{timeE}'"; }
             else
             { query = $"tb_flow where plannum = {cb_plan.SelectedItem} and flowdate between '{timeS}' and '{timeE}'"; }
