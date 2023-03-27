@@ -164,13 +164,14 @@ namespace FinalProject_C3
 
                 // dg_plan 데이터그리드 갱신
                 dg_plan.DataSource = dataTable;
+                get_now();
             }
             catch (Exception ex)
             {
                 // 예외 처리
                 MessageBox.Show(ex.Message);
             }
-            get_now();
+            
         }
 
         private void planBtn_Click(object sender, EventArgs e)
