@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.bt_flowupdate = new System.Windows.Forms.Button();
             this.cb_ = new System.Windows.Forms.ComboBox();
             this.dgv_flow = new System.Windows.Forms.DataGridView();
@@ -37,6 +38,7 @@
             this.lb_name = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_flow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +128,10 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "제품번호";
             // 
+            // Timer
+            // 
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
             // Tab_Device
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -160,5 +166,6 @@
         private System.Windows.Forms.Label lb_name;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer Timer;
     }
 }
