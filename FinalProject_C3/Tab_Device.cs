@@ -29,6 +29,7 @@ namespace FinalProject_C3
             getcb_plan();
             getcb_prod();
             get_usernum();
+            get_cur();
             timer1.Start();
         }
 
@@ -76,6 +77,11 @@ namespace FinalProject_C3
             lb_usernum.Text = db.SelectDetail(con, tb, where).Tables[0].Rows[0][0].ToString();
         }
 
+        private void get_cur()
+        {
+            string tableOrder= $"tb_cur order by curnum DESC LIMIT 1";
+            dgv_cur.DataSource = db.SelectAll(tableOrder).Tables[0];
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -89,6 +95,7 @@ namespace FinalProject_C3
                 string table = "tb_cur(plannum,prodnum,usernum)";
                 string values = $"{cb_plan.SelectedItem},{cb_prod.SelectedItem},{lb_usernum.Text}";
                 db.Insert(table,values);
+                get_cur();
             }
         }
 

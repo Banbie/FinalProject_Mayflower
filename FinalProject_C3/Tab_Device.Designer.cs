@@ -39,10 +39,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lb_usernum = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_cur = new System.Windows.Forms.DataGridView();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_flow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cur)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_flow
@@ -149,17 +149,17 @@
             this.lb_usernum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lb_usernum.Visible = false;
             // 
-            // dataGridView1
+            // dgv_cur
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(142, 336);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.Size = new System.Drawing.Size(403, 44);
-            this.dataGridView1.TabIndex = 18;
+            this.dgv_cur.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_cur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_cur.Location = new System.Drawing.Point(142, 336);
+            this.dgv_cur.Name = "dgv_cur";
+            this.dgv_cur.RowHeadersVisible = false;
+            this.dgv_cur.RowTemplate.Height = 23;
+            this.dgv_cur.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgv_cur.Size = new System.Drawing.Size(403, 44);
+            this.dgv_cur.TabIndex = 18;
             // 
             // metroLabel3
             // 
@@ -179,7 +179,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 395);
             this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_cur);
             this.Controls.Add(this.lb_usernum);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.metroLabel2);
@@ -194,7 +194,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tab_Device_FormClosed);
             this.Load += new System.EventHandler(this.Tab_Device_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_flow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,7 +211,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_usernum;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_cur;
         private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }
