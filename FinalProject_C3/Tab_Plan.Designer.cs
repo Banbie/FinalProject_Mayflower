@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.managerTimer = new System.Windows.Forms.Timer(this.components);
             this.donut = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.planManager = new MetroFramework.Drawing.Html.HtmlPanel();
             this.testTile1 = new MetroFramework.Controls.MetroTile();
+            this.testBtn = new MetroFramework.Controls.MetroButton();
             this.testTB = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.plannumValue1 = new MetroFramework.Controls.MetroLabel();
@@ -51,43 +52,42 @@
             this.priority1 = new MetroFramework.Controls.MetroLabel();
             this.recivedate1 = new MetroFramework.Controls.MetroLabel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.testBtn = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.donut)).BeginInit();
             this.planManager.SuspendLayout();
             this.testTile1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timer1
+            // managerTimer
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.managerTimer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // donut
             // 
-            chartArea2.Name = "ChartArea1";
-            this.donut.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.donut.Legends.Add(legend2);
-            this.donut.Location = new System.Drawing.Point(1056, 451);
+            chartArea1.Name = "ChartArea1";
+            this.donut.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.donut.Legends.Add(legend1);
+            this.donut.Location = new System.Drawing.Point(704, 449);
             this.donut.Name = "donut";
             this.donut.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.donut.Series.Add(series2);
-            this.donut.Size = new System.Drawing.Size(661, 526);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.donut.Series.Add(series1);
+            this.donut.Size = new System.Drawing.Size(351, 281);
             this.donut.TabIndex = 7;
             this.donut.Text = "chart1";
             // 
             // planManager
             // 
             this.planManager.AutoScroll = true;
-            this.planManager.AutoScrollMinSize = new System.Drawing.Size(1694, 18);
+            this.planManager.AutoScrollMinSize = new System.Drawing.Size(1032, 18);
             this.planManager.BackColor = System.Drawing.SystemColors.Window;
             this.planManager.Controls.Add(this.testTile1);
             this.planManager.Location = new System.Drawing.Point(23, 63);
             this.planManager.Name = "planManager";
-            this.planManager.Size = new System.Drawing.Size(1694, 364);
+            this.planManager.Size = new System.Drawing.Size(1032, 364);
             this.planManager.TabIndex = 11;
             this.planManager.Text = "Plan Manager";
             // 
@@ -116,6 +116,15 @@
             this.testTile1.Text = "고객사";
             this.testTile1.UseSelectable = true;
             this.testTile1.Visible = false;
+            // 
+            // testBtn
+            // 
+            this.testBtn.Location = new System.Drawing.Point(240, 265);
+            this.testBtn.Name = "testBtn";
+            this.testBtn.Size = new System.Drawing.Size(50, 25);
+            this.testBtn.TabIndex = 15;
+            this.testBtn.Text = "Cancel";
+            this.testBtn.UseSelectable = true;
             // 
             // testTB
             // 
@@ -281,30 +290,20 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(33, 468);
+            this.metroButton1.Location = new System.Drawing.Point(33, 449);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(125, 88);
+            this.metroButton1.Size = new System.Drawing.Size(90, 40);
             this.metroButton1.TabIndex = 12;
-            this.metroButton1.Text = "metroButton1";
+            this.metroButton1.Text = "새로고침";
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
-            // testBtn
-            // 
-            this.testBtn.Location = new System.Drawing.Point(240, 265);
-            this.testBtn.Name = "testBtn";
-            this.testBtn.Size = new System.Drawing.Size(50, 25);
-            this.testBtn.TabIndex = 15;
-            this.testBtn.Text = "Cancel";
-            this.testBtn.UseSelectable = true;
-            this.testBtn.Click += new System.EventHandler(this.testBtn_Click);
             // 
             // Tab_Plan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1740, 1000);
+            this.ClientSize = new System.Drawing.Size(1078, 753);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.planManager);
             this.Controls.Add(this.donut);
@@ -319,7 +318,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataVisualization.Charting.Chart donut;
         private MetroFramework.Drawing.Html.HtmlPanel planManager;
         private MetroFramework.Controls.MetroTile testTile1;
@@ -339,5 +337,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton testBtn;
+        private System.Windows.Forms.Timer managerTimer;
     }
 }

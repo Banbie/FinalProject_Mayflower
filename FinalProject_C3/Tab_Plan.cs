@@ -17,26 +17,27 @@ using MySqlX.XDevAPI.Relational;
 
 namespace FinalProject_C3
 {
+    
     public partial class Tab_Plan : MetroFramework.Forms.MetroForm
     {
-        //private readonly Timer timer = new Timer(); // 타이머 생성
-        private static readonly string connectionString =
-        //"Server=192.168.0.3;" +
-        "Server=localhost;" +
-        "Database=mayflower;" +
-        "Port=3306;" +
-        "Uid=root;" +
-        "Pwd=1234;";
-        private readonly MySqlConnection connection = new MySqlConnection(connectionString);
-        private int nowea = 0; // 초기값 0으로 설정
+        public MetroFramework.Drawing.Html.HtmlPanel manager;
+        public static MySqlConnection ConnectDB()
+        {
+            string connectionString =
+            "Server=localhost;" +
+            "Database=mayflower;" +
+            "Port=3306;" +
+            "Uid=root;" +
+            "Pwd=1234;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            return connection;
+        }
+        MySqlConnection connection = ConnectDB();
 
         public int planRowNumber;
 
-        int[] specButton;
-        MetroFramework.Controls.MetroButton[] planButton;
-
-
-        public Tab_Plan()
+        public void PanelInit()
         {
             var query = "SELECT COUNT(*) FROM tb_plan;";
             using (MySqlCommand reader = new MySqlCommand(query, connection))
@@ -47,7 +48,7 @@ namespace FinalProject_C3
             manager = planManager;
             MetroFramework.Controls.MetroButton planBtn = new MetroFramework.Controls.MetroButton();
             planManager.Controls.Add(planBtn);
-            planBtn.Location = new Point((310 * (planRowNumber+1)) + 10, 30);
+            planBtn.Location = new Point((310 * (planRowNumber + 1)) + 10, 30);
             planBtn.Name = "planBtn";
             planBtn.Size = new Size(40, 300);
             planBtn.TabIndex = 1;
@@ -98,24 +99,49 @@ namespace FinalProject_C3
 
             PanelInit();
 
-            managerTimer.Interval = 1000; // 1초 간격으로 실행
-            managerTimer.Tick += timer1_Tick; // 타이머 이벤트 핸들러 설정
-            managerTimer.Start(); // 타이머 시작
+            //managerTimer.Interval = 1000; // 1초 간격으로 실행
+            //managerTimer.Tick += timer1_Tick; // 타이머 이벤트 핸들러 설정
+            //managerTimer.Start(); // 타이머 시작
 
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+            RefTile();
+        }
+
+        public void RefTile()
+        {
+            int scl = planManager.HorizontalScroll.Value;
+            planManager.Dispose();
+            planManager = new MetroFramework.Drawing.Html.HtmlPanel();
+            planManager.AutoScroll = true;
+            planManager.AutoScrollMinSize = new Size(1032, 18);
+            planManager.BackColor = SystemColors.Window;
+            planManager.Controls.Add(this.testTile1);
+            planManager.Location = new Point(23, 63);
+            planManager.Name = "planManager";
+            planManager.Size = new Size(1032, 364);
+            planManager.TabIndex = 11;
+            planManager.Text = "Plan Manager";
+            this.Controls.Add(planManager);
+            PanelInit();
         }
 
         private void planBtn_Click(object sender, EventArgs e)
         {
-            MetroFramework.Forms.MetroForm Plan_DML = new MetroFramework.Forms.MetroForm();
-            Plan_DML.TopLevel= true;
-            Plan_DML.Text = "PLAN 등록/수정";
-            Plan_DML.Size = new Size(500, 500);
-            Plan_DML.Show();
+
+            RefTile();
+            Plan_DML dml = new Plan_DML
+            {
+                TopLevel = true
+            };
+            dml.Show();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            RefTile();
         }
     }
     public class OrderTile : MetroFramework.Forms.MetroForm
@@ -262,6 +288,7 @@ namespace FinalProject_C3
             }
             connection.Close();
             this.planPanel.Dispose();
+
         }
 
         private MySqlConnection ConnectDB()
