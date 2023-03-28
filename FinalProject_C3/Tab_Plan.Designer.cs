@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.donut = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.planManager = new MetroFramework.Drawing.Html.HtmlPanel();
@@ -51,6 +51,7 @@
             this.priority1 = new MetroFramework.Controls.MetroLabel();
             this.recivedate1 = new MetroFramework.Controls.MetroLabel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.testBtn = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.donut)).BeginInit();
             this.planManager.SuspendLayout();
             this.testTile1.SuspendLayout();
@@ -62,18 +63,18 @@
             // 
             // donut
             // 
-            chartArea3.Name = "ChartArea1";
-            this.donut.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.donut.Legends.Add(legend3);
+            chartArea2.Name = "ChartArea1";
+            this.donut.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.donut.Legends.Add(legend2);
             this.donut.Location = new System.Drawing.Point(1056, 451);
             this.donut.Name = "donut";
             this.donut.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.donut.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.donut.Series.Add(series2);
             this.donut.Size = new System.Drawing.Size(661, 526);
             this.donut.TabIndex = 7;
             this.donut.Text = "chart1";
@@ -93,6 +94,7 @@
             // testTile1
             // 
             this.testTile1.ActiveControl = null;
+            this.testTile1.Controls.Add(this.testBtn);
             this.testTile1.Controls.Add(this.testTB);
             this.testTile1.Controls.Add(this.metroLabel1);
             this.testTile1.Controls.Add(this.plannumValue1);
@@ -121,9 +123,9 @@
             // 
             // 
             this.testTB.CustomButton.Image = null;
-            this.testTB.CustomButton.Location = new System.Drawing.Point(42, 2);
+            this.testTB.CustomButton.Location = new System.Drawing.Point(82, 2);
             this.testTB.CustomButton.Name = "";
-            this.testTB.CustomButton.Size = new System.Drawing.Size(155, 155);
+            this.testTB.CustomButton.Size = new System.Drawing.Size(115, 115);
             this.testTB.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.testTB.CustomButton.TabIndex = 1;
             this.testTB.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -140,7 +142,7 @@
             this.testTB.SelectionLength = 0;
             this.testTB.SelectionStart = 0;
             this.testTB.ShortcutsEnabled = true;
-            this.testTB.Size = new System.Drawing.Size(200, 160);
+            this.testTB.Size = new System.Drawing.Size(200, 120);
             this.testTB.TabIndex = 14;
             this.testTB.Text = "Memo";
             this.testTB.UseSelectable = true;
@@ -287,6 +289,16 @@
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
+            // testBtn
+            // 
+            this.testBtn.Location = new System.Drawing.Point(240, 265);
+            this.testBtn.Name = "testBtn";
+            this.testBtn.Size = new System.Drawing.Size(50, 25);
+            this.testBtn.TabIndex = 15;
+            this.testBtn.Text = "Cancel";
+            this.testBtn.UseSelectable = true;
+            this.testBtn.Click += new System.EventHandler(this.testBtn_Click);
+            // 
             // Tab_Plan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -326,5 +338,6 @@
         private MetroFramework.Controls.MetroTextBox testTB;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton testBtn;
     }
 }
