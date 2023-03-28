@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dt_Time = new MetroFramework.Controls.MetroDateTime();
-            this.btn_Search = new System.Windows.Forms.Button();
             this.dt_Time1 = new MetroFramework.Controls.MetroDateTime();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_Search = new System.Windows.Forms.DataGridView();
@@ -46,6 +47,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btn_Search = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Search)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Total)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -58,16 +60,6 @@
             this.dt_Time.Name = "dt_Time";
             this.dt_Time.Size = new System.Drawing.Size(200, 29);
             this.dt_Time.TabIndex = 2;
-            // 
-            // btn_Search
-            // 
-            this.btn_Search.Location = new System.Drawing.Point(376, 97);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(75, 23);
-            this.btn_Search.TabIndex = 3;
-            this.btn_Search.Text = "button1";
-            this.btn_Search.UseVisualStyleBackColor = true;
-            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // dt_Time1
             // 
@@ -160,32 +152,50 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(25, 276);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "총생산량";
+            series7.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "불량갯수";
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "불량률(%)";
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
+            this.chart1.Series.Add(series9);
             this.chart1.Size = new System.Drawing.Size(890, 284);
             this.chart1.TabIndex = 14;
             this.chart1.Text = "chart1";
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.Location = new System.Drawing.Point(376, 97);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(75, 23);
+            this.btn_Search.TabIndex = 15;
+            this.btn_Search.Text = "metroButton1";
+            this.btn_Search.UseSelectable = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click_1);
             // 
             // Tab_Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 621);
+            this.ClientSize = new System.Drawing.Size(935, 571);
+            this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.dgv_Total);
             this.Controls.Add(this.dgv_Search);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dt_Time1);
-            this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.dt_Time);
             this.Name = "Tab_Search";
             this.Text = "실적확인";
@@ -200,7 +210,6 @@
 
         #endregion
         private MetroFramework.Controls.MetroDateTime dt_Time;
-        private System.Windows.Forms.Button btn_Search;
         private MetroFramework.Controls.MetroDateTime dt_Time1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgv_Search;
@@ -214,5 +223,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private MetroFramework.Controls.MetroButton btn_Search;
     }
 }
