@@ -122,7 +122,7 @@ namespace FinalProject_C3
         } // 불량추적 폼 열기
         private void bt_Device_Click(object sender, EventArgs e)
         {
-            Tab_Device device = new Tab_Device(lb_UserName.Text);
+            Tab_Device device = new Tab_Device();
             device.TopLevel = true;
             mt_Tap.Controls.Contains(device);
             device.Show();

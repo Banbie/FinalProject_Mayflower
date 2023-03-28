@@ -17,10 +17,10 @@ namespace FinalProject_C3
     {
         DBMySql db = new DBMySql();
 
-        public Tab_Device(string name)
+        public Tab_Device()
         {
             InitializeComponent();
-            lb_name.Text = name;
+            
         }
 
         private void Tab_Device_Load(object sender, EventArgs e)
@@ -129,15 +129,15 @@ namespace FinalProject_C3
         private void bt_search_Click(object sender, EventArgs e)
         {
             // 조회 시작일과 종료일 설정
-            DateTime sDate = dt_start.Value.Date;
-            DateTime eDate = dt_end.Value.Date.AddDays(1);
+            DateTime sDate = dt_start.Value;
+            DateTime eDate = dt_end.Value.AddDays(1);
 
-            string cond = "d.devicename, d.proname, f.flowdate, count(*)";
+            string cond = "d.devicename as  디바이스이름, d.proname as 공정이름, f.flowdate as 날짜, count(*) as 총가동횟수";
             string table = "tb_flow f left join tb_device d on f.pronum = d.pronum";
             string where;
 
-            if (cb_pro.SelectedItem != "전체")
-            {   where = $"WHERE proname = {cb_pro.SelectedItem} AND DATE(flowdate) >= '{sDate:yyyy-MM-dd}' AND DATE(flowdate) < '{eDate:yyyy-MM-dd}'";  }
+            if (cb_pro.SelectedItem.ToString() != "전체")
+            {   where = $"WHERE proname = '{cb_pro.SelectedItem}' AND DATE(flowdate) >= '{sDate:yyyy-MM-dd}' AND DATE(flowdate) < '{eDate:yyyy-MM-dd}'";  }
             else
             {   where = $"WHERE DATE(flowdate) >= '{sDate:yyyy-MM-dd}' AND DATE(flowdate) < '{eDate:yyyy-MM-dd}'";  }
 

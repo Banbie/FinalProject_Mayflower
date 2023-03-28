@@ -33,24 +33,18 @@
             this.bt_devicein = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dgv_cur = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bt_deviceup = new System.Windows.Forms.Button();
             this.bt_devicedel = new System.Windows.Forms.Button();
             this.dt_start = new MetroFramework.Controls.MetroDateTime();
             this.dt_end = new MetroFramework.Controls.MetroDateTime();
             this.dgv_deflow = new System.Windows.Forms.DataGridView();
             this.bt_search = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.cb_pro = new MetroFramework.Controls.MetroComboBox();
-            this.devicename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.flowdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lb_name = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_device)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_deflow)).BeginInit();
@@ -75,7 +69,7 @@
             this.bt_devicein.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_devicein.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.bt_devicein.ForeColor = System.Drawing.Color.White;
-            this.bt_devicein.Location = new System.Drawing.Point(258, 38);
+            this.bt_devicein.Location = new System.Drawing.Point(262, 38);
             this.bt_devicein.Name = "bt_devicein";
             this.bt_devicein.Size = new System.Drawing.Size(64, 28);
             this.bt_devicein.TabIndex = 0;
@@ -104,13 +98,34 @@
             this.dgv_cur.Size = new System.Drawing.Size(443, 44);
             this.dgv_cur.TabIndex = 18;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "디바이스번호";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "디바이스이름";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "공정순서번호";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "공정이름";
+            this.Column4.Name = "Column4";
+            // 
             // bt_deviceup
             // 
             this.bt_deviceup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bt_deviceup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_deviceup.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.bt_deviceup.ForeColor = System.Drawing.Color.White;
-            this.bt_deviceup.Location = new System.Drawing.Point(328, 38);
+            this.bt_deviceup.Location = new System.Drawing.Point(332, 38);
             this.bt_deviceup.Name = "bt_deviceup";
             this.bt_deviceup.Size = new System.Drawing.Size(64, 28);
             this.bt_deviceup.TabIndex = 20;
@@ -151,18 +166,13 @@
             // dgv_deflow
             // 
             this.dgv_deflow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_deflow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.devicename,
-            this.proname,
-            this.flowdate,
-            this.Column6});
-            this.dgv_deflow.Location = new System.Drawing.Point(472, 72);
+            this.dgv_deflow.Location = new System.Drawing.Point(472, 38);
             this.dgv_deflow.Name = "dgv_deflow";
             this.dgv_deflow.RowHeadersVisible = false;
             this.dgv_deflow.RowHeadersWidth = 51;
             this.dgv_deflow.RowTemplate.Height = 23;
             this.dgv_deflow.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_deflow.Size = new System.Drawing.Size(387, 247);
+            this.dgv_deflow.Size = new System.Drawing.Size(387, 281);
             this.dgv_deflow.TabIndex = 24;
             // 
             // bt_search
@@ -178,27 +188,6 @@
             this.bt_search.Text = "조회";
             this.bt_search.UseVisualStyleBackColor = false;
             this.bt_search.Click += new System.EventHandler(this.bt_search_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "디바이스번호";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "디바이스이름";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "공정순서번호";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "공정이름";
-            this.Column4.Name = "Column4";
             // 
             // label1
             // 
@@ -222,55 +211,11 @@
             this.cb_pro.TabIndex = 27;
             this.cb_pro.UseSelectable = true;
             // 
-            // devicename
-            // 
-            this.devicename.HeaderText = "디바이스이름";
-            this.devicename.Name = "devicename";
-            // 
-            // proname
-            // 
-            this.proname.HeaderText = "공정이름";
-            this.proname.Name = "proname";
-            this.proname.Width = 90;
-            // 
-            // flowdate
-            // 
-            this.flowdate.HeaderText = "날짜";
-            this.flowdate.Name = "flowdate";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "총 가동 횟수";
-            this.Column6.Name = "Column6";
-            // 
-            // lb_name
-            // 
-            this.lb_name.AutoSize = true;
-            this.lb_name.Font = new System.Drawing.Font("굴림", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_name.Location = new System.Drawing.Point(698, 32);
-            this.lb_name.Name = "lb_name";
-            this.lb_name.Size = new System.Drawing.Size(103, 29);
-            this.lb_name.TabIndex = 9;
-            this.lb_name.Text = "홍길동";
-            this.lb_name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(816, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 29);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "님";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // Tab_Device
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 410);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.cb_pro);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_search);
@@ -280,7 +225,6 @@
             this.Controls.Add(this.bt_devicedel);
             this.Controls.Add(this.bt_deviceup);
             this.Controls.Add(this.dgv_cur);
-            this.Controls.Add(this.lb_name);
             this.Controls.Add(this.dgv_device);
             this.Controls.Add(this.bt_devicein);
             this.Name = "Tab_Device";
@@ -312,11 +256,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label1;
         private MetroFramework.Controls.MetroComboBox cb_pro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn devicename;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn flowdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Label lb_name;
-        private System.Windows.Forms.Label label2;
     }
 }
