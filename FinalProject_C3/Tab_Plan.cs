@@ -24,10 +24,10 @@ namespace FinalProject_C3
         public static MySqlConnection ConnectDB()
         {
             string connectionString =
-            "Server=localhost;" +
+            "Server=192.168.0.3;;" +
             "Database=mayflower;" +
             "Port=3306;" +
-            "Uid=root;" +
+            "Uid=edu;" +
             "Pwd=1234;";
             MySqlConnection connection = new MySqlConnection(connectionString);
 
@@ -39,6 +39,15 @@ namespace FinalProject_C3
 
         public void PanelInit()
         {
+            try
+            {
+                connection.Open();
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리
+                MessageBox.Show(ex.Message);
+            }
             var query = "SELECT COUNT(*) FROM tb_plan;";
             using (MySqlCommand reader = new MySqlCommand(query, connection))
             {
@@ -74,6 +83,126 @@ namespace FinalProject_C3
                 row = dataTable.Rows[i];
                 orderTile[i] = new OrderTile(planManager, row, i,this);
             }
+
+            connection.Close();
+        }
+
+
+        public void PanelInit(string column , int order)  //overloading column 에 기준 컬럼 문자열로 쉼표를 통해 복수 설정 가능,  order==이면 내림차순 나머지 오름차순
+        {
+            try
+            {
+                connection.Open();
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리
+                MessageBox.Show(ex.Message);
+            }
+            var query = "SELECT COUNT(*) FROM tb_plan;";
+            using (MySqlCommand reader = new MySqlCommand(query, connection))
+            {
+                planRowNumber = Convert.ToInt32(reader.ExecuteScalar()) - 1;
+            }
+
+            manager = planManager;
+            MetroFramework.Controls.MetroButton planBtn = new MetroFramework.Controls.MetroButton();
+            planManager.Controls.Add(planBtn);
+            planBtn.Location = new Point((310 * (planRowNumber + 1)) + 10, 30);
+            planBtn.Name = "planBtn";
+            planBtn.Size = new Size(40, 300);
+            planBtn.TabIndex = 1;
+            planBtn.Text = "+";
+            planBtn.UseSelectable = true;
+            planBtn.Click += new EventHandler(planBtn_Click);
+
+            OrderTile[] orderTile = new OrderTile[planRowNumber + 1];
+
+            var dataTable = new DataTable();
+            string sortWay;
+            if (order == 1)
+            {
+                sortWay = "DESC";
+            }
+            else
+            {
+                sortWay = "ASC";
+            }
+            query = $"SELECT * FROM tb_plan ORDER BY {column} {sortWay};";
+
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
+            {
+                adapter.Fill(dataTable);
+            }
+
+            DataRow row;
+
+            for (int i = 0; i < planRowNumber + 1; i++)
+            {
+                row = dataTable.Rows[i];
+                orderTile[i] = new OrderTile(planManager, row, i, this);
+            }
+
+            connection.Close();
+        } 
+
+        private void GridInit()
+        {
+
+            try
+            {
+                connection.Open();
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리
+                MessageBox.Show(ex.Message);
+            }
+            var dataTable = new DataTable();
+
+            var query = "SELECT * FROM tb_plan ORDER BY priority, duedate;";
+
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
+            {
+                adapter.Fill(dataTable);
+            }
+
+            dgv_plan.DataSource = dataTable;
+
+            connection.Close();
+        }
+        private void GridInit(string column, int order)
+        {
+            string sortWay;
+            if (order == 1)
+            {
+                sortWay = "DESC";
+            }
+            else
+            {
+                sortWay = "ASC";
+            }
+            try
+            {
+                connection.Open();
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리
+                MessageBox.Show(ex.Message);
+            }
+            var dataTable = new DataTable();
+
+            var query = $"SELECT * FROM tb_plan ORDER BY {column} {sortWay};";
+
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
+            {
+                adapter.Fill(dataTable);
+            }
+
+            dgv_plan.DataSource = dataTable;
+
+            connection.Close();
         }
 
         public Tab_Plan()
@@ -94,20 +223,17 @@ namespace FinalProject_C3
             {
                 planRowNumber = Convert.ToInt32(reader.ExecuteScalar()) - 1;
             }
+            connection.Close();
 
             InitializeComponent();
 
             PanelInit();
+            GridInit();
+            managerTimer.Interval = 1000; // 1초 간격으로 실행
+            managerTimer.Tick += timer1_Tick; // 타이머 이벤트 핸들러 설정
+            managerTimer.Start(); // 타이머 시작
 
-            //managerTimer.Interval = 1000; // 1초 간격으로 실행
-            //managerTimer.Tick += timer1_Tick; // 타이머 이벤트 핸들러 설정
-            //managerTimer.Start(); // 타이머 시작
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            RefTile();
+            prod_chart.Titles.Add("생산 완료/미완료 비율");
         }
 
         public void RefTile()
@@ -128,6 +254,69 @@ namespace FinalProject_C3
             PanelInit();
         }
 
+        public void RefTile(string column, int order)
+        {
+            planManager.Dispose();
+            planManager = new MetroFramework.Drawing.Html.HtmlPanel();
+            planManager.AutoScroll = true;
+            planManager.AutoScrollMinSize = new Size(1032, 18);
+            planManager.BackColor = SystemColors.Window;
+            planManager.Controls.Add(this.testTile1);
+            planManager.Location = new Point(23, 63);
+            planManager.Name = "planManager";
+            planManager.Size = new Size(1032, 364);
+            planManager.TabIndex = 11;
+            planManager.Text = "Plan Manager";
+            this.Controls.Add(planManager);
+            PanelInit(column, order);
+        }
+
+        private int CountGood(string column) //알고 싶은 컬럼의 sum값
+        {
+            connection.Open();
+            var query = $"SELECT SUM({column}) FROM tb_plan;";
+            int allProd;
+            using (MySqlCommand reader = new MySqlCommand(query, connection))
+            {
+                allProd= Convert.ToInt32(reader.ExecuteScalar());
+            }
+            connection.Close();
+            return allProd;
+        }        
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            prod_chart.Series.Clear();
+            int defect;
+            int goods;
+            int orders;
+
+            orders = CountGood("planea");
+            goods = CountGood("nowea");
+
+            defect = goods - orders;
+
+            // Series 생성
+            Series series = new Series("Series1");
+            series.ChartType = SeriesChartType.Doughnut;
+
+            // 데이터 포인트 추가
+            DataPoint goodDataPoint = new DataPoint();
+            goodDataPoint.SetValueXY("완료", goods);
+            series.Points.Add(goodDataPoint);
+
+            DataPoint defectDataPoint = new DataPoint();
+            defectDataPoint.SetValueXY("미완료", defect);
+            series.Points.Add(defectDataPoint);
+
+            // 차트에 Series 추가
+            prod_chart.Series.Add(series);
+
+            prod_chart.Update();
+            prod_chart.Show();
+
+        }
+
         private void planBtn_Click(object sender, EventArgs e)
         {
 
@@ -142,15 +331,34 @@ namespace FinalProject_C3
         private void metroButton1_Click(object sender, EventArgs e)
         {
             RefTile();
+            GridInit();
         }
+
+        private void metroButton2_Click(object sender, EventArgs e) //순위
+        {
+            RefTile("priority",0);
+            GridInit("priority", 0);
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e) //납기
+        {
+            RefTile("duedate", 0);
+            GridInit("duedate", 0);
+        }
+
+        private void metroButton4_Click(object sender, EventArgs e) //수량
+        {
+            RefTile("planea", 1);
+            GridInit("planea", 1);
+        }
+
     }
     public class OrderTile : MetroFramework.Forms.MetroForm
     {
         DataRow row;
         MetroFramework.Controls.MetroTile planPanel = new MetroFramework.Controls.MetroTile();
         MetroFramework.Drawing.Html.HtmlPanel manager;
-        Tab_Plan tab_Plan; 
-
+        Tab_Plan tab_Plan;
         public OrderTile(MetroFramework.Drawing.Html.HtmlPanel planManager, DataRow row, int i, Control tab_Plan) //넣을 HtmlPanel
         {
             this.tab_Plan = (Tab_Plan)tab_Plan;
@@ -294,10 +502,10 @@ namespace FinalProject_C3
         private MySqlConnection ConnectDB()
         {
             string connectionString =
-            "Server=localhost;" +
+            "Server=192.168.0.3;;" +
             "Database=mayflower;" +
             "Port=3306;" +
-            "Uid=root;" +
+            "Uid=edu;" +
             "Pwd=1234;";
             MySqlConnection connection = new MySqlConnection(connectionString);
 

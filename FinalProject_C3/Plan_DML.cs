@@ -54,10 +54,10 @@ namespace FinalProject_C3
         private MySqlConnection MysqlConnected()
         {
             string connectionString =
-            "Server=localhost;" +
+            "Server=192.168.0.3;;" +
             "Database=mayflower;" +
             "Port=3306;" +
-            "Uid=root;" +
+            "Uid=edu;" +
             "Pwd=1234;";
             MySqlConnection connection = new MySqlConnection(connectionString);
 
