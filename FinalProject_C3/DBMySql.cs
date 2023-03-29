@@ -164,6 +164,23 @@ namespace LoginTest
             }
         }
 
+        public void alter(string query)
+        {
+            try
+            {
+                conn.Open();
+                //DELETE FROM user_info WHERE user_id='user1'
+                cmd = new MySqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                throw;
+            }
+        }
+
         public object ExecuteScalar(string query)
         {
             try

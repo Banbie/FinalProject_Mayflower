@@ -51,8 +51,9 @@
             // 
             // dt_Time
             // 
-            this.dt_Time.Location = new System.Drawing.Point(25, 62);
-            this.dt_Time.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dt_Time.Location = new System.Drawing.Point(29, 78);
+            this.dt_Time.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dt_Time.MinimumSize = new System.Drawing.Size(0, 30);
             this.dt_Time.Name = "dt_Time";
             this.dt_Time.Size = new System.Drawing.Size(181, 29);
             this.dt_Time.TabIndex = 2;
@@ -70,7 +71,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(212, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 12);
+            this.label2.Size = new System.Drawing.Size(18, 15);
             this.label2.TabIndex = 11;
             this.label2.Text = "~";
             // 
@@ -84,6 +85,7 @@
             this.불량률});
             this.dgv_Search.Location = new System.Drawing.Point(501, 62);
             this.dgv_Search.Name = "dgv_Search";
+            this.dgv_Search.RowHeadersWidth = 51;
             this.dgv_Search.RowTemplate.Height = 23;
             this.dgv_Search.Size = new System.Drawing.Size(523, 201);
             this.dgv_Search.TabIndex = 12;
@@ -135,30 +137,34 @@
             // 날짜
             // 
             this.날짜.HeaderText = "날짜";
+            this.날짜.MinimumWidth = 6;
             this.날짜.Name = "날짜";
             this.날짜.Width = 120;
             // 
             // 총생산량
             // 
             this.총생산량.HeaderText = "총 생산량";
+            this.총생산량.MinimumWidth = 6;
             this.총생산량.Name = "총생산량";
             this.총생산량.Width = 120;
             // 
             // 불량갯수
             // 
             this.불량갯수.HeaderText = "불량 갯수";
+            this.불량갯수.MinimumWidth = 6;
             this.불량갯수.Name = "불량갯수";
             this.불량갯수.Width = 120;
             // 
             // 불량률
             // 
             this.불량률.HeaderText = "불량률";
+            this.불량률.MinimumWidth = 6;
             this.불량률.Name = "불량률";
             this.불량률.Width = 120;
             // 
             // Tab_Search
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 690);
             this.Controls.Add(this.btn_Search);
@@ -168,7 +174,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dt_Time1);
             this.Controls.Add(this.dt_Time);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Tab_Search";
+            this.Padding = new System.Windows.Forms.Padding(23, 75, 23, 25);
             this.Text = "실적확인";
             this.Load += new System.EventHandler(this.Tab_Search_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Search)).EndInit();
