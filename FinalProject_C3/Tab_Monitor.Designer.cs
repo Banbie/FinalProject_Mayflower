@@ -28,18 +28,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tb_pronow = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
+            this.testTile1 = new MetroFramework.Controls.MetroTile();
+            this.lb_nowplan = new MetroFramework.Controls.MetroLabel();
+            this.plannum1 = new MetroFramework.Controls.MetroLabel();
+            this.mpb_pro = new MetroFramework.Controls.MetroProgressBar();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.prod_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpS = new System.Windows.Forms.DateTimePicker();
+            this.dtpE = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.FAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEMP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,18 +51,24 @@
             this.LUX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lb_nowprod = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panel1.SuspendLayout();
+            this.testTile1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prod_chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tb_pronow
             // 
+            this.tb_pronow.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tb_pronow.Location = new System.Drawing.Point(722, 46);
             this.tb_pronow.Name = "tb_pronow";
+            this.tb_pronow.ReadOnly = true;
             this.tb_pronow.Size = new System.Drawing.Size(310, 21);
             this.tb_pronow.TabIndex = 0;
+            this.tb_pronow.TextChanged += new System.EventHandler(this.tb_pronow_TextChanged);
             // 
             // label1
             // 
@@ -72,18 +82,67 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.metroProgressBar1);
+            this.panel1.Controls.Add(this.testTile1);
+            this.panel1.Controls.Add(this.mpb_pro);
+            this.panel1.Controls.Add(this.metroLabel2);
             this.panel1.Location = new System.Drawing.Point(12, 73);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(790, 121);
             this.panel1.TabIndex = 2;
             // 
-            // metroProgressBar1
+            // testTile1
             // 
-            this.metroProgressBar1.Location = new System.Drawing.Point(441, 3);
-            this.metroProgressBar1.Name = "metroProgressBar1";
-            this.metroProgressBar1.Size = new System.Drawing.Size(346, 48);
-            this.metroProgressBar1.TabIndex = 0;
+            this.testTile1.ActiveControl = null;
+            this.testTile1.Controls.Add(this.metroLabel1);
+            this.testTile1.Controls.Add(this.lb_nowplan);
+            this.testTile1.Controls.Add(this.lb_nowprod);
+            this.testTile1.Controls.Add(this.plannum1);
+            this.testTile1.Location = new System.Drawing.Point(10, 28);
+            this.testTile1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.testTile1.Name = "testTile1";
+            this.testTile1.Size = new System.Drawing.Size(390, 64);
+            this.testTile1.TabIndex = 9;
+            this.testTile1.UseSelectable = true;
+            // 
+            // lb_nowplan
+            // 
+            this.lb_nowplan.Enabled = false;
+            this.lb_nowplan.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lb_nowplan.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lb_nowplan.Location = new System.Drawing.Point(92, 20);
+            this.lb_nowplan.Name = "lb_nowplan";
+            this.lb_nowplan.Size = new System.Drawing.Size(70, 25);
+            this.lb_nowplan.TabIndex = 12;
+            this.lb_nowplan.Text = "1";
+            // 
+            // plannum1
+            // 
+            this.plannum1.Enabled = false;
+            this.plannum1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.plannum1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.plannum1.Location = new System.Drawing.Point(7, 20);
+            this.plannum1.Name = "plannum1";
+            this.plannum1.Size = new System.Drawing.Size(88, 25);
+            this.plannum1.TabIndex = 11;
+            this.plannum1.Text = "현재주문";
+            // 
+            // mpb_pro
+            // 
+            this.mpb_pro.Location = new System.Drawing.Point(406, 35);
+            this.mpb_pro.Maximum = 75;
+            this.mpb_pro.Name = "mpb_pro";
+            this.mpb_pro.Size = new System.Drawing.Size(378, 48);
+            this.mpb_pro.TabIndex = 0;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel2.Location = new System.Drawing.Point(25, 114);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(65, 25);
+            this.metroLabel2.TabIndex = 2;
+            this.metroLabel2.Text = "Nowea";
             // 
             // pictureBox1
             // 
@@ -93,22 +152,22 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // chart1
+            // prod_chart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(12, 298);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(350, 231);
-            this.chart1.TabIndex = 3;
-            this.chart1.Text = "chart1";
+            chartArea7.Name = "ChartArea1";
+            this.prod_chart.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.prod_chart.Legends.Add(legend7);
+            this.prod_chart.Location = new System.Drawing.Point(12, 298);
+            this.prod_chart.Name = "prod_chart";
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.prod_chart.Series.Add(series7);
+            this.prod_chart.Size = new System.Drawing.Size(350, 231);
+            this.prod_chart.TabIndex = 3;
+            this.prod_chart.Text = "chart1";
             // 
             // label2
             // 
@@ -120,19 +179,21 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "양품률";
             // 
-            // dateTimePicker1
+            // dtpS
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 271);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(172, 21);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dtpS.Location = new System.Drawing.Point(12, 271);
+            this.dtpS.Name = "dtpS";
+            this.dtpS.Size = new System.Drawing.Size(172, 21);
+            this.dtpS.TabIndex = 5;
+            this.dtpS.ValueChanged += new System.EventHandler(this.dtpS_ValueChanged);
             // 
-            // dateTimePicker2
+            // dtpE
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(190, 271);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(172, 21);
-            this.dateTimePicker2.TabIndex = 6;
+            this.dtpE.Location = new System.Drawing.Point(190, 271);
+            this.dtpE.Name = "dtpE";
+            this.dtpE.Size = new System.Drawing.Size(172, 21);
+            this.dtpE.TabIndex = 6;
+            this.dtpE.ValueChanged += new System.EventHandler(this.dtpE_ValueChanged);
             // 
             // dataGridView1
             // 
@@ -190,8 +251,31 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lb_nowprod
+            // 
+            this.lb_nowprod.AutoSize = true;
+            this.lb_nowprod.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lb_nowprod.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lb_nowprod.Location = new System.Drawing.Point(221, 20);
+            this.lb_nowprod.Name = "lb_nowprod";
+            this.lb_nowprod.Size = new System.Drawing.Size(91, 25);
+            this.lb_nowprod.TabIndex = 4;
+            this.lb_nowprod.Text = "NowProd";
+            this.lb_nowprod.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.Location = new System.Drawing.Point(365, 20);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(22, 25);
+            this.metroLabel1.TabIndex = 13;
+            this.metroLabel1.Text = "::";
+            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Tab_Monitor
             // 
@@ -200,20 +284,24 @@
             this.ClientSize = new System.Drawing.Size(1060, 580);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpE);
+            this.Controls.Add(this.dtpS);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.prod_chart);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_pronow);
             this.Name = "Tab_Monitor";
             this.Text = "모니터링";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tab_Monitor_FormClosed);
             this.Load += new System.EventHandler(this.Tab_Monitor_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.testTile1.ResumeLayout(false);
+            this.testTile1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prod_chart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -226,17 +314,23 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart prod_chart;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpS;
+        private System.Windows.Forms.DateTimePicker dtpE;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn FAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEMP;
         private System.Windows.Forms.DataGridViewTextBoxColumn HUMI;
         private System.Windows.Forms.DataGridViewTextBoxColumn LUX;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
+        private MetroFramework.Controls.MetroProgressBar mpb_pro;
         private System.Windows.Forms.Timer timer1;
+        private MetroFramework.Controls.MetroLabel lb_nowprod;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTile testTile1;
+        private MetroFramework.Controls.MetroLabel lb_nowplan;
+        private MetroFramework.Controls.MetroLabel plannum1;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }
