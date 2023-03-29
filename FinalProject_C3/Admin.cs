@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using LoginTest;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 
@@ -30,6 +30,7 @@ namespace FinalProject_C3
         //public Admin(Dictionary<string, string> userData)
 
         private readonly Dictionary<string, string> userData;
+        DBMySql db = new DBMySql();
 
         public Admin(Dictionary<string, string> userData)
         {
@@ -44,6 +45,9 @@ namespace FinalProject_C3
                 // 예를 들어, 아래와 같이 라벨에 값을 설정할 수 있습니다.
                 lb_UserName.Text = userData["username"];
                 lb_Position.Text = userData["author"];
+                string query = $"ALTER TABLE tb_flow MODIFY usernum INT DEFAULT {userData["usernum"]}";
+                db.alter(query);
+
             }
             catch (KeyNotFoundException ex)
             {
@@ -124,7 +128,7 @@ namespace FinalProject_C3
         } // 불량추적 폼 열기
         private void bt_Device_Click(object sender, EventArgs e)
         {
-            Tab_Device device = new Tab_Device(lb_UserName.Text);
+            Tab_Device device = new Tab_Device();
             OpenFormInPanel(device);
         } // 디바이스관리 폼 열기
         private void bt_Data_Click(object sender, EventArgs e)
@@ -140,6 +144,8 @@ namespace FinalProject_C3
 
         private void Admin_FormClosed(object sender, FormClosedEventArgs e)
         {
+            string query = $"ALTER TABLE tb_flow MODIFY usernum INT DEFAULT null";
+            db.alter(query);
             Application.Exit();
         }
 
