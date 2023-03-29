@@ -5,13 +5,18 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using MetroFramework.Controls;
 using MetroFramework.Forms;
+
+using static System.Windows.Forms.AxHost;
 
 namespace FinalProject_C3
 {
-    public partial class Admin : MetroFramework.Forms.MetroForm
+    public partial class Admin : MetroForm
     {
         //슬라이딩 메뉴의 최대, 최소 폭 크기
         const int MAX_SLIDING_WIDTH = 200;
@@ -53,6 +58,10 @@ namespace FinalProject_C3
             timerDate.Interval = 100; //타이머 간격 100ms
             timerDate.Start();  //타이머 시작            
             lb_LogTime.Text = DateTime.Now.ToString("T"); // label1에 현재날짜시간 표시, F:자세한 전체 날짜/시간
+            this.Location = new Point(
+            (pn_Center.Width - this.Width) / 2 + pn_Center.Location.X,
+            (pn_Center.Height - this.Height) / 2 + pn_Center.Location.Y
+    );
         }
         private void cb_Hide_CheckedChanged(object sender, EventArgs e)
         {
@@ -101,45 +110,32 @@ namespace FinalProject_C3
         private void bt_Plan_Click(object sender, EventArgs e)
         {
             Tab_Plan plan = new Tab_Plan();
-            plan.TopLevel = true;
-            //plan.Dock = System.Windows.Forms.DockStyle.Fill;
-            mt_Tap.Controls.Contains(plan);
-            plan.Show();
+            OpenFormInPanel(plan);
         } // 생산계획 폼 열기
         private void bt_Search_Click(object sender, EventArgs e)
         {
             Tab_Search search = new Tab_Search();
-            search.TopLevel = true;
-            mt_Tap.Controls.Contains(search);
-            search.Show();
+            OpenFormInPanel(search);
         } // 실적검색 폼 열기
         private void bt_Poor_Click(object sender, EventArgs e)
         {
             Tab_Defect defect = new Tab_Defect();
-            defect.TopLevel = true;
-            mt_Tap.Controls.Contains(defect);
-            defect.Show();
+            OpenFormInPanel(defect);
         } // 불량추적 폼 열기
         private void bt_Device_Click(object sender, EventArgs e)
         {
             Tab_Device device = new Tab_Device(lb_UserName.Text);
-            device.TopLevel = true;
-            mt_Tap.Controls.Contains(device);
-            device.Show();
+            OpenFormInPanel(device);
         } // 디바이스관리 폼 열기
         private void bt_Data_Click(object sender, EventArgs e)
         {
             Tab_State state = new Tab_State();
-            state.TopLevel = true;
-            mt_Tap.Controls.Contains(state);
-            state.Show();
+            OpenFormInPanel(state);
         } // 설비데이터 폼 열기
         private void bt_Monitor_Click(object sender, EventArgs e)
         {
             Tab_Monitor monitor = new Tab_Monitor();
-            monitor.TopLevel = true;
-            mt_Tap.Controls.Contains(monitor);
-            monitor.Show();
+            OpenFormInPanel(monitor);
         } // 모니터링 폼 열기
 
         private void Admin_FormClosed(object sender, FormClosedEventArgs e)
@@ -152,6 +148,12 @@ namespace FinalProject_C3
             lb_NowTime.Text = DateTime.Now.ToString("F");
             // label1에 현재날짜시간 표시, F:자세한 전체 날짜/시간
             // T:시간만 표시
+        }
+        private void OpenFormInPanel(Form form)
+        {
+            form.TopLevel = true;
+            pn_Right.Controls.Contains(form);
+            form.Show();
         }
     }
 }

@@ -21,11 +21,11 @@ namespace FinalProject_C3
     {
         //private readonly Timer timer = new Timer(); // 타이머 생성
         private static readonly string connectionString =
-        //"Server=192.168.0.3;" +
-        "Server=localhost;" +
+        "Server=192.168.0.3;" +
+        //"Server=localhost;" +
         "Database=mayflower;" +
         "Port=3306;" +
-        "Uid=root;" +
+        "Uid=edu;" +
         "Pwd=1234;";
         private readonly MySqlConnection connection = new MySqlConnection(connectionString);
         private int nowea = 0; // 초기값 0으로 설정

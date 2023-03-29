@@ -163,12 +163,12 @@ namespace FinalProject_C3
 
         private void bt_search_Click(object sender, EventArgs e)
         {
-            // 조회 시작일과 종료일 설정
-            DateTime sDate = dt_start.Value.Date;
-            DateTime eDate = dt_end.Value.Date.AddDays(1);
+            //// 조회 시작일과 종료일 설정
+            //DateTime sDate = dt_start.Value.Date;
+            //DateTime eDate = dt_end.Value.Date.AddDays(1);
 
-            // 총 생산량 쿼리 실행
-            string query = $"SELECT count(prodnum) FROM tb_flow WHERE pr = '완료' AND DATE(donetime) >= '{startDate:yyyy-MM-dd}' AND DATE(donetime) < '{endDate:yyyy-MM-dd}'";
+            //// 총 생산량 쿼리 실행
+            //string query = $"SELECT count(prodnum) FROM tb_flow WHERE pr = '완료' AND DATE(donetime) >= '{startDate:yyyy-MM-dd}' AND DATE(donetime) < '{endDate:yyyy-MM-dd}'";
             //try
             //{
             //    object result = db.ExecuteScalar(query);
