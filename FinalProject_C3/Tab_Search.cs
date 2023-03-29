@@ -1,5 +1,4 @@
 ﻿using LoginTest;
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +12,9 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms.DataVisualization.Charting;
 using MySqlX.XDevAPI;
 using System.Runtime.InteropServices.ComTypes;
+using MetroFramework;
+using MetroFramework.Forms;
+
 namespace FinalProject_C3
 {
     //Tab_Search 클래스는 DBMySql 객체를 생성하고, 검색 버튼(btn_Search) 클릭 이벤트 핸들러를 정의합니다
@@ -25,7 +27,7 @@ namespace FinalProject_C3
     //tb_plan에서는 날짜+state(상태)가 '완료'인 경우를 조회하여 총 생산량을 가져오고
     //tb_prod에서는 날짜+spec(합격상태 1불합격 2합격)가 1인 경우를 조회하여 불량갯수를 가져온다.
     //두 데이터를 가져와 나눠 불량률을 계산하고, 세가지 데이터를 날짜 기준으로 데이터그리드뷰에 표시
-    public partial class Tab_Search : MetroFramework.Forms.MetroForm
+    public partial class Tab_Search : MetroForm
     {
         DBMySql db = new DBMySql();
         public Tab_Search()
@@ -36,6 +38,7 @@ namespace FinalProject_C3
         private void Tab_Search_Load(object sender, EventArgs e)
         {
             db.Connection();
+            btn_Search.PerformClick();
         }
 
         private void btn_Search_Click_1(object sender, EventArgs e)
@@ -49,10 +52,10 @@ namespace FinalProject_C3
             try
             {
                 object result = db.ExecuteScalar(query);
-                int totalQuantity = Convert.ToInt32(result ?? 0);
+                int totalQuantity = result is DBNull ? 0 : Convert.ToInt32(result);
                 int totalDefectCount = 0;
 
-                // 불량품 수 쿼리 실행
+                // 불량품 수 쿼리 실행System.InvalidCastException: '개체를 DBNull에서 다른 형식으로 캐스팅할 수 없습니다.'
                 string defectQuery = $"SELECT DATE(proddate), COUNT(*) FROM tb_prod WHERE DATE(proddate) >= '{startDate:yyyy-MM-dd}' AND DATE(proddate) < '{endDate:yyyy-MM-dd}' AND spec = '1' GROUP BY DATE(proddate)";
                 DataTable defectTable = db.ExecuteDataTable(defectQuery);
 

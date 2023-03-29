@@ -64,9 +64,8 @@
             // 
             // dt_Time1
             // 
-            this.dt_Time1.Location = new System.Drawing.Point(287, 78);
-            this.dt_Time1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dt_Time1.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dt_Time1.Location = new System.Drawing.Point(266, 62);
+            this.dt_Time1.MinimumSize = new System.Drawing.Size(0, 29);
             this.dt_Time1.Name = "dt_Time1";
             this.dt_Time1.Size = new System.Drawing.Size(228, 30);
             this.dt_Time1.TabIndex = 10;
@@ -74,7 +73,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(264, 90);
+            this.label2.Location = new System.Drawing.Point(239, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(18, 15);
             this.label2.TabIndex = 11;
@@ -88,8 +87,7 @@
             this.총생산량,
             this.불량갯수,
             this.불량률});
-            this.dgv_Search.Location = new System.Drawing.Point(539, 78);
-            this.dgv_Search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgv_Search.Location = new System.Drawing.Point(23, 226);
             this.dgv_Search.Name = "dgv_Search";
             this.dgv_Search.RowHeadersWidth = 51;
             this.dgv_Search.RowTemplate.Height = 23;
@@ -132,8 +130,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dgv_Total.Location = new System.Drawing.Point(26, 236);
-            this.dgv_Total.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgv_Total.Location = new System.Drawing.Point(23, 126);
             this.dgv_Total.Name = "dgv_Total";
             this.dgv_Total.RowHeadersWidth = 51;
             this.dgv_Total.RowTemplate.Height = 23;
@@ -174,8 +171,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(29, 345);
-            this.chart1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chart1.Location = new System.Drawing.Point(482, 62);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -190,18 +186,17 @@
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
             this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(1017, 355);
+            this.chart1.Size = new System.Drawing.Size(430, 372);
             this.chart1.TabIndex = 14;
             this.chart1.Text = "chart1";
             // 
             // btn_Search
             // 
-            this.btn_Search.Location = new System.Drawing.Point(430, 121);
-            this.btn_Search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Search.Location = new System.Drawing.Point(391, 97);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(86, 29);
             this.btn_Search.TabIndex = 15;
-            this.btn_Search.Text = "metroButton1";
+            this.btn_Search.Text = "검색";
             this.btn_Search.UseSelectable = true;
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click_1);
             // 
@@ -209,7 +204,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 714);
+            this.ClientSize = new System.Drawing.Size(935, 453);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.dgv_Total);
