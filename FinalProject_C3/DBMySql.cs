@@ -25,7 +25,6 @@ namespace LoginTest
             }
             conn.Close();
         }
-
         public DataSet SelectAll(string table)
         {
             try
