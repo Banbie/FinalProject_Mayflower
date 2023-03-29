@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginTest;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace FinalProject_C3
 {
@@ -58,11 +60,36 @@ namespace FinalProject_C3
             return value;
         }
 
-
+        private DateTime currentDate = DateTime.Now;
 
         private void Tab_State_Load(object sender, EventArgs e)
-        {
+        {//
+            DBMySql db = new DBMySql();
+           
+            db.Connection();
+            //DataTable dt = db.Select($"SELECT DATE_FORMAT(time, '%Y-%m-%d') AS time, value FROM io_plc WHERE IO_ID ='plc_d103' AND DATE_FORMAT(time, '%Y-%m-%d') = '{currentDate.ToString("yyyy-MM-dd")}';");
+            DataTable dt = db.Select($"SELECT DATE_FORMAT(time, '%h:%i:%s') AS time, value \r\nFROM io_plc \r\nwhere IO_ID ='plc_d103' and dATE_FORMAT(time, '%Y-%m-%d') = '2023-03-28';");
 
+            // 차트 생성 및 옵션 설정
+           
+            chart1.Parent = this;
+            chart1.Dock = DockStyle.None;
+            chart1.Location = new Point(10, 10);
+            chart1.Width = this.Width - 20;
+            chart1.Height = this.Height - 50;
+            chart1.ChartAreas.Add(new ChartArea("Default"));
+            chart1.Series.Add(new Series("Data"));
+            chart1.Series["Data"].ChartType = SeriesChartType.Line;
+            chart1.Series["Data"].XValueType = ChartValueType.DateTime;
+
+
+            // 데이터 추가
+            foreach (DataRow row in dt.Rows)
+            {
+                DateTime time = DateTime.Parse(row["time"].ToString());
+                double value = double.Parse(row["value"].ToString());
+                chart1.Series["Data"].Points.AddXY(time, value);
+            }
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -132,5 +159,7 @@ namespace FinalProject_C3
         {
 
         }
+
+        
     }
 }
