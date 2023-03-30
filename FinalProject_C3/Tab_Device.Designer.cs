@@ -249,6 +249,7 @@
             this.Name = "Tab_Device";
             this.Padding = new System.Windows.Forms.Padding(23, 75, 23, 25);
             this.Text = "디바이스관리";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tab_Device_FormClosed);
             this.Load += new System.EventHandler(this.Tab_Device_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_device)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cur)).EndInit();

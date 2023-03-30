@@ -89,7 +89,7 @@ namespace FinalProject_C3
             {
                 reader.ExecuteNonQuery();
             }
-            connection.Close();
+            //connection.Close();
             Plan_DML plan_DML = this;
             plan_DML.Dispose();
 
@@ -114,7 +114,7 @@ namespace FinalProject_C3
             {
                 reader.ExecuteNonQuery();
             }
-            connection.Close();
+            //connection.Close();
             Plan_DML plan_DML = this;
             plan_DML.Dispose();
 

@@ -141,9 +141,11 @@ namespace FinalProject_C3
                     this.Hide();
                     string userName = row["username"].ToString();
                     string author = row["author"].ToString();
+                    string usernum = row["usernum"].ToString();
                     Dictionary<string, string> userData = new Dictionary<string, string>();
                     userData.Add("username", userName);
                     userData.Add("author", author);
+                    userData.Add("usernum", usernum);
                     Admin adminForm = new Admin(userData);
                     adminForm.Show();
                 }
