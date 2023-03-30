@@ -75,10 +75,22 @@ namespace FinalProject_C3
                 }
                 else if (dr[2].ToString() == "2")
                 {
-                    //string count = $"SELECT count(*) FROM tb_prod p where lotnum = " +
-                    //    $"(SELECT distinct prodnum from tb_flow where plannum = {dr[1]}) and spec = 2 ;";
-                    //string nowea = db.Select(count).Rows[0][0].ToString();
-                    //noweaValue1.Text = nowea;
+                    string count = $"SELECT count(*) FROM tb_prod where lotnum = " +
+                        $"(SELECT distinct prodnum from tb_flow where plannum = {dr[1]}) and spec = 2 ;";
+                    string plancount = $"SELECT planea FROM tb_plan p where plannum = {dr[1]} ;";
+                    int nowea = Convert.ToInt32(db.Select(count).Rows[0][0]);
+                    int planea = Convert.ToInt32(db.Select(plancount).Rows[0][0]);
+                    //string values = $"";
+                    //db.Update("tb_plan",);
+
+                    //if (nowea == planea)
+                    //{
+
+                    //    string planquery = "ALTER TABLE tb_flow MODIFY COLUNM plannum INT DEFAULT " +
+                    //        "(select plannum from tb_plan where nowea< planea order by priority,duetime limit 1 );";
+                    //    db.alter(planquery);
+                    //}
+                    //else {}
                 }
             }
             catch (Exception ex)

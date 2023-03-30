@@ -125,7 +125,7 @@ namespace FinalProject_C3
             DateTime eDate = dt_end.Value.AddDays(1);
 
             string cond = "d.devicename as  디바이스이름, d.proname as 공정이름, f.flowdate as 날짜, count(*) as 총가동횟수";
-            string table = "tb_flow f left join tb_device d on f.pronum = d.pronum";
+            string table = "tb_flow f left join tb_device d on f.pronum = d.pronum ; ";
             string where;
 
             if (cb_pro.SelectedItem.ToString() != "전체")

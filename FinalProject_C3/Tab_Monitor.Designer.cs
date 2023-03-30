@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tb_pronow = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -38,7 +38,6 @@
             this.lb_nowplan = new MetroFramework.Controls.MetroLabel();
             this.plannum1 = new MetroFramework.Controls.MetroLabel();
             this.mpb_pro = new MetroFramework.Controls.MetroProgressBar();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.prod_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lb_nowprod = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.panel1.SuspendLayout();
             this.testTile1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -84,7 +84,6 @@
             // 
             this.panel1.Controls.Add(this.testTile1);
             this.panel1.Controls.Add(this.mpb_pro);
-            this.panel1.Controls.Add(this.metroLabel2);
             this.panel1.Location = new System.Drawing.Point(12, 73);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(790, 121);
@@ -93,6 +92,7 @@
             // testTile1
             // 
             this.testTile1.ActiveControl = null;
+            this.testTile1.Controls.Add(this.metroLabel2);
             this.testTile1.Controls.Add(this.metroLabel1);
             this.testTile1.Controls.Add(this.lb_nowplan);
             this.testTile1.Controls.Add(this.lb_nowprod);
@@ -134,16 +134,6 @@
             this.mpb_pro.Size = new System.Drawing.Size(378, 48);
             this.mpb_pro.TabIndex = 0;
             // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.Location = new System.Drawing.Point(25, 114);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(65, 25);
-            this.metroLabel2.TabIndex = 2;
-            this.metroLabel2.Text = "Nowea";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(808, 73);
@@ -154,17 +144,17 @@
             // 
             // prod_chart
             // 
-            chartArea7.Name = "ChartArea1";
-            this.prod_chart.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.prod_chart.Legends.Add(legend7);
+            chartArea8.Name = "ChartArea1";
+            this.prod_chart.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.prod_chart.Legends.Add(legend8);
             this.prod_chart.Location = new System.Drawing.Point(12, 298);
             this.prod_chart.Name = "prod_chart";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.prod_chart.Series.Add(series7);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.prod_chart.Series.Add(series8);
             this.prod_chart.Size = new System.Drawing.Size(350, 231);
             this.prod_chart.TabIndex = 3;
             this.prod_chart.Text = "chart1";
@@ -277,6 +267,18 @@
             this.metroLabel1.Text = "::";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel2.Location = new System.Drawing.Point(153, 20);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(22, 25);
+            this.metroLabel2.TabIndex = 14;
+            this.metroLabel2.Text = "::";
+            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Tab_Monitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -297,7 +299,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tab_Monitor_FormClosed);
             this.Load += new System.EventHandler(this.Tab_Monitor_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.testTile1.ResumeLayout(false);
             this.testTile1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -327,10 +328,10 @@
         private MetroFramework.Controls.MetroProgressBar mpb_pro;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroLabel lb_nowprod;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTile testTile1;
         private MetroFramework.Controls.MetroLabel lb_nowplan;
         private MetroFramework.Controls.MetroLabel plannum1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }
