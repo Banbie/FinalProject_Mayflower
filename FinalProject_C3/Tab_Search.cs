@@ -106,6 +106,7 @@ namespace FinalProject_C3
             chart1.ChartAreas[0].AxisX.Title = "날짜";
             chart1.ChartAreas[0].AxisY.Title = "총생산량,갯수";
             chart1.ChartAreas[0].AxisY2.Title = "불량률 (%)";
+            chart1.ChartAreas[0].AxisY2.Maximum = 100;
 
             // 차트 데이터 추가
             Series seriesTotalQuantity = chart1.Series.Add("총 생산량");
