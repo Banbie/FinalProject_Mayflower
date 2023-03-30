@@ -30,12 +30,9 @@ namespace FinalProject_C3
     public partial class Tab_Search : MetroForm
     {
         DBMySql db = new DBMySql();
-        Timer timer = new Timer();
         public Tab_Search()
         {
             InitializeComponent();
-            timer.Interval = 30000; // 30초 간격
-            timer.Tick += new EventHandler(timer1_Tick);
         }
 
         private void Tab_Search_Load(object sender, EventArgs e)
@@ -51,13 +48,6 @@ namespace FinalProject_C3
             // DataGridView 마지막 행에 빈칸이 나오는 경우 방지
             dgv_Search.AllowUserToAddRows = false;
             dgv_doneplan.AllowUserToAddRows = false;
-        }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            // btn_Search_Click_1 이벤트 핸들러 호출
-            btn_Search_Click_1(null, null);
-            // Tab_Search_Load 이벤트 핸들러 호출
-            Tab_Search_Load(null, null);
         }
 
         private void btn_Search_Click_1(object sender, EventArgs e)
