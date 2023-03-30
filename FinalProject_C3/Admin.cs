@@ -124,7 +124,7 @@ namespace FinalProject_C3
         } // 불량추적 폼 열기
         private void bt_Device_Click(object sender, EventArgs e)
         {
-            Tab_Device device = new Tab_Device(lb_UserName.Text);
+            Tab_Device device = new Tab_Device();
             OpenFormInPanel(device);
         } // 디바이스관리 폼 열기
         private void bt_Data_Click(object sender, EventArgs e)
