@@ -44,11 +44,14 @@ namespace FinalProject_C3
 
         private void dgv_device_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            for (int i = 0; i < 4; i++)
+            if (e.RowIndex >= 0)
             {
-                dgv_cur.Rows[0].Cells[i].Value = dgv_device.Rows[e.RowIndex].Cells[i].Value;
-                
-            }//선택된 dgv_device값을 dgv_cur에 불러오기
+                for (int i = 0; i < 4; i++)
+                {
+                    dgv_cur.Rows[0].Cells[i].Value = dgv_device.Rows[e.RowIndex].Cells[i].Value;
+
+                }//선택된 dgv_device값을 dgv_cur에 불러오기
+            }
         }
 
         private void bt_devicein_Click(object sender, EventArgs e)
@@ -125,7 +128,7 @@ namespace FinalProject_C3
             DateTime eDate = dt_end.Value.AddDays(1);
 
             string cond = "d.devicename as  디바이스이름, d.proname as 공정이름, f.flowdate as 날짜, count(*) as 총가동횟수";
-            string table = "tb_flow f left join tb_device d on f.pronum = d.pronum ; ";
+            string table = "tb_flow f left join tb_device d on f.pronum = d.pronum ";
             string where;
 
             if (cb_pro.SelectedItem.ToString() != "전체")
@@ -133,7 +136,7 @@ namespace FinalProject_C3
             else
             {   where = $"WHERE DATE(flowdate) >= '{sDate:yyyy-MM-dd}' AND DATE(flowdate) < '{eDate:yyyy-MM-dd}'";  }
 
-            string groupBy = " group by mayflower.d.devicename, mayflower.d.proname, mayflower.f.flowdate;";
+            string groupBy = " group by d.devicename, d.proname, f.flowdate ;";
 
             try
             {
