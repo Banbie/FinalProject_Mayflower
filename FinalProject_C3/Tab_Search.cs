@@ -67,7 +67,7 @@ namespace FinalProject_C3
             DateTime endDate = dt_Time1.Value.Date.AddDays(1);
 
             // tfs 테이블에서 각 일자별 총 생산량, 불량갯수 조회
-            string query = $"SELECT DATE(DayTime) AS '날짜', MAX(acceptive) AS '총 생산량', MAX(defective) AS '불량 갯수' FROM tfs WHERE DayTime >= '{startDate:yyyy-MM-dd}' AND DayTime < '{endDate:yyyy-MM-dd}' GROUP BY DATE(DayTime)";
+            string query = $"SELECT DATE(DayTime) AS '날짜', MAX(total) AS '총 생산량', MAX(defective) AS '불량 갯수' FROM tfs WHERE DayTime >= '{startDate:yyyy-MM-dd}' AND DayTime < '{endDate:yyyy-MM-dd}' GROUP BY DATE(DayTime)";
             DataTable defectResult = db.ExecuteDataTable(query);
 
             // 검색 결과를 출력할 데이터 그리드뷰의 컬럼 설정
