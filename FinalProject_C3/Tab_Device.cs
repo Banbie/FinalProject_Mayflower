@@ -28,7 +28,6 @@ namespace FinalProject_C3
             db.Connection();
             dgv_device.DataSource = db.SelectAll("tb_device").Tables[0];
             getcb_pro();
-            timer1.Start();
         }
  
 
@@ -42,16 +41,6 @@ namespace FinalProject_C3
             //            get_cur();
             //        }
         }//삭제됨
-
-        private void Tab_Device_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            timer1.Stop();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            dgv_device.DataSource = db.SelectAll("tb_device").Tables[0]; // 주기적 DB 업데이트
-        }
 
         private void dgv_device_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -69,6 +58,7 @@ namespace FinalProject_C3
                 string values = $"'{dgv_cur.Rows[0].Cells[1].Value}',{dgv_cur.Rows[0].Cells[2].Value},'{dgv_cur.Rows[0].Cells[3].Value}'";
                 db.Insert("tb_device(devicename,pronum,proname)", values);
                 MessageBox.Show("디바이스를 추가하였습니다.","추가완료");
+                dgv_device.DataSource = db.SelectAll("tb_device").Tables[0];
             }
             catch (Exception ex)
             {
@@ -87,6 +77,7 @@ namespace FinalProject_C3
                 string wherevalue = $"where devicenum = {dgv_cur.Rows[0].Cells[0].Value}";
                 db.Update("tb_device", setvalue, wherevalue);
                 MessageBox.Show("디바이스를 수정하였습니다.", "수정완료");
+                dgv_device.DataSource = db.SelectAll("tb_device").Tables[0];
             }
             catch (Exception ex)
             {
@@ -101,6 +92,7 @@ namespace FinalProject_C3
                 string values = $"tb_device where devicenum = {dgv_cur.Rows[0].Cells[0].Value}";
                 db.DeleteAll(values);
                 MessageBox.Show("디바이스를 삭제하였습니다.", "삭제완료");
+                dgv_device.DataSource = db.SelectAll("tb_device").Tables[0];
             }
             catch (Exception ex)
             {

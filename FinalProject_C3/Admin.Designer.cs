@@ -47,7 +47,7 @@
             this.pn_Center = new System.Windows.Forms.Panel();
             this.timerDate = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.mt_Tap = new MetroFramework.Controls.MetroTabControl();
+            this.pn_Right = new System.Windows.Forms.Panel();
             this.panelSideMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -264,7 +264,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.mt_Tap);
+            this.panel1.Controls.Add(this.pn_Right);
             this.panel1.Controls.Add(this.panelSideMenu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(20, 60);
@@ -272,14 +272,13 @@
             this.panel1.Size = new System.Drawing.Size(1516, 804);
             this.panel1.TabIndex = 6;
             // 
-            // mt_Tap
+            // pn_Right
             // 
-            this.mt_Tap.Dock = System.Windows.Forms.DockStyle.Left;
-            this.mt_Tap.Location = new System.Drawing.Point(200, 0);
-            this.mt_Tap.Name = "mt_Tap";
-            this.mt_Tap.Size = new System.Drawing.Size(1680, 804);
-            this.mt_Tap.TabIndex = 4;
-            this.mt_Tap.UseSelectable = true;
+            this.pn_Right.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pn_Right.Location = new System.Drawing.Point(194, 0);
+            this.pn_Right.Name = "pn_Right";
+            this.pn_Right.Size = new System.Drawing.Size(1322, 804);
+            this.pn_Right.TabIndex = 4;
             // 
             // Admin
             // 
@@ -321,6 +320,6 @@
         private System.Windows.Forms.Panel pn_Center;
         private System.Windows.Forms.Timer timerDate;
         private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroTabControl mt_Tap;
+        private System.Windows.Forms.Panel pn_Right;
     }
 }
