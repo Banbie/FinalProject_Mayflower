@@ -75,22 +75,7 @@ namespace FinalProject_C3
                 }
                 else if (dr[2].ToString() == "2")
                 {
-                    //string count = $"SELECT count(*) FROM tb_prod where lotnum = " +
-                    //    $"(SELECT distinct prodnum from tb_flow where plannum = {dr[1]}) and spec = 2 ;";
-                    //string plancount = $"SELECT planea FROM tb_plan p where plannum = {dr[1]} ;";
-                    //int nowea = Convert.ToInt32(db.Select(count).Rows[0][0]);
-                    //int planea = Convert.ToInt32(db.Select(plancount).Rows[0][0]);
-                    //string values = $"";
-                    //db.Update("tb_plan",);
-
-                    //if (nowea == planea)
-                    //{
-
-                    //    string planquery = "ALTER TABLE tb_flow MODIFY COLUNM plannum INT DEFAULT " +
-                    //        "(select plannum from tb_plan where nowea< planea order by priority,duetime limit 1 );";
-                    //    db.alter(planquery);
-                    //}
-                    //else {}
+                    noweaupdate(dr[1]);
                 }
             }
             catch (Exception ex)
@@ -170,6 +155,26 @@ namespace FinalProject_C3
                 pictureBox1.Image = Image.FromFile(imagePath);
             }
 
+        }
+
+        private void noweaupdate(DataRow dr)
+        {
+            string count = $"SELECT count(*) FROM tb_prod where lotnum = " +
+                        $"any(SELECT distinct prodnum from tb_flow where plannum = {dr[1]}) and spec = 2 ;";
+            string plancount = $"SELECT planea FROM tb_plan p where plannum = {dr[1]} ;";
+            int nowea = Convert.ToInt32(db.Select(count).Rows[0][0]);
+            int planea = Convert.ToInt32(db.Select(plancount).Rows[0][0]);
+            string setvalue = $" nowea = {nowea}";
+            db.Update("tb_plan", $" nowea = {nowea}", $"WHERE plannum = {dr[1]} ;");
+
+            if (nowea >= planea)
+            {
+
+                string planquery = "ALTER TABLE tb_flow MODIFY COLUNM plannum INT DEFAULT " +
+                    "(select plannum from tb_plan where nowea < planea order by priority,duetime limit 1 );";
+                db.alter(planquery);
+            }
+            else { }
         }
 
         private void tb_pronow_TextChanged(object sender, EventArgs e)
