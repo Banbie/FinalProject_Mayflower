@@ -144,5 +144,10 @@ namespace FinalProject_C3
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Tab_Device_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }

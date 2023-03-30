@@ -75,11 +75,11 @@ namespace FinalProject_C3
                 }
                 else if (dr[2].ToString() == "2")
                 {
-                    string count = $"SELECT count(*) FROM tb_prod where lotnum = " +
-                        $"(SELECT distinct prodnum from tb_flow where plannum = {dr[1]}) and spec = 2 ;";
-                    string plancount = $"SELECT planea FROM tb_plan p where plannum = {dr[1]} ;";
-                    int nowea = Convert.ToInt32(db.Select(count).Rows[0][0]);
-                    int planea = Convert.ToInt32(db.Select(plancount).Rows[0][0]);
+                    //string count = $"SELECT count(*) FROM tb_prod where lotnum = " +
+                    //    $"(SELECT distinct prodnum from tb_flow where plannum = {dr[1]}) and spec = 2 ;";
+                    //string plancount = $"SELECT planea FROM tb_plan p where plannum = {dr[1]} ;";
+                    //int nowea = Convert.ToInt32(db.Select(count).Rows[0][0]);
+                    //int planea = Convert.ToInt32(db.Select(plancount).Rows[0][0]);
                     //string values = $"";
                     //db.Update("tb_plan",);
 
