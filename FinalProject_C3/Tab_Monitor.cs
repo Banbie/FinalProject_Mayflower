@@ -75,7 +75,7 @@ namespace FinalProject_C3
                 }
                 else if (dr[2].ToString() == "2")
                 {
-                    noweaupdate(dr[1]);
+                    noweaupdate(dr);
                 }
             }
             catch (Exception ex)
