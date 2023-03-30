@@ -40,8 +40,6 @@ namespace FinalProject_C3
 
         private void Tab_Search_Load(object sender, EventArgs e)
         {
-            // 타이머 시작
-            timer.Start();
             db.Connection();
             // 최근 30개 완료된 계획 가져오기
             string query = "SELECT comname AS '주문자',planea AS '주문량' ,donedate AS '완료시각' FROM tb_plan WHERE donedate IS NOT NULL ORDER BY donedate DESC LIMIT 30";
@@ -68,12 +66,8 @@ namespace FinalProject_C3
             DateTime startDate = dt_Time.Value.Date;
             DateTime endDate = dt_Time1.Value.Date.AddDays(1);
 
-            // 각 날짜별 총 생산량 조회
-            string query = $"SELECT DATE(donedate) as '날짜', SUM(planea) as '총 생산량' FROM tb_plan WHERE donedate >= '{startDate:yyyy-MM-dd}' AND donedate < '{endDate:yyyy-MM-dd}' GROUP BY DATE(donedate)";
-            DataTable result = db.ExecuteDataTable(query);
-
-            // tfs 테이블에서 각 일자별 불량갯수 조회
-            query = $"SELECT DATE(DayTime), MAX(defective) FROM tfs WHERE DayTime >= '{startDate:yyyy-MM-dd}' AND DayTime < '{endDate:yyyy-MM-dd}' GROUP BY DATE(DayTime)";
+            // tfs 테이블에서 각 일자별 총 생산량, 불량갯수 조회
+            string query = $"SELECT DATE(DayTime) AS '날짜', MAX(acceptive) AS '총 생산량', MAX(defective) AS '불량 갯수' FROM tfs WHERE DayTime >= '{startDate:yyyy-MM-dd}' AND DayTime < '{endDate:yyyy-MM-dd}' GROUP BY DATE(DayTime)";
             DataTable defectResult = db.ExecuteDataTable(query);
 
             // 검색 결과를 출력할 데이터 그리드뷰의 컬럼 설정
@@ -88,11 +82,12 @@ namespace FinalProject_C3
             // 각 일자별 불량률 계산 및 데이터 그리드뷰에 출력
             foreach (DataRow row in defectResult.Rows)
             {
-                DateTime date = Convert.ToDateTime(row["DATE(DayTime)"]);
-                int defectCount = Convert.ToInt32(row["MAX(defective)"]);
+                DateTime date = Convert.ToDateTime(row["날짜"]);
+                int acceptCount = Convert.ToInt32(row["총 생산량"]);
+                int defectCount = Convert.ToInt32(row["불량 갯수"]);
 
                 // 해당 날짜에 맞는 총 생산량 조회
-                DataRow[] prodRows = result.Select($"날짜 = '{date:yyyy-MM-dd}'");
+                DataRow[] prodRows = defectResult.Select($"날짜 = '{date:yyyy-MM-dd}'");
                 int totalProduction = prodRows.Length > 0 ? Convert.ToInt32(prodRows[0]["총 생산량"]) : 0;
 
                 double defectRate = totalProduction != 0 ? Math.Round((double)defectCount / totalProduction * 100, 2) : 0;
