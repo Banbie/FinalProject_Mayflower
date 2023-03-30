@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dt_Time = new MetroFramework.Controls.MetroDateTime();
             this.dt_Time1 = new MetroFramework.Controls.MetroDateTime();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,84 +51,90 @@
             // 
             // dt_Time
             // 
-            this.dt_Time.Location = new System.Drawing.Point(29, 78);
-            this.dt_Time.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dt_Time.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dt_Time.Location = new System.Drawing.Point(23, 58);
+            this.dt_Time.MinimumSize = new System.Drawing.Size(0, 29);
             this.dt_Time.Name = "dt_Time";
-            this.dt_Time.Size = new System.Drawing.Size(181, 29);
+            this.dt_Time.Size = new System.Drawing.Size(194, 29);
             this.dt_Time.TabIndex = 2;
             // 
             // dt_Time1
             // 
-            this.dt_Time1.Location = new System.Drawing.Point(232, 62);
+            this.dt_Time1.Location = new System.Drawing.Point(243, 58);
+            this.dt_Time1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dt_Time1.MinimumSize = new System.Drawing.Size(0, 29);
             this.dt_Time1.Name = "dt_Time1";
-            this.dt_Time1.Size = new System.Drawing.Size(183, 29);
+            this.dt_Time1.Size = new System.Drawing.Size(194, 29);
             this.dt_Time1.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(212, 72);
+            this.label2.Location = new System.Drawing.Point(223, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 15);
+            this.label2.Size = new System.Drawing.Size(14, 12);
             this.label2.TabIndex = 11;
             this.label2.Text = "~";
             // 
             // dgv_Search
             // 
+            this.dgv_Search.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dgv_Search.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Search.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.날짜,
             this.총생산량,
             this.불량갯수,
             this.불량률});
-            this.dgv_Search.Location = new System.Drawing.Point(501, 62);
+            this.dgv_Search.Location = new System.Drawing.Point(23, 101);
+            this.dgv_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_Search.Name = "dgv_Search";
             this.dgv_Search.RowHeadersWidth = 51;
             this.dgv_Search.RowTemplate.Height = 23;
-            this.dgv_Search.Size = new System.Drawing.Size(523, 201);
+            this.dgv_Search.Size = new System.Drawing.Size(474, 155);
             this.dgv_Search.TabIndex = 12;
             // 
             // dgv_doneplan
             // 
+            this.dgv_doneplan.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dgv_doneplan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_doneplan.Location = new System.Drawing.Point(23, 108);
+            this.dgv_doneplan.Location = new System.Drawing.Point(518, 58);
+            this.dgv_doneplan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_doneplan.Name = "dgv_doneplan";
             this.dgv_doneplan.RowTemplate.Height = 23;
-            this.dgv_doneplan.Size = new System.Drawing.Size(472, 155);
+            this.dgv_doneplan.Size = new System.Drawing.Size(425, 198);
             this.dgv_doneplan.TabIndex = 13;
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(23, 269);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
+            this.chart1.Location = new System.Drawing.Point(23, 260);
+            this.chart1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "총생산량";
-            series4.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "불량갯수";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "불량률(%)";
-            this.chart1.Series.Add(series4);
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
-            this.chart1.Size = new System.Drawing.Size(1001, 398);
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "총생산량";
+            series10.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series11.ChartArea = "ChartArea1";
+            series11.Legend = "Legend1";
+            series11.Name = "불량갯수";
+            series12.ChartArea = "ChartArea1";
+            series12.Legend = "Legend1";
+            series12.Name = "불량률(%)";
+            this.chart1.Series.Add(series10);
+            this.chart1.Series.Add(series11);
+            this.chart1.Series.Add(series12);
+            this.chart1.Size = new System.Drawing.Size(957, 344);
             this.chart1.TabIndex = 14;
             this.chart1.Text = "chart1";
             // 
             // btn_Search
             // 
-            this.btn_Search.Location = new System.Drawing.Point(421, 62);
+            this.btn_Search.Location = new System.Drawing.Point(447, 64);
+            this.btn_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(74, 29);
+            this.btn_Search.Size = new System.Drawing.Size(65, 23);
             this.btn_Search.TabIndex = 15;
             this.btn_Search.Text = "검색";
             this.btn_Search.UseSelectable = true;
@@ -146,27 +152,24 @@
             this.총생산량.HeaderText = "총 생산량";
             this.총생산량.MinimumWidth = 6;
             this.총생산량.Name = "총생산량";
-            this.총생산량.Width = 120;
             // 
             // 불량갯수
             // 
             this.불량갯수.HeaderText = "불량 갯수";
             this.불량갯수.MinimumWidth = 6;
             this.불량갯수.Name = "불량갯수";
-            this.불량갯수.Width = 120;
             // 
             // 불량률
             // 
             this.불량률.HeaderText = "불량률";
             this.불량률.MinimumWidth = 6;
             this.불량률.Name = "불량률";
-            this.불량률.Width = 120;
             // 
             // Tab_Search
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 690);
+            this.ClientSize = new System.Drawing.Size(1001, 611);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.dgv_doneplan);
@@ -174,9 +177,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dt_Time1);
             this.Controls.Add(this.dt_Time);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Tab_Search";
-            this.Padding = new System.Windows.Forms.Padding(23, 75, 23, 25);
             this.Text = "실적확인";
             this.Load += new System.EventHandler(this.Tab_Search_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Search)).EndInit();

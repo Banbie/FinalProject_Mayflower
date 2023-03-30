@@ -42,6 +42,12 @@ namespace FinalProject_C3
             string query = "SELECT comname AS '주문자',planea AS '주문량' ,donedate AS '완료시각' FROM tb_plan WHERE donedate IS NOT NULL ORDER BY donedate DESC LIMIT 30";
             DataTable donePlanTable = db.ExecuteDataTable(query);
             dgv_doneplan.DataSource = donePlanTable;
+            dgv_doneplan.Columns["주문자"].Width = 120;
+            dgv_doneplan.Columns["주문량"].Width = 120;
+            dgv_doneplan.Columns["완료시각"].Width = 140;
+            // DataGridView 마지막 행에 빈칸이 나오는 경우 방지
+            dgv_Search.AllowUserToAddRows = false;
+            dgv_doneplan.AllowUserToAddRows = false;
         }
 
         private void btn_Search_Click_1(object sender, EventArgs e)
@@ -61,9 +67,11 @@ namespace FinalProject_C3
             // 검색 결과를 출력할 데이터 그리드뷰의 컬럼 설정
             dgv_Search.Columns.Clear();
             dgv_Search.Columns.Add("Date", "날짜");
+            dgv_Search.Columns["Date"].Width = 120;
             dgv_Search.Columns.Add("TotalProduction", "총 생산량");
             dgv_Search.Columns.Add("DefectiveCount", "불량 갯수");
             dgv_Search.Columns.Add("DefectiveRate", "불량률(%)");
+
 
             // 각 일자별 불량률 계산 및 데이터 그리드뷰에 출력
             foreach (DataRow row in defectResult.Rows)
