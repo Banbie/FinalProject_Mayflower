@@ -234,6 +234,10 @@
     <None Include="Resources\mayflower %281%29.png" />
     <None Include="Resources\mayflower.png" />
     <None Include="Resources\03-28_8.jpg" />
+    <None Include="Resources\new-moon %282%29.png" />
+    <None Include="Resources\new-moon %281%29.png" />
+    <None Include="Resources\new-moon %283%29.png" />
+    <None Include="Resources\new-moon %284%29.png" />
     <Content Include="Resources\yacht.png" />
     <Content Include="Resources\로그인화면3.png" />
     <None Include="Resources\dial.png" />

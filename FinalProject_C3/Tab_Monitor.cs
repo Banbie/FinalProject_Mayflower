@@ -31,11 +31,13 @@ namespace FinalProject_C3
         {
             get_picture();
             get_qual();
+            lightdisplay();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             get_prosess();
+            lightdisplay();
             mpb_pro.PerformStep();
         }
 
@@ -75,7 +77,8 @@ namespace FinalProject_C3
                 }
                 else if (dr[2].ToString() == "2")
                 {
-                    noweaupdate(dr);
+                    TF(dr[0].ToString());
+                    //noweaupdate(dr);
                 }
             }
             catch (Exception ex)
@@ -157,6 +160,38 @@ namespace FinalProject_C3
 
         }
 
+        private void lightdisplay()
+        {
+            string count = "SELECT green,orange,red FROM light;";
+            DataTable dt = db.Select(count);
+            DataRow ldr = dt.Rows[dt.Rows.Count - 1];
+            if (ldr[0].Equals(false)) 
+            { pbgreen.Visible = false; }
+            else 
+            { pbgreen.Visible = true; }
+            if (ldr[1].Equals(false)) 
+            { pborange.Visible = false; }
+            else 
+            { pborange.Visible = true; }
+            if (ldr[2].Equals(false)) 
+            { pbred.Visible = false; }
+            else
+            { pbred.Visible = true; }
+        }
+
+        private void TF(string where)
+        {
+            string spec = $"SELECT spec from tb_prod where lotnum = '{where}' ;";
+            if (db.Select(spec).Rows[0][0].Equals(2))
+            {
+                tbtf.Text = "합격";
+            }
+            else if (db.Select(spec).Rows[0][0].Equals(1))
+            {
+                tbtf.Text = "불합격";
+            }
+        }
+
         private void noweaupdate(DataRow dr)
         {
             string count = $"SELECT count(*) FROM tb_prod where lotnum = " +
@@ -179,6 +214,7 @@ namespace FinalProject_C3
 
         private void tb_pronow_TextChanged(object sender, EventArgs e)
         {
+            tbtf.Text = "";
             get_picture();
             progress();
         }
