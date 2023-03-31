@@ -307,6 +307,10 @@ namespace FinalProject_C3
                     {
                         reader.ExecuteNonQuery();
                     }
+                    if (deltaEa < 0)  //안전구문
+                    {
+                        deltaEa = 0;
+                    }
                 }
             }
             catch(Exception ex)
@@ -606,6 +610,8 @@ namespace FinalProject_C3
             planLabel[11].Name = $"planPanel_duedateValue";
             planLabel[12].Name = $"planPanel_plannumValue";
 
+
+
             //db에서 불러오기
             planLabel[7].Text = row[1].ToString();
             planLabel[8].Text = row[6].ToString();
@@ -613,6 +619,17 @@ namespace FinalProject_C3
             planLabel[10].Text = row[5].ToString();
             planLabel[11].Text = row[2].ToString();
             planLabel[12].Text = row[0].ToString();
+
+            int planEa = int.Parse(planLabel[10].Text);
+            int nowEa = int.Parse(planLabel[9].Text.ToString());
+            if (nowEa != 0 && planEa > nowEa)
+            {
+                planTb.Text = "진행중";
+            }
+            else if (planEa == nowEa)
+            {
+                planTb.Text = "출하 완료";
+            }
         }
 
         void CancelBtn_Click(object sender, EventArgs e)
