@@ -56,6 +56,7 @@
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.dgv_plan = new System.Windows.Forms.DataGridView();
+            this.bt_done = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.prod_chart)).BeginInit();
             this.planManager.SuspendLayout();
             this.testTile1.SuspendLayout();
@@ -301,7 +302,7 @@
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(90, 40);
             this.metroButton1.TabIndex = 12;
-            this.metroButton1.Text = "기본정렬";
+            this.metroButton1.Text = "새로고침";
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
@@ -344,12 +345,23 @@
             this.dgv_plan.Size = new System.Drawing.Size(685, 219);
             this.dgv_plan.TabIndex = 16;
             // 
+            // bt_done
+            // 
+            this.bt_done.Location = new System.Drawing.Point(628, 449);
+            this.bt_done.Name = "bt_done";
+            this.bt_done.Size = new System.Drawing.Size(90, 40);
+            this.bt_done.TabIndex = 17;
+            this.bt_done.Text = "출하";
+            this.bt_done.UseSelectable = true;
+            this.bt_done.Click += new System.EventHandler(this.bt_done_Click);
+            // 
             // Tab_Plan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1109, 750);
+            this.Controls.Add(this.bt_done);
             this.Controls.Add(this.dgv_plan);
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.metroButton3);
@@ -394,5 +406,6 @@
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton4;
         private System.Windows.Forms.DataGridView dgv_plan;
+        private MetroFramework.Controls.MetroButton bt_done;
     }
 }

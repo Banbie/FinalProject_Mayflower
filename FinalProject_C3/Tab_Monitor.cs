@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.AxHost;
 using System.IO;
+using FinalProject_C3.Properties;
 
 namespace FinalProject_C3
 {
@@ -23,6 +24,10 @@ namespace FinalProject_C3
         public Tab_Monitor()
         {
             InitializeComponent();
+
+            pbgreen.Image = Resources.new_moon__3_;
+            pborange.Image = Resources.new_moon__4_;
+            pbred.Image = Resources.new_moon__2_;
             timer1.Interval = 1000;
             timer1.Start();
         }
@@ -31,11 +36,13 @@ namespace FinalProject_C3
         {
             get_picture();
             get_qual();
+            lightdisplay();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             get_prosess();
+            lightdisplay();
             mpb_pro.PerformStep();
         }
 
@@ -75,7 +82,8 @@ namespace FinalProject_C3
                 }
                 else if (dr[2].ToString() == "2")
                 {
-                    noweaupdate(dr);
+                    TF(dr[0].ToString());
+                    //noweaupdate(dr);
                 }
             }
             catch (Exception ex)
@@ -157,6 +165,39 @@ namespace FinalProject_C3
 
         }
 
+        private void lightdisplay()
+        {
+            string count = "SELECT green,orange,red FROM light ORDER BY lightcol DESC LIMIT 1;";
+            DataRow ldr = db.Select(count).Rows[0];
+            if (ldr[0].ToString() == "0") 
+            { pbgreen.Visible = false; }
+            else 
+            { pbgreen.Visible = true; }
+
+            if (ldr[1].ToString() == "0") 
+            { pborange.Visible = false; }
+            else 
+            { pborange.Visible = true; }
+
+            if (ldr[2].ToString() == "0") 
+            { pbred.Visible = false; }
+            else
+            { pbred.Visible = true; }
+        }
+
+        private void TF(string where)
+        {
+            string spec = $"SELECT spec from tb_prod where lotnum = '{where}' ;";
+            if (db.Select(spec).Rows[0][0].Equals(2))
+            {
+                tbtf.Text = "합격";
+            }
+            else if (db.Select(spec).Rows[0][0].Equals(1))
+            {
+                tbtf.Text = "불합격";
+            }
+        }
+
         private void noweaupdate(DataRow dr)
         {
             string count = $"SELECT count(*) FROM tb_prod where lotnum = " +
@@ -179,6 +220,7 @@ namespace FinalProject_C3
 
         private void tb_pronow_TextChanged(object sender, EventArgs e)
         {
+            tbtf.Text = "대기";
             get_picture();
             progress();
         }
