@@ -169,17 +169,17 @@ namespace FinalProject_C3
         {
             string count = "SELECT green,orange,red FROM light ORDER BY lightcol DESC LIMIT 1;";
             DataRow ldr = db.Select(count).Rows[0];
-            if (ldr[0].Equals(false)) 
+            if (ldr[0].ToString() == "0") 
             { pbgreen.Visible = false; }
             else 
             { pbgreen.Visible = true; }
 
-            if (ldr[1].Equals(false)) 
+            if (ldr[1].ToString() == "0") 
             { pborange.Visible = false; }
             else 
             { pborange.Visible = true; }
 
-            if (ldr[2].Equals(false)) 
+            if (ldr[2].ToString() == "0") 
             { pbred.Visible = false; }
             else
             { pbred.Visible = true; }

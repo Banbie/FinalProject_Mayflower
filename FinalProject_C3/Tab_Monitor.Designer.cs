@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tb_pronow = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -173,17 +173,17 @@
             // 
             // prod_chart
             // 
-            chartArea7.Name = "ChartArea1";
-            this.prod_chart.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.prod_chart.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.prod_chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.prod_chart.Legends.Add(legend1);
             this.prod_chart.Location = new System.Drawing.Point(12, 240);
             this.prod_chart.Name = "prod_chart";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.prod_chart.Series.Add(series7);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.prod_chart.Series.Add(series1);
             this.prod_chart.Size = new System.Drawing.Size(350, 231);
             this.prod_chart.TabIndex = 3;
             this.prod_chart.Text = "chart1";
@@ -233,6 +233,7 @@
             this.tbtf.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tbtf.Location = new System.Drawing.Point(808, 312);
             this.tbtf.Name = "tbtf";
+            this.tbtf.ReadOnly = true;
             this.tbtf.Size = new System.Drawing.Size(229, 63);
             this.tbtf.TabIndex = 12;
             this.tbtf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
