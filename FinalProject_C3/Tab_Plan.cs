@@ -14,6 +14,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace FinalProject_C3
 {
@@ -24,12 +25,12 @@ namespace FinalProject_C3
         public static MySqlConnection ConnectDB()
         {
             string connectionString =
-            //"Server=192.168.0.3;;" +
-            "Server=localhost;" +
+            "Server=192.168.0.3;;" +
+            //"Server=localhost;" +
             "Database=mayflower;" +
             "Port=3306;" +
-            //"Uid=edu;" +
-            "Uid=root;" +
+            "Uid=edu;" +
+            //"Uid=root;" +
             "Pwd=1234;";
             MySqlConnection connection = new MySqlConnection(connectionString);
 
@@ -69,16 +70,9 @@ namespace FinalProject_C3
 
             prod_chart.Titles.Add("생산 완료/미완료 비율");
 
-            //Test
-           UpdateRow(GridInit());
-            int remain = 0;
-            //여기에 deltaEa값 넣고 remain에 넣음 됨
-            while (remain!=0)
-            {
-                string setStr = UpdateRow(GridInit());
-                remain=UpdateNowea(setStr, remain);
-             }
-         }
+                                                   //Test
+
+        }
 
         public void PanelInit()
         {
@@ -273,6 +267,60 @@ namespace FinalProject_C3
             return targetRow;
         }
 
+        private int DeltaEa()
+        {
+            int deltaEa = 0;
+            int pastEa = 0;
+            connection.Open();
+            var query= "SELECT acceptive FROM tfs WHERE state = 'done' ORDER BY daytime DESC LIMIT 1;";
+            try
+            {
+                MySqlCommand reader = new MySqlCommand(query, connection); //과거에 읽어온 done 값 검색
+                if(reader.ExecuteScalar()==null)
+                {
+                    query = "SELECT acceptive FROM tfs WHERE daytime = (SELECT MAX(daytime) FROM tfs);";
+                    using (reader = new MySqlCommand(query, connection))
+                    {
+                        deltaEa = Int32.Parse(reader.ExecuteScalar().ToString());
+                    }
+                    query = "UPDATE tfs SET state = 'done' WHERE daytime = (SELECT MAX(daytime) FROM (SELECT * FROM tfs) AS t);";
+                    using (reader = new MySqlCommand(query, connection))
+                    {
+                        reader.ExecuteNonQuery();
+                    }
+                    if (deltaEa < 0)  //안전구문
+                    {
+                        deltaEa = 0;
+                    }
+                }
+                else
+                {
+                    pastEa = Int32.Parse(reader.ExecuteScalar().ToString()); //done값이 있을 경우 pastEa 값에 넣었던 총 갯수 저장
+
+                    query = "SELECT acceptive FROM tfs WHERE daytime = (SELECT MAX(daytime) FROM tfs);";
+                    using (reader = new MySqlCommand(query, connection))
+                    {
+                        deltaEa = Int32.Parse(reader.ExecuteScalar().ToString())-pastEa;
+                    }
+                    query = "UPDATE tfs SET state = 'done' WHERE daytime = (SELECT MAX(daytime) FROM (SELECT * FROM tfs) AS t);";
+                    using (reader = new MySqlCommand(query, connection))
+                    {
+                        reader.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            connection.Close();
+
+
+
+
+            return deltaEa;
+        }
+
         private int UpdateNowea(string data, int deltaEa) // nowea 최신화하고 남는 갯수 리턴
         {
             
@@ -422,9 +470,20 @@ namespace FinalProject_C3
             RefTile("planea", 1);
             GridInit("planea", 1);
         }
-    
+
+        private void bt_done_Click(object sender, EventArgs e)
+        {
+            int remain = 0;
+            //여기에 deltaEa값 넣고 remain에 넣음 됨
+            remain = DeltaEa();
+            while (remain != 0)
+            {
+                string setStr = UpdateRow(GridInit());
+                remain = UpdateNowea(setStr, remain);
+            }
+        }
     }
-    
+
     public class OrderTile : MetroFramework.Forms.MetroForm
     {
         DataRow row;
