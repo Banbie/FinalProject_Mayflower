@@ -162,17 +162,18 @@ namespace FinalProject_C3
 
         private void lightdisplay()
         {
-            string count = "SELECT green,orange,red FROM light;";
-            DataTable dt = db.Select(count);
-            DataRow ldr = dt.Rows[dt.Rows.Count - 1];
+            string count = "SELECT green,orange,red FROM light ORDER BY lightcol DESC LIMIT 1;";
+            DataRow ldr = db.Select(count).Rows[0];
             if (ldr[0].Equals(false)) 
             { pbgreen.Visible = false; }
             else 
             { pbgreen.Visible = true; }
+
             if (ldr[1].Equals(false)) 
             { pborange.Visible = false; }
             else 
             { pborange.Visible = true; }
+
             if (ldr[2].Equals(false)) 
             { pbred.Visible = false; }
             else
@@ -214,7 +215,7 @@ namespace FinalProject_C3
 
         private void tb_pronow_TextChanged(object sender, EventArgs e)
         {
-            tbtf.Text = "";
+            tbtf.Text = "대기";
             get_picture();
             progress();
         }

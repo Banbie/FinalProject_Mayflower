@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tb_pronow = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -173,17 +173,17 @@
             // 
             // prod_chart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.prod_chart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.prod_chart.Legends.Add(legend3);
+            chartArea7.Name = "ChartArea1";
+            this.prod_chart.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.prod_chart.Legends.Add(legend7);
             this.prod_chart.Location = new System.Drawing.Point(12, 240);
             this.prod_chart.Name = "prod_chart";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.prod_chart.Series.Add(series3);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.prod_chart.Series.Add(series7);
             this.prod_chart.Size = new System.Drawing.Size(350, 231);
             this.prod_chart.TabIndex = 3;
             this.prod_chart.Text = "chart1";
@@ -231,7 +231,7 @@
             // tbtf
             // 
             this.tbtf.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tbtf.Location = new System.Drawing.Point(808, 321);
+            this.tbtf.Location = new System.Drawing.Point(808, 312);
             this.tbtf.Name = "tbtf";
             this.tbtf.Size = new System.Drawing.Size(229, 63);
             this.tbtf.TabIndex = 12;
@@ -239,27 +239,27 @@
             // 
             // pbgreen
             // 
-            this.pbgreen.Location = new System.Drawing.Point(368, 240);
+            this.pbgreen.Location = new System.Drawing.Point(368, 272);
             this.pbgreen.Name = "pbgreen";
-            this.pbgreen.Size = new System.Drawing.Size(138, 130);
+            this.pbgreen.Size = new System.Drawing.Size(138, 137);
             this.pbgreen.TabIndex = 11;
             this.pbgreen.TabStop = false;
             this.pbgreen.Visible = false;
             // 
             // pborange
             // 
-            this.pborange.Location = new System.Drawing.Point(513, 240);
+            this.pborange.Location = new System.Drawing.Point(512, 272);
             this.pborange.Name = "pborange";
-            this.pborange.Size = new System.Drawing.Size(139, 130);
+            this.pborange.Size = new System.Drawing.Size(139, 137);
             this.pborange.TabIndex = 10;
             this.pborange.TabStop = false;
             this.pborange.Visible = false;
             // 
             // pbred
             // 
-            this.pbred.Location = new System.Drawing.Point(658, 240);
+            this.pbred.Location = new System.Drawing.Point(657, 272);
             this.pbred.Name = "pbred";
-            this.pbred.Size = new System.Drawing.Size(138, 130);
+            this.pbred.Size = new System.Drawing.Size(138, 137);
             this.pbred.TabIndex = 9;
             this.pbred.TabStop = false;
             this.pbred.Visible = false;

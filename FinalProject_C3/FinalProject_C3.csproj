@@ -209,6 +209,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tab_Monitor.resx">
       <DependentUpon>Tab_Monitor.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -235,7 +236,6 @@
     <None Include="Resources\mayflower.png" />
     <None Include="Resources\03-28_8.jpg" />
     <None Include="Resources\new-moon %282%29.png" />
-    <None Include="Resources\new-moon %281%29.png" />
     <None Include="Resources\new-moon %283%29.png" />
     <None Include="Resources\new-moon %284%29.png" />
     <Content Include="Resources\yacht.png" />
