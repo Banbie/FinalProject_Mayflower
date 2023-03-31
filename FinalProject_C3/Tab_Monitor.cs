@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.AxHost;
 using System.IO;
+using FinalProject_C3.Properties;
 
 namespace FinalProject_C3
 {
@@ -23,6 +24,10 @@ namespace FinalProject_C3
         public Tab_Monitor()
         {
             InitializeComponent();
+
+            pbgreen.Image = Resources.new_moon__3_;
+            pborange.Image = Resources.new_moon__4_;
+            pbred.Image = Resources.new_moon__2_;
             timer1.Interval = 1000;
             timer1.Start();
         }
