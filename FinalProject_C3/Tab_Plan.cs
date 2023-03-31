@@ -24,10 +24,12 @@ namespace FinalProject_C3
         public static MySqlConnection ConnectDB()
         {
             string connectionString =
-            "Server=192.168.0.3;;" +
+            //"Server=192.168.0.3;;" +
+            "Server=localhost;" +
             "Database=mayflower;" +
             "Port=3306;" +
-            "Uid=edu;" +
+            //"Uid=edu;" +
+            "Uid=root;" +
             "Pwd=1234;";
             MySqlConnection connection = new MySqlConnection(connectionString);
 
@@ -36,6 +38,47 @@ namespace FinalProject_C3
         MySqlConnection connection = ConnectDB();
 
         public int planRowNumber;
+        public Tab_Plan()
+        {
+            // 데이터베이스 연결
+            try
+            {
+                connection.Open();
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리
+                MessageBox.Show(ex.Message);
+            }
+
+            var query = "SELECT COUNT(*) FROM tb_plan;";
+            using (MySqlCommand reader = new MySqlCommand(query, connection))
+            {
+                planRowNumber = Convert.ToInt32(reader.ExecuteScalar()) - 1;
+            }
+            connection.Close();
+
+            InitializeComponent();
+
+            PanelInit();
+
+            dgv_plan.DataSource = GridInit();
+            managerTimer.Interval = 1000; // 1초 간격으로 실행
+            managerTimer.Tick += timer1_Tick; // 타이머 이벤트 핸들러 설정
+            managerTimer.Start(); // 타이머 시작
+
+            prod_chart.Titles.Add("생산 완료/미완료 비율");
+
+            //Test
+           UpdateRow(GridInit());
+            int remain = 0;
+            //여기에 deltaEa값 넣고 remain에 넣음 됨
+            while (remain!=0)
+            {
+                string setStr = UpdateRow(GridInit());
+                remain=UpdateNowea(setStr, remain);
+             }
+         }
 
         public void PanelInit()
         {
@@ -86,7 +129,6 @@ namespace FinalProject_C3
 
             connection.Close();
         }
-
 
         public void PanelInit(string column , int order)  //overloading column 에 기준 컬럼 문자열로 쉼표를 통해 복수 설정 가능,  order==이면 내림차순 나머지 오름차순
         {
@@ -146,31 +188,6 @@ namespace FinalProject_C3
             connection.Close();
         } 
 
-        private void GridInit()
-        {
-
-            try
-            {
-                connection.Open();
-            }
-            catch (Exception ex)
-            {
-                // 예외 처리
-                MessageBox.Show(ex.Message);
-            }
-            var dataTable = new DataTable();
-
-            var query = "SELECT * FROM tb_plan ORDER BY priority, duedate;";
-
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
-            {
-                adapter.Fill(dataTable);
-            }
-
-            dgv_plan.DataSource = dataTable;
-
-            connection.Close();
-        }
         private void GridInit(string column, int order)
         {
             string sortWay;
@@ -205,9 +222,9 @@ namespace FinalProject_C3
             connection.Close();
         }
 
-        public Tab_Plan()
+        private DataTable GridInit()
         {
-            // 데이터베이스 연결
+            DataTable dataTable = new DataTable();
             try
             {
                 connection.Open();
@@ -218,22 +235,76 @@ namespace FinalProject_C3
                 MessageBox.Show(ex.Message);
             }
 
-            var query = "SELECT COUNT(*) FROM tb_plan;";
-            using (MySqlCommand reader = new MySqlCommand(query, connection))
+            var query = "SELECT * FROM tb_plan ORDER BY priority, duedate;";
+
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
             {
-                planRowNumber = Convert.ToInt32(reader.ExecuteScalar()) - 1;
+                adapter.Fill(dataTable);
             }
+
             connection.Close();
 
-            InitializeComponent();
+            return dataTable;
+        } // sort 된 DataTable 리턴
 
-            PanelInit();
-            GridInit();
-            managerTimer.Interval = 1000; // 1초 간격으로 실행
-            managerTimer.Tick += timer1_Tick; // 타이머 이벤트 핸들러 설정
-            managerTimer.Start(); // 타이머 시작
+        private string UpdateRow(DataTable dataTable) //업데이트 해야하는 pk 체워야하는ea planea 공백기준으로 스트링 리턴
+        {
+            //init
+            string targetRow="";
+            int rowIndex = dataTable.Rows.Count;
+            DataRow row = dataTable.Rows[0]; //주문완료 된 행이 없는 경우 우선순위 첫번째 Primary Key 반환
+            int remain = Int32.Parse(row[5].ToString()) - Int32.Parse(row[4].ToString());
+            string noRow = row[0].ToString()+" "+ remain.ToString()+" " + row[5].ToString(); 
+            if (rowIndex > 0) //안전구문
+            {
+                for (int i =0; i<rowIndex; i++)
+                {
+                    row = dataTable.Rows[i];
 
-            prod_chart.Titles.Add("생산 완료/미완료 비율");
+                    if (row[4].ToString() != row[5].ToString())
+                    {
+                        remain = Int32.Parse(row[5].ToString()) - Int32.Parse(row[4].ToString());
+                        targetRow = row[0].ToString()+" "+ remain.ToString()+" " + row[5].ToString(); 
+                        break;
+                    }
+                    targetRow = noRow;
+                }
+            }
+            return targetRow;
+        }
+
+        private int UpdateNowea(string data, int deltaEa) // nowea 최신화하고 남는 갯수 리턴
+        {
+            
+            var query="";
+            string[] words = data.Split(' ');
+            int pk = Int32.Parse(words[0]);
+            int fillEa = Int32.Parse(words[1]);
+            int planEa = Int32.Parse(words[2]);
+            int handOver = 0;
+            DateTime dateTime= DateTime.Now;
+
+            if (deltaEa > fillEa)
+            {
+                query = $"UPDATE tb_plan SET nowea = {planEa}, donedate ='{dateTime}' WHERE plannum = {pk};";
+                handOver = deltaEa - fillEa;
+            }
+            else if(deltaEa == fillEa)
+            {
+                query = $"UPDATE tb_plan SET nowea = {planEa}, donedate ='{dateTime}' WHERE plannum = {pk};";
+            }
+            else
+            {
+                query = $"UPDATE tb_plan SET nowea = {planEa - fillEa + deltaEa} WHERE plannum = {pk};";
+            }
+            connection.Open();
+            using (MySqlCommand reader = new MySqlCommand(query, connection))
+            {
+                reader.ExecuteNonQuery();
+            }
+            connection.Close();
+            return handOver;
+
         }
 
         public void RefTile()
@@ -331,7 +402,7 @@ namespace FinalProject_C3
         private void metroButton1_Click(object sender, EventArgs e)
         {
             RefTile();
-            GridInit();
+            dgv_plan.DataSource = GridInit();
         }
 
         private void metroButton2_Click(object sender, EventArgs e) //순위
@@ -351,8 +422,9 @@ namespace FinalProject_C3
             RefTile("planea", 1);
             GridInit("planea", 1);
         }
-
+    
     }
+    
     public class OrderTile : MetroFramework.Forms.MetroForm
     {
         DataRow row;
