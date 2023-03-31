@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -50,14 +50,14 @@
             // 
             // chart1
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea9);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Left;
-            legend9.Name = "Legend1";
-            this.chart1.Legends.Add(legend9);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(23, 75);
             this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(463, 462);
+            this.chart1.Size = new System.Drawing.Size(456, 462);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             // 

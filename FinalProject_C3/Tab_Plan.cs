@@ -24,12 +24,12 @@ namespace FinalProject_C3
         public static MySqlConnection ConnectDB()
         {
             string connectionString =
-            //"Server=192.168.0.3;;" +
-            "Server=localhost;" +
+            "Server=192.168.0.3;;" +
+           // "Server=localhost;" +
             "Database=mayflower;" +
             "Port=3306;" +
-            //"Uid=edu;" +
-            "Uid=root;" +
+            "Uid=edu;" +
+           // "Uid=root;" +
             "Pwd=1234;";
             MySqlConnection connection = new MySqlConnection(connectionString);
 

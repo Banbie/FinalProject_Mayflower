@@ -135,7 +135,7 @@ namespace FinalProject_C3
         private void metroButton1_Click_1(object sender, EventArgs e)
         {
             
-                ActUtilType.SetDevice("M12", 0);//주황색 on, 빨간색 off 
+                ActUtilType.SetDevice("M12", 1);//주황색 on, 빨간색 off 
                
                 metroTextBox1.Text = "긴급 정지";
          
@@ -152,7 +152,6 @@ namespace FinalProject_C3
             timer1.Enabled = false;
             ActUtilType.SetDevice("M1", 1);
            metroTextBox1.Text = "미풍으로 돌아가는중";
-            ActUtilType.SetDevice("D113", 1);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -164,7 +163,6 @@ namespace FinalProject_C3
                 ActUtilType.SetDevice("M0", 1);
                 ActUtilType.SetDevice("M1", 1);
                 metroTextBox1.Text = "미풍으로 돌아가는중";
-                ActUtilType.SetDevice("D113", 1);
 
             }
             else if (DataRead1 > 19 && DataRead1 <= 21)
@@ -172,14 +170,13 @@ namespace FinalProject_C3
                 ActUtilType.SetDevice("M0", 1);
                 ActUtilType.SetDevice("M2", 1);
                 metroTextBox1.Text = "약풍으로 돌아가는중";
-                ActUtilType.SetDevice("D113", 2);
             }
             else if (DataRead1 > 21)
             {
                 ActUtilType.SetDevice("M0", 1);
                 ActUtilType.SetDevice("M3", 1);
                 metroTextBox1.Text = "강풍으로 돌아가는중";
-                ActUtilType.SetDevice("D113", 3);
+               
             }
         }
 
@@ -188,7 +185,7 @@ namespace FinalProject_C3
             timer1.Enabled = false;
             ActUtilType.SetDevice("M2", 1);
             metroTextBox1.Text = "약풍으로 돌아가는중";
-            ActUtilType.SetDevice("D113", 2);
+           
         }
 
         private void metroButton4_Click(object sender, EventArgs e)
@@ -196,7 +193,7 @@ namespace FinalProject_C3
             timer1.Enabled = false;
             ActUtilType.SetDevice("M3", 1);
             metroTextBox1.Text = "강풍으로 돌아가는중";
-            ActUtilType.SetDevice("D113", 3);
+            
         }
 
         private void metroButton5_Click(object sender, EventArgs e)
