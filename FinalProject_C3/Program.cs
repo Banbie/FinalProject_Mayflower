@@ -16,12 +16,12 @@ namespace FinalProject_C3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
-            //Application.Run(new Tab_Plan());
+            //Application.Run(new Login());
+            Application.Run(new Tab_Plan());
 
             (new Admin(new Dictionary<string, string>())).Show();
             //(new Admin()).Show();
-            Application.Run();
+           // Application.Run();
         }
     }
 }

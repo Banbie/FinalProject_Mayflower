@@ -476,6 +476,14 @@ namespace FinalProject_C3
             int remain = 0;
             //여기에 deltaEa값 넣고 remain에 넣음 됨
             remain = DeltaEa();
+            if(remain == 0)
+            {
+                MessageBox.Show("생산된 재고가 없습니다.");
+            }
+            else
+            {
+                MessageBox.Show("제품 출하 완료");
+            }
             while (remain != 0)
             {
                 string setStr = UpdateRow(GridInit());
