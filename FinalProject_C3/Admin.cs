@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,11 +26,10 @@ namespace FinalProject_C3
         const int STEP_SLIDING = 10;
         //최초 슬라이딩 메뉴 크기
         int _posSliding = 200;
-        //private Dictionary<string, string> userData;
 
-        //public Admin(Dictionary<string, string> userData)
+        
 
-        private readonly Dictionary<string, string> userData;
+        private Dictionary<string, string> userData;
         DBMySql db = new DBMySql();
 
         public Admin(Dictionary<string, string> userData)
@@ -37,36 +37,45 @@ namespace FinalProject_C3
             InitializeComponent();
             //로그인 할때 로그인 user테이블의 id를 검색해 그 행의 이름,직급을 가져와 라벨에 씌우는 코드인데
             //작동은 정상적으로 하는데 프로그램 종료 시 key값이 없다는 오류가 떠서 어차피 끄는거니 오류뜨면 종료하게 만듬
-            try
-            {
-                this.userData = userData;
+            UpdateTimeLabel();
 
-                // userData 변수를 이용하여 원하는 작업을 수행합니다.
-                // 예를 들어, 아래와 같이 라벨에 값을 설정할 수 있습니다.
-                lb_UserName.Text = userData["username"];
-                lb_Position.Text = userData["author"];
-                string query = $"ALTER TABLE tb_flow MODIFY usernum INT DEFAULT {userData["usernum"]}";
-                db.alter(query);
+            //try
+            //{
 
-            }
-            catch (KeyNotFoundException ex)
-            {
-                //MessageBox.Show("사용자 정보를 찾을 수 없습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
-            }
-        }
+            //    // userData 변수를 이용하여 원하는 작업을 수행합니다.
+            //    // 예를 들어, 아래와 같이 라벨에 값을 설정할 수 있습니다.
+            //string query = $"ALTER TABLE tb_flow MODIFY usernum INT DEFAULT {this.userData["usernum"]}";  //banbie 왜 알터테이블?
+            //db.alter(query);
 
-        private void Admin_Load(object sender, EventArgs e)
-        {
-            bt_Monitor.PerformClick(); // 기본적으로 생산계획 폼 열어놓기
+            //}
+            //catch (KeyNotFoundException ex)
+            //{
+            //    //MessageBox.Show("사용자 정보를 찾을 수 없습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    Application.Exit();
+            //}
+
+
+            //Admin backend init
+            this.userData = userData;
+            lb_UserName.Text = $"안녕하세요! {this.userData["username"]} 님";
+            lb_Position.Text = this.userData["author"];
+
+            //Admin frontend init
+            Location = new Point(
+            (pn_Center.Width - Width) / 2 + pn_Center.Location.X,
+            (pn_Center.Height - Height) / 2 + pn_Center.Location.Y);
+            OpenFormInPanel(new Tab_Plan());
+
             timerDate.Interval = 100; //타이머 간격 100ms
             timerDate.Start();  //타이머 시작            
-            lb_LogTime.Text = DateTime.Now.ToString("T"); // label1에 현재날짜시간 표시, F:자세한 전체 날짜/시간
-            this.Location = new Point(
-            (pn_Center.Width - this.Width) / 2 + pn_Center.Location.X,
-            (pn_Center.Height - this.Height) / 2 + pn_Center.Location.Y
-    );
+
         }
+
+        private void UpdateTimeLabel()
+        {
+            lb_NowTime.Text = DateTime.Now.ToString("F");
+        }
+
         private void cb_Hide_CheckedChanged(object sender, EventArgs e)
         {
             if (cb_Hide.Checked == true)
@@ -113,8 +122,8 @@ namespace FinalProject_C3
         } // 네비게이션 탭 슬라이딩메뉴 모션
         private void bt_Plan_Click(object sender, EventArgs e)
         {
-            Tab_Plan plan = new Tab_Plan();
-            OpenFormInPanel(plan);
+            OpenFormInPanel(new Tab_Plan());
+
         } // 생산계획 폼 열기
         private void bt_Search_Click(object sender, EventArgs e)
         {
@@ -144,22 +153,23 @@ namespace FinalProject_C3
 
         private void Admin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            string query = $"ALTER TABLE tb_flow MODIFY usernum INT DEFAULT null";
-            db.alter(query);
-            Application.Exit();
+            //string query = $"ALTER TABLE tb_flow MODIFY usernum INT DEFAULT null"; //banbie 왜 여기도 알터테이블?
+            //db.alter(query);
+            //Application.Exit();
         }
 
         private void timerDate_Tick(object sender, EventArgs e)
         {
-            lb_NowTime.Text = DateTime.Now.ToString("F");
-            // label1에 현재날짜시간 표시, F:자세한 전체 날짜/시간
-            // T:시간만 표시
+            UpdateTimeLabel();
         }
-        private void OpenFormInPanel(Form form)
+        private void OpenFormInPanel(MetroForm form)
         {
-            form.TopLevel = true;
-            pn_Right.Controls.Contains(form);
-            form.Show();
+            pn_Right.Controls.Clear();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            form.ShadowType = MetroFormShadowType.None;
+            pn_Right.Controls.Add(form);
         }
     }
 }

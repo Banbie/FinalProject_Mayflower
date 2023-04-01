@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace FinalProject_C3
         public static MySqlConnection ConnectDB()
         {
             string connectionString =
-            "Server=192.168.0.3;;" +
+             "Server=192.168.0.3;;" +
             //"Server=localhost;" +
             "Database=mayflower;" +
             "Port=3306;" +
@@ -63,15 +64,19 @@ namespace FinalProject_C3
 
             PanelInit();
 
-            dgv_plan.DataSource = GridInit();
-            managerTimer.Interval = 1000; // 1초 간격으로 실행
-            managerTimer.Tick += timer1_Tick; // 타이머 이벤트 핸들러 설정
-            managerTimer.Start(); // 타이머 시작
+            UpdateChart();
+
+            DataTable dataTable = GridInit();
+            dataTable.Columns.RemoveAt(0);
+            dgv_plan.DataSource = dataTable;
+
+            //managerTimer.Interval = 1000; // 1초 간격으로 실행
+            //managerTimer.Tick += timer1_Tick; // 타이머 이벤트 핸들러 설정
+            //managerTimer.Start(); // 타이머 시작
 
             prod_chart.Titles.Add("생산 완료/미완료 비율");
-
-                                                   //Test
-
+            
+            Show();
         }
 
         public void PanelInit()
@@ -211,6 +216,14 @@ namespace FinalProject_C3
                 adapter.Fill(dataTable);
             }
 
+            dataTable.Columns.RemoveAt(0);
+            dataTable.Columns[1].ColumnName = "수주일자";
+            dataTable.Columns[2].ColumnName = "납기기한";
+            dataTable.Columns[3].ColumnName = "주문자";
+            dataTable.Columns[4].ColumnName = "생산량";
+            dataTable.Columns[5].ColumnName = "주문량";
+            dataTable.Columns[6].ColumnName = "우선순위";
+            dataTable.Columns[7].ColumnName = "배정/출하시간";
             dgv_plan.DataSource = dataTable;
 
             connection.Close();
@@ -237,6 +250,14 @@ namespace FinalProject_C3
             }
 
             connection.Close();
+            dataTable.Columns[1].ColumnName = "수주일자";
+            dataTable.Columns[2].ColumnName = "납기기한";
+            dataTable.Columns[3].ColumnName = "주문자";
+            dataTable.Columns[4].ColumnName = "생산량";
+            dataTable.Columns[5].ColumnName = "주문량";
+            dataTable.Columns[6].ColumnName = "우선순위";
+            dataTable.Columns[7].ColumnName = "배정/출하시간";
+
 
             return dataTable;
         } // sort 된 DataTable 리턴
@@ -409,6 +430,9 @@ namespace FinalProject_C3
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+        }
+        private void UpdateChart()
+        {
             prod_chart.Series.Clear();
             int defect;
             int goods;
@@ -437,7 +461,6 @@ namespace FinalProject_C3
 
             prod_chart.Update();
             prod_chart.Show();
-
         }
 
         private void planBtn_Click(object sender, EventArgs e)
@@ -454,25 +477,31 @@ namespace FinalProject_C3
         private void metroButton1_Click(object sender, EventArgs e)
         {
             RefTile();
-            dgv_plan.DataSource = GridInit();
+            DataTable dataTable = GridInit();
+            dataTable.Columns.RemoveAt(0);
+            dgv_plan.DataSource = dataTable;
+            UpdateChart();
         }
 
         private void metroButton2_Click(object sender, EventArgs e) //순위
         {
             RefTile("priority",0);
             GridInit("priority", 0);
+            UpdateChart();
         }
 
         private void metroButton3_Click(object sender, EventArgs e) //납기
         {
             RefTile("duedate", 0);
             GridInit("duedate", 0);
+            UpdateChart();
         }
 
         private void metroButton4_Click(object sender, EventArgs e) //수량
         {
             RefTile("planea", 1);
             GridInit("planea", 1);
+            UpdateChart();
         }
 
         private void bt_done_Click(object sender, EventArgs e)
@@ -493,6 +522,7 @@ namespace FinalProject_C3
                 string setStr = UpdateRow(GridInit());
                 remain = UpdateNowea(setStr, remain);
             }
+            UpdateChart();
         }
     }
 

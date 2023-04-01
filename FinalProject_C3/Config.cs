@@ -11,8 +11,10 @@ namespace LoginTest
     class Config
     {
         public static string Database = "mayflower";
-        public static string Server = "192.168.0.3";
-        public static string UserID = "edu";
+        //public static string Server = "192.168.0.3";
+        public static string Server = "localhost";
+        //public static string UserID = "edu";
+        public static string UserID = "root";
         public static string UserPassword = "1234";
 
         public static string[] Tables = { "tb_user" };
