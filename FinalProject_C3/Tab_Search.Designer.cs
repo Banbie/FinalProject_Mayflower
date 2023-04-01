@@ -177,6 +177,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dt_Time1);
             this.Controls.Add(this.dt_Time);
+            this.Movable = false;
             this.Name = "Tab_Search";
             this.Text = "실적확인";
             this.Load += new System.EventHandler(this.Tab_Search_Load);

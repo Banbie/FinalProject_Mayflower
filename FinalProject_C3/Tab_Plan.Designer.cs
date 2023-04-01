@@ -33,9 +33,9 @@ namespace FinalProject_C3
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.managerTimer = new System.Windows.Forms.Timer(this.components);
             this.prod_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.planManager = new MetroFramework.Drawing.Html.HtmlPanel();
@@ -74,20 +74,20 @@ namespace FinalProject_C3
             // 
             // prod_chart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.prod_chart.ChartAreas.Add(chartArea1);
-            legend1.DockedToChartArea = "ChartArea1";
-            legend1.IsDockedInsideChartArea = false;
-            legend1.Name = "Legend1";
-            this.prod_chart.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.prod_chart.ChartAreas.Add(chartArea2);
+            legend2.DockedToChartArea = "ChartArea1";
+            legend2.IsDockedInsideChartArea = false;
+            legend2.Name = "Legend1";
+            this.prod_chart.Legends.Add(legend2);
             this.prod_chart.Location = new System.Drawing.Point(870, 449);
             this.prod_chart.Name = "prod_chart";
             this.prod_chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Legend = "Legend1";
-            series1.Name = "JobDoneRatio";
-            this.prod_chart.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "JobDoneRatio";
+            this.prod_chart.Series.Add(series2);
             this.prod_chart.Size = new System.Drawing.Size(362, 304);
             this.prod_chart.TabIndex = 7;
             this.prod_chart.Text = "chart1";
@@ -313,6 +313,8 @@ namespace FinalProject_C3
             // 
             // metroButton1
             // 
+            this.metroButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.metroButton1.ForeColor = System.Drawing.Color.White;
             this.metroButton1.Location = new System.Drawing.Point(33, 449);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(90, 40);
@@ -323,6 +325,8 @@ namespace FinalProject_C3
             // 
             // metroButton2
             // 
+            this.metroButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.metroButton2.ForeColor = System.Drawing.Color.White;
             this.metroButton2.Location = new System.Drawing.Point(129, 449);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(90, 40);
@@ -333,6 +337,8 @@ namespace FinalProject_C3
             // 
             // metroButton3
             // 
+            this.metroButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.metroButton3.ForeColor = System.Drawing.Color.White;
             this.metroButton3.Location = new System.Drawing.Point(225, 449);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(90, 40);
@@ -343,6 +349,8 @@ namespace FinalProject_C3
             // 
             // metroButton4
             // 
+            this.metroButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.metroButton4.ForeColor = System.Drawing.Color.White;
             this.metroButton4.Location = new System.Drawing.Point(321, 449);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(90, 40);
@@ -362,6 +370,8 @@ namespace FinalProject_C3
             // 
             // bt_done
             // 
+            this.bt_done.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_done.ForeColor = System.Drawing.Color.White;
             this.bt_done.Location = new System.Drawing.Point(703, 449);
             this.bt_done.Name = "bt_done";
             this.bt_done.Size = new System.Drawing.Size(90, 40);

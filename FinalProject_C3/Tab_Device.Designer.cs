@@ -54,13 +54,12 @@
             // 
             this.dgv_device.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgv_device.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_device.Location = new System.Drawing.Point(26, 152);
-            this.dgv_device.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgv_device.Location = new System.Drawing.Point(23, 122);
             this.dgv_device.Name = "dgv_device";
             this.dgv_device.RowHeadersWidth = 51;
             this.dgv_device.RowTemplate.Height = 23;
             this.dgv_device.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_device.Size = new System.Drawing.Size(506, 335);
+            this.dgv_device.Size = new System.Drawing.Size(553, 531);
             this.dgv_device.TabIndex = 3;
             this.dgv_device.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_device_CellClick);
             // 
@@ -70,10 +69,9 @@
             this.bt_devicein.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_devicein.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.bt_devicein.ForeColor = System.Drawing.Color.White;
-            this.bt_devicein.Location = new System.Drawing.Point(299, 48);
-            this.bt_devicein.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bt_devicein.Location = new System.Drawing.Point(372, 38);
             this.bt_devicein.Name = "bt_devicein";
-            this.bt_devicein.Size = new System.Drawing.Size(73, 35);
+            this.bt_devicein.Size = new System.Drawing.Size(64, 28);
             this.bt_devicein.TabIndex = 0;
             this.bt_devicein.Text = "추가";
             this.bt_devicein.UseVisualStyleBackColor = false;
@@ -92,13 +90,12 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dgv_cur.Location = new System.Drawing.Point(26, 90);
-            this.dgv_cur.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgv_cur.Location = new System.Drawing.Point(23, 72);
             this.dgv_cur.Name = "dgv_cur";
             this.dgv_cur.RowHeadersWidth = 51;
             this.dgv_cur.RowTemplate.Height = 23;
             this.dgv_cur.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgv_cur.Size = new System.Drawing.Size(506, 55);
+            this.dgv_cur.Size = new System.Drawing.Size(553, 44);
             this.dgv_cur.TabIndex = 18;
             // 
             // Column1
@@ -136,10 +133,9 @@
             this.bt_deviceup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_deviceup.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.bt_deviceup.ForeColor = System.Drawing.Color.White;
-            this.bt_deviceup.Location = new System.Drawing.Point(379, 48);
-            this.bt_deviceup.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bt_deviceup.Location = new System.Drawing.Point(442, 38);
             this.bt_deviceup.Name = "bt_deviceup";
-            this.bt_deviceup.Size = new System.Drawing.Size(73, 35);
+            this.bt_deviceup.Size = new System.Drawing.Size(64, 28);
             this.bt_deviceup.TabIndex = 20;
             this.bt_deviceup.Text = "수정";
             this.bt_deviceup.UseVisualStyleBackColor = false;
@@ -151,10 +147,9 @@
             this.bt_devicedel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_devicedel.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.bt_devicedel.ForeColor = System.Drawing.Color.White;
-            this.bt_devicedel.Location = new System.Drawing.Point(459, 48);
-            this.bt_devicedel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bt_devicedel.Location = new System.Drawing.Point(512, 38);
             this.bt_devicedel.Name = "bt_devicedel";
-            this.bt_devicedel.Size = new System.Drawing.Size(73, 35);
+            this.bt_devicedel.Size = new System.Drawing.Size(64, 28);
             this.bt_devicedel.TabIndex = 21;
             this.bt_devicedel.Text = "삭제";
             this.bt_devicedel.UseVisualStyleBackColor = false;
@@ -162,33 +157,30 @@
             // 
             // dt_start
             // 
-            this.dt_start.Location = new System.Drawing.Point(539, 406);
-            this.dt_start.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dt_start.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dt_start.Location = new System.Drawing.Point(840, 590);
+            this.dt_start.MinimumSize = new System.Drawing.Size(0, 29);
             this.dt_start.Name = "dt_start";
-            this.dt_start.Size = new System.Drawing.Size(210, 30);
+            this.dt_start.Size = new System.Drawing.Size(184, 29);
             this.dt_start.TabIndex = 22;
             // 
             // dt_end
             // 
-            this.dt_end.Location = new System.Drawing.Point(771, 406);
-            this.dt_end.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dt_end.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dt_end.Location = new System.Drawing.Point(1043, 590);
+            this.dt_end.MinimumSize = new System.Drawing.Size(0, 29);
             this.dt_end.Name = "dt_end";
-            this.dt_end.Size = new System.Drawing.Size(210, 30);
+            this.dt_end.Size = new System.Drawing.Size(184, 29);
             this.dt_end.TabIndex = 23;
             // 
             // dgv_deflow
             // 
             this.dgv_deflow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_deflow.Location = new System.Drawing.Point(539, 48);
-            this.dgv_deflow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgv_deflow.Location = new System.Drawing.Point(599, 72);
             this.dgv_deflow.Name = "dgv_deflow";
             this.dgv_deflow.RowHeadersVisible = false;
             this.dgv_deflow.RowHeadersWidth = 51;
             this.dgv_deflow.RowTemplate.Height = 23;
             this.dgv_deflow.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_deflow.Size = new System.Drawing.Size(442, 351);
+            this.dgv_deflow.Size = new System.Drawing.Size(628, 512);
             this.dgv_deflow.TabIndex = 24;
             // 
             // bt_search
@@ -197,10 +189,9 @@
             this.bt_search.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_search.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.bt_search.ForeColor = System.Drawing.Color.White;
-            this.bt_search.Location = new System.Drawing.Point(858, 450);
-            this.bt_search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bt_search.Location = new System.Drawing.Point(1119, 625);
             this.bt_search.Name = "bt_search";
-            this.bt_search.Size = new System.Drawing.Size(123, 35);
+            this.bt_search.Size = new System.Drawing.Size(108, 28);
             this.bt_search.TabIndex = 25;
             this.bt_search.Text = "조회";
             this.bt_search.UseVisualStyleBackColor = false;
@@ -210,9 +201,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(751, 418);
+            this.label1.Location = new System.Drawing.Point(1025, 599);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 17);
+            this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 26;
             this.label1.Text = "~";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -221,19 +212,18 @@
             // cb_pro
             // 
             this.cb_pro.FormattingEnabled = true;
-            this.cb_pro.ItemHeight = 24;
-            this.cb_pro.Location = new System.Drawing.Point(539, 449);
-            this.cb_pro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cb_pro.ItemHeight = 23;
+            this.cb_pro.Location = new System.Drawing.Point(840, 624);
             this.cb_pro.Name = "cb_pro";
-            this.cb_pro.Size = new System.Drawing.Size(311, 30);
+            this.cb_pro.Size = new System.Drawing.Size(273, 29);
             this.cb_pro.TabIndex = 27;
             this.cb_pro.UseSelectable = true;
             // 
             // Tab_Device
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 512);
+            this.ClientSize = new System.Drawing.Size(1250, 798);
             this.Controls.Add(this.cb_pro);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_search);
@@ -245,9 +235,8 @@
             this.Controls.Add(this.dgv_cur);
             this.Controls.Add(this.dgv_device);
             this.Controls.Add(this.bt_devicein);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Movable = false;
             this.Name = "Tab_Device";
-            this.Padding = new System.Windows.Forms.Padding(23, 75, 23, 25);
             this.Text = "디바이스관리";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tab_Device_FormClosed);
             this.Load += new System.EventHandler(this.Tab_Device_Load);
