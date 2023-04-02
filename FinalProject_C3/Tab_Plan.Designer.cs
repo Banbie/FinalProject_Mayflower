@@ -32,11 +32,9 @@ namespace FinalProject_C3
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.managerTimer = new System.Windows.Forms.Timer(this.components);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.prod_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.planManager = new MetroFramework.Drawing.Html.HtmlPanel();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
@@ -68,26 +66,22 @@ namespace FinalProject_C3
             ((System.ComponentModel.ISupportInitialize)(this.dgv_plan)).BeginInit();
             this.SuspendLayout();
             // 
-            // managerTimer
-            // 
-            this.managerTimer.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // prod_chart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.prod_chart.ChartAreas.Add(chartArea2);
-            legend2.DockedToChartArea = "ChartArea1";
-            legend2.IsDockedInsideChartArea = false;
-            legend2.Name = "Legend1";
-            this.prod_chart.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.prod_chart.ChartAreas.Add(chartArea1);
+            legend1.DockedToChartArea = "ChartArea1";
+            legend1.IsDockedInsideChartArea = false;
+            legend1.Name = "Legend1";
+            this.prod_chart.Legends.Add(legend1);
             this.prod_chart.Location = new System.Drawing.Point(870, 449);
             this.prod_chart.Name = "prod_chart";
             this.prod_chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "JobDoneRatio";
-            this.prod_chart.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Legend = "Legend1";
+            series1.Name = "JobDoneRatio";
+            this.prod_chart.Series.Add(series1);
             this.prod_chart.Size = new System.Drawing.Size(362, 304);
             this.prod_chart.TabIndex = 7;
             this.prod_chart.Text = "chart1";
@@ -428,7 +422,6 @@ namespace FinalProject_C3
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton testBtn;
-        private System.Windows.Forms.Timer managerTimer;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton4;

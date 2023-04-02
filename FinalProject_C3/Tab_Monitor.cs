@@ -14,6 +14,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.AxHost;
 using System.IO;
 using FinalProject_C3.Properties;
+using MetroFramework.Forms;
 
 namespace FinalProject_C3
 {
@@ -30,6 +31,8 @@ namespace FinalProject_C3
             pbred.Image = Resources.new_moon__2_;
             timer1.Interval = 1000;
             timer1.Start();
+            ShadowType = MetroFormShadowType.None; //그림자 안생김
+            Show();
         }
 
         private void Tab_Monitor_Load(object sender, EventArgs e)

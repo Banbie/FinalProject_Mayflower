@@ -70,10 +70,6 @@ namespace FinalProject_C3
             dataTable.Columns.RemoveAt(0);
             dgv_plan.DataSource = dataTable;
 
-            //managerTimer.Interval = 1000; // 1초 간격으로 실행
-            //managerTimer.Tick += timer1_Tick; // 타이머 이벤트 핸들러 설정
-            //managerTimer.Start(); // 타이머 시작
-
             prod_chart.Titles.Add("생산 완료/미완료 비율");
             
             Show();
@@ -428,9 +424,6 @@ namespace FinalProject_C3
             return allProd;
         }        
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-        }
         private void UpdateChart()
         {
             prod_chart.Series.Clear();

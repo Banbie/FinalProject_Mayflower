@@ -52,6 +52,7 @@ namespace FinalProject_C3
                 metroTextBox1.Text = $"불량률: {defectRate:F2}%";
             }
 
+            Show();
 
         }
 

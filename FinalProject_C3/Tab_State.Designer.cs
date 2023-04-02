@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -50,22 +50,24 @@
             // 
             // chart1
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea9);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Left;
-            legend9.Name = "Legend1";
-            this.chart1.Legends.Add(legend9);
-            this.chart1.Location = new System.Drawing.Point(23, 75);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(20, 60);
+            this.chart1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(463, 462);
+            this.chart1.Size = new System.Drawing.Size(405, 718);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(662, 75);
+            this.metroButton1.Location = new System.Drawing.Point(579, 60);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(99, 23);
+            this.metroButton1.Size = new System.Drawing.Size(87, 18);
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "긴급 정지";
             this.metroButton1.UseSelectable = true;
@@ -77,9 +79,10 @@
             // 
             // 
             this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(110, 1);
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(88, 2);
+            this.metroTextBox1.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(11, 10);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox1.CustomButton.TabIndex = 1;
             this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -87,7 +90,8 @@
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[] {
         "metroTextBox1"};
-            this.metroTextBox1.Location = new System.Drawing.Point(524, 55);
+            this.metroTextBox1.Location = new System.Drawing.Point(458, 44);
+            this.metroTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -96,7 +100,7 @@
             this.metroTextBox1.SelectionLength = 0;
             this.metroTextBox1.SelectionStart = 0;
             this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(132, 23);
+            this.metroTextBox1.Size = new System.Drawing.Size(116, 18);
             this.metroTextBox1.TabIndex = 3;
             this.metroTextBox1.Text = "metroTextBox1";
             this.metroTextBox1.UseSelectable = true;
@@ -105,9 +109,10 @@
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(662, 115);
+            this.metroButton2.Location = new System.Drawing.Point(579, 92);
+            this.metroButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(99, 23);
+            this.metroButton2.Size = new System.Drawing.Size(87, 18);
             this.metroButton2.TabIndex = 4;
             this.metroButton2.Text = "미풍";
             this.metroButton2.UseSelectable = true;
@@ -120,9 +125,10 @@
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(662, 145);
+            this.metroButton3.Location = new System.Drawing.Point(579, 116);
+            this.metroButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(99, 23);
+            this.metroButton3.Size = new System.Drawing.Size(87, 18);
             this.metroButton3.TabIndex = 5;
             this.metroButton3.Text = "약풍";
             this.metroButton3.UseSelectable = true;
@@ -130,9 +136,10 @@
             // 
             // metroButton4
             // 
-            this.metroButton4.Location = new System.Drawing.Point(662, 175);
+            this.metroButton4.Location = new System.Drawing.Point(579, 140);
+            this.metroButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroButton4.Name = "metroButton4";
-            this.metroButton4.Size = new System.Drawing.Size(99, 23);
+            this.metroButton4.Size = new System.Drawing.Size(87, 18);
             this.metroButton4.TabIndex = 6;
             this.metroButton4.Text = "강풍";
             this.metroButton4.UseSelectable = true;
@@ -140,9 +147,10 @@
             // 
             // metroButton5
             // 
-            this.metroButton5.Location = new System.Drawing.Point(767, 115);
+            this.metroButton5.Location = new System.Drawing.Point(671, 92);
+            this.metroButton5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroButton5.Name = "metroButton5";
-            this.metroButton5.Size = new System.Drawing.Size(99, 23);
+            this.metroButton5.Size = new System.Drawing.Size(87, 18);
             this.metroButton5.TabIndex = 7;
             this.metroButton5.Text = "자동운전";
             this.metroButton5.UseSelectable = true;
@@ -150,9 +158,9 @@
             // 
             // Tab_State
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 562);
+            this.ClientSize = new System.Drawing.Size(1250, 798);
             this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.metroButton3);
@@ -160,9 +168,8 @@
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.chart1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Movable = false;
             this.Name = "Tab_State";
-            this.Padding = new System.Windows.Forms.Padding(23, 75, 23, 25);
             this.Text = "설비데이터";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tab_State_FormClosed);
             this.Load += new System.EventHandler(this.Tab_State_Load);

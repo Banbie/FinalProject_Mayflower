@@ -1,4 +1,5 @@
 ﻿using LoginTest;
+using MetroFramework.Forms;
 using Org.BouncyCastle.Ocsp;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,8 @@ namespace FinalProject_C3
         public Tab_State()
         {
             InitializeComponent();
+            ShadowType = MetroFormShadowType.None; //그림자 안생김
+            Show();
         }
 
 
