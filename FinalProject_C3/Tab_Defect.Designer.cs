@@ -33,8 +33,8 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -45,28 +45,31 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 120);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 96);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(362, 325);
+            this.dataGridView1.Size = new System.Drawing.Size(317, 260);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(428, 120);
+            this.pictureBox1.Location = new System.Drawing.Point(374, 96);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(197, 325);
+            this.pictureBox1.Size = new System.Drawing.Size(172, 260);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(232, 78);
+            this.metroButton1.Location = new System.Drawing.Point(203, 62);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(75, 23);
+            this.metroButton1.Size = new System.Drawing.Size(66, 18);
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "이전";
             this.metroButton1.UseSelectable = true;
@@ -74,9 +77,10 @@
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(313, 78);
+            this.metroButton2.Location = new System.Drawing.Point(274, 62);
+            this.metroButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(75, 23);
+            this.metroButton2.Size = new System.Drawing.Size(66, 18);
             this.metroButton2.TabIndex = 3;
             this.metroButton2.Text = "기존";
             this.metroButton2.UseSelectable = true;
@@ -87,44 +91,13 @@
             this.metroTile1.ActiveControl = null;
             this.metroTile1.Controls.Add(this.metroTextBox2);
             this.metroTile1.Controls.Add(this.metroTextBox1);
-            this.metroTile1.Location = new System.Drawing.Point(660, 120);
+            this.metroTile1.Location = new System.Drawing.Point(578, 96);
+            this.metroTile1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(174, 136);
+            this.metroTile1.Size = new System.Drawing.Size(152, 109);
             this.metroTile1.TabIndex = 4;
             this.metroTile1.Text = "metroTile1";
             this.metroTile1.UseSelectable = true;
-            // 
-            // metroTextBox1
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(63, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[] {
-        "불량률"};
-            this.metroTextBox1.Location = new System.Drawing.Point(21, 24);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(134, 23);
-            this.metroTextBox1.TabIndex = 0;
-            this.metroTextBox1.Text = "불량률";
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroTextBox2
             // 
@@ -132,9 +105,10 @@
             // 
             // 
             this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(63, 1);
+            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(51, 2);
+            this.metroTextBox2.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(11, 10);
             this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox2.CustomButton.TabIndex = 1;
             this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -142,7 +116,8 @@
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.Lines = new string[] {
         "metroTextBox2"};
-            this.metroTextBox2.Location = new System.Drawing.Point(21, 54);
+            this.metroTextBox2.Location = new System.Drawing.Point(18, 43);
+            this.metroTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
@@ -151,12 +126,46 @@
             this.metroTextBox2.SelectionLength = 0;
             this.metroTextBox2.SelectionStart = 0;
             this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(85, 23);
+            this.metroTextBox2.Size = new System.Drawing.Size(74, 18);
             this.metroTextBox2.TabIndex = 1;
             this.metroTextBox2.Text = "metroTextBox2";
             this.metroTextBox2.UseSelectable = true;
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroTextBox1
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox1.CustomButton.Image = null;
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(88, 2);
+            this.metroTextBox1.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.metroTextBox1.CustomButton.Name = "";
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(11, 10);
+            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox1.CustomButton.TabIndex = 1;
+            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox1.CustomButton.UseSelectable = true;
+            this.metroTextBox1.CustomButton.Visible = false;
+            this.metroTextBox1.Lines = new string[] {
+        "불량률"};
+            this.metroTextBox1.Location = new System.Drawing.Point(18, 19);
+            this.metroTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.metroTextBox1.MaxLength = 32767;
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.PasswordChar = '\0';
+            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox1.SelectedText = "";
+            this.metroTextBox1.SelectionLength = 0;
+            this.metroTextBox1.SelectionStart = 0;
+            this.metroTextBox1.ShortcutsEnabled = true;
+            this.metroTextBox1.Size = new System.Drawing.Size(117, 18);
+            this.metroTextBox1.TabIndex = 0;
+            this.metroTextBox1.Text = "불량률";
+            this.metroTextBox1.UseSelectable = true;
+            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroTextBox3
             // 
@@ -164,9 +173,10 @@
             // 
             // 
             this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(44, 2);
+            this.metroTextBox3.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTextBox3.CustomButton.Name = "";
-            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(11, 10);
             this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox3.CustomButton.TabIndex = 1;
             this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -174,7 +184,8 @@
             this.metroTextBox3.CustomButton.Visible = false;
             this.metroTextBox3.Lines = new string[] {
         "날짜"};
-            this.metroTextBox3.Location = new System.Drawing.Point(660, 78);
+            this.metroTextBox3.Location = new System.Drawing.Point(578, 62);
+            this.metroTextBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '\0';
@@ -183,7 +194,7 @@
             this.metroTextBox3.SelectionLength = 0;
             this.metroTextBox3.SelectionStart = 0;
             this.metroTextBox3.ShortcutsEnabled = true;
-            this.metroTextBox3.Size = new System.Drawing.Size(75, 23);
+            this.metroTextBox3.Size = new System.Drawing.Size(66, 18);
             this.metroTextBox3.TabIndex = 5;
             this.metroTextBox3.Text = "날짜";
             this.metroTextBox3.UseSelectable = true;
@@ -192,9 +203,10 @@
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(768, 78);
+            this.metroButton3.Location = new System.Drawing.Point(672, 62);
+            this.metroButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(75, 23);
+            this.metroButton3.Size = new System.Drawing.Size(66, 18);
             this.metroButton3.TabIndex = 6;
             this.metroButton3.Text = "이전";
             this.metroButton3.UseSelectable = true;
@@ -202,9 +214,9 @@
             // 
             // Tab_Defect
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 562);
+            this.ClientSize = new System.Drawing.Size(1250, 798);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroTextBox3);
             this.Controls.Add(this.metroTile1);
@@ -212,9 +224,8 @@
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Movable = false;
             this.Name = "Tab_Defect";
-            this.Padding = new System.Windows.Forms.Padding(23, 75, 23, 25);
             this.Text = "불량추적";
             this.Deactivate += new System.EventHandler(this.Tab_Defect_Deactivate);
             this.Load += new System.EventHandler(this.Tab_Defect_Load);

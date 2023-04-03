@@ -33,18 +33,22 @@ namespace FinalProject_C3
         public Tab_Search()
         {
             InitializeComponent();
+            ShadowType = MetroFormShadowType.None; //그림자 안생김
+            Show();
         }
 
         private void Tab_Search_Load(object sender, EventArgs e)
         {
             db.Connection();
             // 최근 30개 완료된 계획 가져오기
-            string query = "SELECT comname AS '주문자',planea AS '주문량' ,donedate AS '완료시각' FROM tb_plan WHERE donedate IS NOT NULL ORDER BY donedate DESC LIMIT 30";
+            string query = "SELECT comname AS '주문자',recivedate AS '수주일', duedate AS '납기일',planea AS '주문량' ,donedate AS '완료시각' FROM tb_plan WHERE donedate IS NOT NULL ORDER BY donedate DESC LIMIT 30";
             DataTable donePlanTable = db.ExecuteDataTable(query);
             dgv_doneplan.DataSource = donePlanTable;
             dgv_doneplan.Columns["주문자"].Width = 120;
+            dgv_doneplan.Columns["수주일"].Width = 140;
+            dgv_doneplan.Columns["납기일"].Width = 140;
             dgv_doneplan.Columns["주문량"].Width = 120;
-            dgv_doneplan.Columns["완료시각"].Width = 140;
+            dgv_doneplan.Columns["완료시각"].Width = 160;
             // DataGridView 마지막 행에 빈칸이 나오는 경우 방지
             dgv_Search.AllowUserToAddRows = false;
             dgv_doneplan.AllowUserToAddRows = false;

@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace FinalProject_C3
         public static MySqlConnection ConnectDB()
         {
             string connectionString =
-            "Server=192.168.0.3;;" +
+             "Server=192.168.0.3;;" +
             //"Server=localhost;" +
             "Database=mayflower;" +
             "Port=3306;" +
@@ -63,15 +64,15 @@ namespace FinalProject_C3
 
             PanelInit();
 
-            dgv_plan.DataSource = GridInit();
-            managerTimer.Interval = 1000; // 1초 간격으로 실행
-            managerTimer.Tick += timer1_Tick; // 타이머 이벤트 핸들러 설정
-            managerTimer.Start(); // 타이머 시작
+            UpdateChart();
+
+            DataTable dataTable = GridInit();
+            dataTable.Columns.RemoveAt(0);
+            dgv_plan.DataSource = dataTable;
 
             prod_chart.Titles.Add("생산 완료/미완료 비율");
-
-                                                   //Test
-
+            
+            Show();
         }
 
         public void PanelInit()
@@ -211,6 +212,14 @@ namespace FinalProject_C3
                 adapter.Fill(dataTable);
             }
 
+            dataTable.Columns.RemoveAt(0);
+            dataTable.Columns[1].ColumnName = "수주일자";
+            dataTable.Columns[2].ColumnName = "납기기한";
+            dataTable.Columns[3].ColumnName = "주문자";
+            dataTable.Columns[4].ColumnName = "생산량";
+            dataTable.Columns[5].ColumnName = "주문량";
+            dataTable.Columns[6].ColumnName = "우선순위";
+            dataTable.Columns[7].ColumnName = "배정/출하시간";
             dgv_plan.DataSource = dataTable;
 
             connection.Close();
@@ -237,6 +246,14 @@ namespace FinalProject_C3
             }
 
             connection.Close();
+            dataTable.Columns[1].ColumnName = "수주일자";
+            dataTable.Columns[2].ColumnName = "납기기한";
+            dataTable.Columns[3].ColumnName = "주문자";
+            dataTable.Columns[4].ColumnName = "생산량";
+            dataTable.Columns[5].ColumnName = "주문량";
+            dataTable.Columns[6].ColumnName = "우선순위";
+            dataTable.Columns[7].ColumnName = "배정/출하시간";
+
 
             return dataTable;
         } // sort 된 DataTable 리턴
@@ -306,6 +323,10 @@ namespace FinalProject_C3
                     using (reader = new MySqlCommand(query, connection))
                     {
                         reader.ExecuteNonQuery();
+                    }
+                    if (deltaEa < 0)  //안전구문
+                    {
+                        deltaEa = 0;
                     }
                 }
             }
@@ -403,7 +424,7 @@ namespace FinalProject_C3
             return allProd;
         }        
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void UpdateChart()
         {
             prod_chart.Series.Clear();
             int defect;
@@ -433,7 +454,6 @@ namespace FinalProject_C3
 
             prod_chart.Update();
             prod_chart.Show();
-
         }
 
         private void planBtn_Click(object sender, EventArgs e)
@@ -450,25 +470,31 @@ namespace FinalProject_C3
         private void metroButton1_Click(object sender, EventArgs e)
         {
             RefTile();
-            dgv_plan.DataSource = GridInit();
+            DataTable dataTable = GridInit();
+            dataTable.Columns.RemoveAt(0);
+            dgv_plan.DataSource = dataTable;
+            UpdateChart();
         }
 
         private void metroButton2_Click(object sender, EventArgs e) //순위
         {
             RefTile("priority",0);
             GridInit("priority", 0);
+            UpdateChart();
         }
 
         private void metroButton3_Click(object sender, EventArgs e) //납기
         {
             RefTile("duedate", 0);
             GridInit("duedate", 0);
+            UpdateChart();
         }
 
         private void metroButton4_Click(object sender, EventArgs e) //수량
         {
             RefTile("planea", 1);
             GridInit("planea", 1);
+            UpdateChart();
         }
 
         private void bt_done_Click(object sender, EventArgs e)
@@ -476,11 +502,20 @@ namespace FinalProject_C3
             int remain = 0;
             //여기에 deltaEa값 넣고 remain에 넣음 됨
             remain = DeltaEa();
+            if(remain == 0)
+            {
+                MessageBox.Show("생산된 재고가 없습니다.");
+            }
+            else
+            {
+                MessageBox.Show("제품 출하 완료");
+            }
             while (remain != 0)
             {
                 string setStr = UpdateRow(GridInit());
                 remain = UpdateNowea(setStr, remain);
             }
+            UpdateChart();
         }
     }
 
@@ -598,6 +633,8 @@ namespace FinalProject_C3
             planLabel[11].Name = $"planPanel_duedateValue";
             planLabel[12].Name = $"planPanel_plannumValue";
 
+
+
             //db에서 불러오기
             planLabel[7].Text = row[1].ToString();
             planLabel[8].Text = row[6].ToString();
@@ -605,6 +642,17 @@ namespace FinalProject_C3
             planLabel[10].Text = row[5].ToString();
             planLabel[11].Text = row[2].ToString();
             planLabel[12].Text = row[0].ToString();
+
+            int planEa = int.Parse(planLabel[10].Text);
+            int nowEa = int.Parse(planLabel[9].Text.ToString());
+            if (nowEa != 0 && planEa > nowEa)
+            {
+                planTb.Text = "진행중";
+            }
+            else if (planEa == nowEa)
+            {
+                planTb.Text = "출하 완료";
+            }
         }
 
         void CancelBtn_Click(object sender, EventArgs e)

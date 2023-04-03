@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FinalProject_C3
 {
@@ -16,12 +18,20 @@ namespace FinalProject_C3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
-            //Application.Run(new Tab_Plan());
+            //Application.Run(new Login());
+            Dictionary<string, string> hash = new Dictionary<string, string>
+            {
+                { "username", "TESTER" },
+                { "author", "TESTAUTHOR" },
+                { "usernum", "4885" }
+            };
 
-            (new Admin(new Dictionary<string, string>())).Show();
-            //(new Admin()).Show();
-            Application.Run();
+            Admin form = new Admin(hash);
+
+            Application.Run(form);
+            //form.Show();
+
+            //Application.Run();
         }
     }
 }

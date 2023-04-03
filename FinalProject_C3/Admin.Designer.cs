@@ -32,9 +32,10 @@
             this.components = new System.ComponentModel.Container();
             this.lb_UserName = new System.Windows.Forms.Label();
             this.lb_Position = new System.Windows.Forms.Label();
-            this.lb_접속시간 = new System.Windows.Forms.Label();
-            this.lb_LogTime = new System.Windows.Forms.Label();
             this.lb_NowTime = new System.Windows.Forms.Label();
+            this.timerSliding = new System.Windows.Forms.Timer(this.components);
+            this.pn_Center = new System.Windows.Forms.Panel();
+            this.timerDate = new System.Windows.Forms.Timer(this.components);
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.cb_Hide = new System.Windows.Forms.CheckBox();
             this.bt_Monitor = new System.Windows.Forms.Button();
@@ -43,9 +44,6 @@
             this.bt_Defect = new System.Windows.Forms.Button();
             this.bt_Search = new System.Windows.Forms.Button();
             this.bt_Plan = new System.Windows.Forms.Button();
-            this.timerSliding = new System.Windows.Forms.Timer(this.components);
-            this.pn_Center = new System.Windows.Forms.Panel();
-            this.timerDate = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.pn_Right = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -57,7 +55,7 @@
             // 
             this.lb_UserName.AutoSize = true;
             this.lb_UserName.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_UserName.Location = new System.Drawing.Point(241, 55);
+            this.lb_UserName.Location = new System.Drawing.Point(223, 41);
             this.lb_UserName.Name = "lb_UserName";
             this.lb_UserName.Size = new System.Drawing.Size(80, 17);
             this.lb_UserName.TabIndex = 5;
@@ -65,43 +63,41 @@
             // 
             // lb_Position
             // 
-            this.lb_Position.AutoSize = true;
+            this.lb_Position.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Position.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_Position.Location = new System.Drawing.Point(192, 55);
+            this.lb_Position.Location = new System.Drawing.Point(1379, 23);
             this.lb_Position.Name = "lb_Position";
-            this.lb_Position.Size = new System.Drawing.Size(44, 17);
+            this.lb_Position.Size = new System.Drawing.Size(157, 13);
             this.lb_Position.TabIndex = 4;
-            this.lb_Position.Text = "직급";
-            // 
-            // lb_접속시간
-            // 
-            this.lb_접속시간.AutoSize = true;
-            this.lb_접속시간.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_접속시간.Location = new System.Drawing.Point(320, 55);
-            this.lb_접속시간.Name = "lb_접속시간";
-            this.lb_접속시간.Size = new System.Drawing.Size(44, 17);
-            this.lb_접속시간.TabIndex = 3;
-            this.lb_접속시간.Text = "접속";
-            // 
-            // lb_LogTime
-            // 
-            this.lb_LogTime.AutoSize = true;
-            this.lb_LogTime.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_LogTime.Location = new System.Drawing.Point(367, 55);
-            this.lb_LogTime.Name = "lb_LogTime";
-            this.lb_LogTime.Size = new System.Drawing.Size(74, 17);
-            this.lb_LogTime.TabIndex = 2;
-            this.lb_LogTime.Text = "09:00:00";
+            this.lb_Position.Text = "관리자";
+            this.lb_Position.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lb_NowTime
             // 
-            this.lb_NowTime.AutoSize = true;
             this.lb_NowTime.Font = new System.Drawing.Font("HY견고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_NowTime.Location = new System.Drawing.Point(192, 25);
+            this.lb_NowTime.Location = new System.Drawing.Point(1186, 38);
             this.lb_NowTime.Name = "lb_NowTime";
-            this.lb_NowTime.Size = new System.Drawing.Size(111, 20);
+            this.lb_NowTime.Size = new System.Drawing.Size(350, 16);
             this.lb_NowTime.TabIndex = 0;
-            this.lb_NowTime.Text = "09:00:00";
+            this.lb_NowTime.Text = "0900:0000";
+            this.lb_NowTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // timerSliding
+            // 
+            this.timerSliding.Interval = 10;
+            this.timerSliding.Tick += new System.EventHandler(this.timerSliding_Tick);
+            // 
+            // pn_Center
+            // 
+            this.pn_Center.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pn_Center.Location = new System.Drawing.Point(20, 60);
+            this.pn_Center.Name = "pn_Center";
+            this.pn_Center.Size = new System.Drawing.Size(0, 804);
+            this.pn_Center.TabIndex = 4;
+            // 
+            // timerDate
+            // 
+            this.timerDate.Tick += new System.EventHandler(this.timerDate_Tick);
             // 
             // panelSideMenu
             // 
@@ -254,24 +250,6 @@
             this.bt_Plan.UseVisualStyleBackColor = false;
             this.bt_Plan.Click += new System.EventHandler(this.bt_Plan_Click);
             // 
-            // timerSliding
-            // 
-            this.timerSliding.Interval = 10;
-            this.timerSliding.Tick += new System.EventHandler(this.timerSliding_Tick);
-            // 
-            // pn_Center
-            // 
-            this.pn_Center.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pn_Center.Location = new System.Drawing.Point(23, 75);
-            this.pn_Center.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pn_Center.Name = "pn_Center";
-            this.pn_Center.Size = new System.Drawing.Size(0, 1002);
-            this.pn_Center.TabIndex = 4;
-            // 
-            // timerDate
-            // 
-            this.timerDate.Tick += new System.EventHandler(this.timerDate_Tick);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pn_Right);
@@ -285,11 +263,10 @@
             // 
             // pn_Right
             // 
-            this.pn_Right.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pn_Right.Location = new System.Drawing.Point(221, 0);
-            this.pn_Right.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pn_Right.Location = new System.Drawing.Point(206, 3);
+            this.pn_Right.Margin = new System.Windows.Forms.Padding(0);
             this.pn_Right.Name = "pn_Right";
-            this.pn_Right.Size = new System.Drawing.Size(1511, 1002);
+            this.pn_Right.Size = new System.Drawing.Size(1307, 798);
             this.pn_Right.TabIndex = 4;
             // 
             // timer1
@@ -305,16 +282,13 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lb_UserName);
             this.Controls.Add(this.pn_Center);
-            this.Controls.Add(this.lb_접속시간);
             this.Controls.Add(this.lb_Position);
-            this.Controls.Add(this.lb_LogTime);
             this.Controls.Add(this.lb_NowTime);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Admin";
             this.Padding = new System.Windows.Forms.Padding(23, 75, 23, 25);
             this.Text = "MayFlower";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Admin_FormClosed);
-            this.Load += new System.EventHandler(this.Admin_Load);
             this.panelSideMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -322,6 +296,12 @@
 
         }
         #endregion
+        private System.Windows.Forms.Timer timerSliding;
+        private System.Windows.Forms.Label lb_UserName;
+        private System.Windows.Forms.Label lb_Position;
+        private System.Windows.Forms.Label lb_NowTime;
+        private System.Windows.Forms.Panel pn_Center;
+        private System.Windows.Forms.Timer timerDate;
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.CheckBox cb_Hide;
         private System.Windows.Forms.Button bt_Monitor;
@@ -330,14 +310,6 @@
         private System.Windows.Forms.Button bt_Defect;
         private System.Windows.Forms.Button bt_Search;
         private System.Windows.Forms.Button bt_Plan;
-        private System.Windows.Forms.Timer timerSliding;
-        private System.Windows.Forms.Label lb_UserName;
-        private System.Windows.Forms.Label lb_Position;
-        private System.Windows.Forms.Label lb_접속시간;
-        private System.Windows.Forms.Label lb_LogTime;
-        private System.Windows.Forms.Label lb_NowTime;
-        private System.Windows.Forms.Panel pn_Center;
-        private System.Windows.Forms.Timer timerDate;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pn_Right;
         private System.Windows.Forms.Timer timer1;

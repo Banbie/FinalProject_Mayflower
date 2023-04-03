@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tb_pronow = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -64,7 +64,7 @@
             // tb_pronow
             // 
             this.tb_pronow.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tb_pronow.Location = new System.Drawing.Point(722, 46);
+            this.tb_pronow.Location = new System.Drawing.Point(914, 42);
             this.tb_pronow.Name = "tb_pronow";
             this.tb_pronow.ReadOnly = true;
             this.tb_pronow.Size = new System.Drawing.Size(310, 21);
@@ -75,7 +75,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 12F);
-            this.label1.Location = new System.Drawing.Point(593, 48);
+            this.label1.Location = new System.Drawing.Point(785, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 16);
             this.label1.TabIndex = 1;
@@ -87,7 +87,7 @@
             this.panel1.Controls.Add(this.mpb_pro);
             this.panel1.Location = new System.Drawing.Point(12, 73);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(790, 105);
+            this.panel1.Size = new System.Drawing.Size(922, 103);
             this.panel1.TabIndex = 2;
             // 
             // testTile1
@@ -168,23 +168,23 @@
             this.mpb_pro.Location = new System.Drawing.Point(406, 30);
             this.mpb_pro.Maximum = 75;
             this.mpb_pro.Name = "mpb_pro";
-            this.mpb_pro.Size = new System.Drawing.Size(378, 48);
+            this.mpb_pro.Size = new System.Drawing.Size(511, 48);
             this.mpb_pro.TabIndex = 0;
             // 
             // prod_chart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.prod_chart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.prod_chart.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.prod_chart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.prod_chart.Legends.Add(legend2);
             this.prod_chart.Location = new System.Drawing.Point(12, 240);
             this.prod_chart.Name = "prod_chart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.prod_chart.Series.Add(series1);
-            this.prod_chart.Size = new System.Drawing.Size(350, 231);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.prod_chart.Series.Add(series2);
+            this.prod_chart.Size = new System.Drawing.Size(696, 408);
             this.prod_chart.TabIndex = 3;
             this.prod_chart.Text = "chart1";
             // 
@@ -231,7 +231,7 @@
             // tbtf
             // 
             this.tbtf.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tbtf.Location = new System.Drawing.Point(808, 312);
+            this.tbtf.Location = new System.Drawing.Point(998, 585);
             this.tbtf.Name = "tbtf";
             this.tbtf.ReadOnly = true;
             this.tbtf.Size = new System.Drawing.Size(229, 63);
@@ -240,7 +240,7 @@
             // 
             // pbgreen
             // 
-            this.pbgreen.Location = new System.Drawing.Point(368, 272);
+            this.pbgreen.Location = new System.Drawing.Point(714, 412);
             this.pbgreen.Name = "pbgreen";
             this.pbgreen.Size = new System.Drawing.Size(138, 137);
             this.pbgreen.TabIndex = 11;
@@ -249,7 +249,7 @@
             // 
             // pborange
             // 
-            this.pborange.Location = new System.Drawing.Point(512, 272);
+            this.pborange.Location = new System.Drawing.Point(858, 412);
             this.pborange.Name = "pborange";
             this.pborange.Size = new System.Drawing.Size(139, 137);
             this.pborange.TabIndex = 10;
@@ -258,7 +258,7 @@
             // 
             // pbred
             // 
-            this.pbred.Location = new System.Drawing.Point(657, 272);
+            this.pbred.Location = new System.Drawing.Point(1003, 412);
             this.pbred.Name = "pbred";
             this.pbred.Size = new System.Drawing.Size(138, 137);
             this.pbred.TabIndex = 9;
@@ -267,9 +267,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(808, 73);
+            this.pictureBox1.Location = new System.Drawing.Point(940, 73);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(224, 224);
+            this.pictureBox1.Size = new System.Drawing.Size(282, 294);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -277,7 +277,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1060, 488);
+            this.ClientSize = new System.Drawing.Size(1250, 798);
             this.Controls.Add(this.tbtf);
             this.Controls.Add(this.pbgreen);
             this.Controls.Add(this.pborange);
@@ -291,6 +291,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_pronow);
+            this.Movable = false;
             this.Name = "Tab_Monitor";
             this.Text = "모니터링";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tab_Monitor_FormClosed);

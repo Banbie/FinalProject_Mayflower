@@ -1,5 +1,5 @@
 ﻿using LoginTest;
-using MetroFramework.Controls;
+using MetroFramework.Forms;
 using Org.BouncyCastle.Ocsp;
 using System;
 using System.Collections.Generic;
@@ -25,7 +25,9 @@ namespace FinalProject_C3
         private MetroProgressBar metroProgressBar1;
         public Tab_State()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            ShadowType = MetroFormShadowType.None; //그림자 안생김
+            Show();
         }
 
 

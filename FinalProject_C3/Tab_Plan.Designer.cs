@@ -1,4 +1,8 @@
-﻿namespace FinalProject_C3
+﻿using System.Drawing;
+using System.Numerics;
+using System.Windows.Forms;
+
+namespace FinalProject_C3
 {
     partial class Tab_Plan
     {
@@ -28,13 +32,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.managerTimer = new System.Windows.Forms.Timer(this.components);
             this.prod_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.planManager = new MetroFramework.Drawing.Html.HtmlPanel();
+            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.testTile1 = new MetroFramework.Controls.MetroTile();
             this.testBtn = new MetroFramework.Controls.MetroButton();
             this.testTB = new MetroFramework.Controls.MetroTextBox();
@@ -63,10 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_plan)).BeginInit();
             this.SuspendLayout();
             // 
-            // managerTimer
-            // 
-            this.managerTimer.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // prod_chart
             // 
             chartArea1.Name = "ChartArea1";
@@ -75,7 +74,7 @@
             legend1.IsDockedInsideChartArea = false;
             legend1.Name = "Legend1";
             this.prod_chart.Legends.Add(legend1);
-            this.prod_chart.Location = new System.Drawing.Point(724, 446);
+            this.prod_chart.Location = new System.Drawing.Point(870, 449);
             this.prod_chart.Name = "prod_chart";
             this.prod_chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
             series1.ChartArea = "ChartArea1";
@@ -83,21 +82,31 @@
             series1.Legend = "Legend1";
             series1.Name = "JobDoneRatio";
             this.prod_chart.Series.Add(series1);
-            this.prod_chart.Size = new System.Drawing.Size(351, 281);
+            this.prod_chart.Size = new System.Drawing.Size(362, 304);
             this.prod_chart.TabIndex = 7;
             this.prod_chart.Text = "chart1";
             // 
             // planManager
             // 
             this.planManager.AutoScroll = true;
-            this.planManager.AutoScrollMinSize = new System.Drawing.Size(1052, 18);
-            this.planManager.BackColor = System.Drawing.SystemColors.Window;
+            this.planManager.AutoScrollMinSize = new System.Drawing.Size(1209, 18);
+            this.planManager.BackColor = System.Drawing.Color.White;
+            this.planManager.Controls.Add(this.metroTabControl1);
             this.planManager.Controls.Add(this.testTile1);
+            this.planManager.ForeColor = System.Drawing.Color.White;
             this.planManager.Location = new System.Drawing.Point(23, 63);
             this.planManager.Name = "planManager";
-            this.planManager.Size = new System.Drawing.Size(1052, 364);
+            this.planManager.Size = new System.Drawing.Size(1209, 364);
             this.planManager.TabIndex = 11;
             this.planManager.Text = "Plan Manager";
+            // 
+            // metroTabControl1
+            // 
+            this.metroTabControl1.Location = new System.Drawing.Point(603, 160);
+            this.metroTabControl1.Name = "metroTabControl1";
+            this.metroTabControl1.Size = new System.Drawing.Size(8, 8);
+            this.metroTabControl1.TabIndex = 1;
+            this.metroTabControl1.UseSelectable = true;
             // 
             // testTile1
             // 
@@ -298,6 +307,8 @@
             // 
             // metroButton1
             // 
+            this.metroButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.metroButton1.ForeColor = System.Drawing.Color.White;
             this.metroButton1.Location = new System.Drawing.Point(33, 449);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(90, 40);
@@ -308,6 +319,8 @@
             // 
             // metroButton2
             // 
+            this.metroButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.metroButton2.ForeColor = System.Drawing.Color.White;
             this.metroButton2.Location = new System.Drawing.Point(129, 449);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(90, 40);
@@ -318,6 +331,8 @@
             // 
             // metroButton3
             // 
+            this.metroButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.metroButton3.ForeColor = System.Drawing.Color.White;
             this.metroButton3.Location = new System.Drawing.Point(225, 449);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(90, 40);
@@ -328,6 +343,8 @@
             // 
             // metroButton4
             // 
+            this.metroButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.metroButton4.ForeColor = System.Drawing.Color.White;
             this.metroButton4.Location = new System.Drawing.Point(321, 449);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(90, 40);
@@ -342,16 +359,18 @@
             this.dgv_plan.Location = new System.Drawing.Point(33, 508);
             this.dgv_plan.Name = "dgv_plan";
             this.dgv_plan.RowTemplate.Height = 23;
-            this.dgv_plan.Size = new System.Drawing.Size(685, 219);
+            this.dgv_plan.Size = new System.Drawing.Size(760, 233);
             this.dgv_plan.TabIndex = 16;
             // 
             // bt_done
             // 
-            this.bt_done.Location = new System.Drawing.Point(628, 449);
+            this.bt_done.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_done.ForeColor = System.Drawing.Color.White;
+            this.bt_done.Location = new System.Drawing.Point(703, 449);
             this.bt_done.Name = "bt_done";
             this.bt_done.Size = new System.Drawing.Size(90, 40);
             this.bt_done.TabIndex = 17;
-            this.bt_done.Text = "출하";
+            this.bt_done.Text = "배정/출하";
             this.bt_done.UseSelectable = true;
             this.bt_done.Click += new System.EventHandler(this.bt_done_Click);
             // 
@@ -360,7 +379,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1109, 750);
+            this.ClientSize = new System.Drawing.Size(1250, 798);
             this.Controls.Add(this.bt_done);
             this.Controls.Add(this.dgv_plan);
             this.Controls.Add(this.metroButton4);
@@ -370,9 +389,11 @@
             this.Controls.Add(this.planManager);
             this.Controls.Add(this.prod_chart);
             this.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Movable = false;
             this.Name = "Tab_Plan";
             this.Resizable = false;
-            this.Text = "PRODUCT_PLAN";
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.Text = "생산계획";
             ((System.ComponentModel.ISupportInitialize)(this.prod_chart)).EndInit();
             this.planManager.ResumeLayout(false);
             this.testTile1.ResumeLayout(false);
@@ -401,11 +422,11 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton testBtn;
-        private System.Windows.Forms.Timer managerTimer;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton4;
         private System.Windows.Forms.DataGridView dgv_plan;
         private MetroFramework.Controls.MetroButton bt_done;
+        private MetroFramework.Controls.MetroTabControl metroTabControl1;
     }
 }

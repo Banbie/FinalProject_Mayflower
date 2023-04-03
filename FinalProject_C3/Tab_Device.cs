@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LoginTest;
+using MetroFramework.Forms;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Asn1.X509;
 
@@ -20,7 +21,8 @@ namespace FinalProject_C3
         public Tab_Device()
         {
             InitializeComponent();
-            
+            ShadowType = MetroFormShadowType.None; //그림자 안생김
+            Show();
         }
 
         private void Tab_Device_Load(object sender, EventArgs e)
