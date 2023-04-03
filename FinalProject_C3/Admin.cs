@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
@@ -170,6 +171,11 @@ namespace FinalProject_C3
             form.Dock = DockStyle.Fill;
             form.ShadowType = MetroFormShadowType.None;
             pn_Right.Controls.Add(form);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

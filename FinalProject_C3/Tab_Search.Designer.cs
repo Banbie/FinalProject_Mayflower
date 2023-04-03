@@ -57,16 +57,16 @@
             this.dt_Time.Location = new System.Drawing.Point(733, 67);
             this.dt_Time.MinimumSize = new System.Drawing.Size(0, 29);
             this.dt_Time.Name = "dt_Time";
-            this.dt_Time.Size = new System.Drawing.Size(194, 29);
+            this.dt_Time.Size = new System.Drawing.Size(221, 30);
             this.dt_Time.TabIndex = 2;
             // 
             // dt_Time1
             // 
             this.dt_Time1.Location = new System.Drawing.Point(953, 68);
             this.dt_Time1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dt_Time1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dt_Time1.MinimumSize = new System.Drawing.Size(0, 30);
             this.dt_Time1.Name = "dt_Time1";
-            this.dt_Time1.Size = new System.Drawing.Size(194, 29);
+            this.dt_Time1.Size = new System.Drawing.Size(221, 30);
             this.dt_Time1.TabIndex = 10;
             // 
             // label2
@@ -74,7 +74,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(933, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 12);
+            this.label2.Size = new System.Drawing.Size(18, 15);
             this.label2.TabIndex = 11;
             this.label2.Text = "~";
             // 
@@ -87,7 +87,7 @@
             this.총생산량,
             this.불량갯수,
             this.불량률});
-            this.dgv_Search.Location = new System.Drawing.Point(23, 101);
+            this.dgv_Search.Location = new System.Drawing.Point(26, 126);
             this.dgv_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_Search.Name = "dgv_Search";
             this.dgv_Search.RowHeadersWidth = 51;
@@ -107,18 +107,21 @@
             this.총생산량.HeaderText = "총 생산량";
             this.총생산량.MinimumWidth = 6;
             this.총생산량.Name = "총생산량";
+            this.총생산량.Width = 125;
             // 
             // 불량갯수
             // 
             this.불량갯수.HeaderText = "불량 갯수";
             this.불량갯수.MinimumWidth = 6;
             this.불량갯수.Name = "불량갯수";
+            this.불량갯수.Width = 125;
             // 
             // 불량률
             // 
             this.불량률.HeaderText = "불량률";
             this.불량률.MinimumWidth = 6;
             this.불량률.Name = "불량률";
+            this.불량률.Width = 125;
             // 
             // dgv_doneplan
             // 
@@ -127,6 +130,7 @@
             this.dgv_doneplan.Location = new System.Drawing.Point(502, 101);
             this.dgv_doneplan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_doneplan.Name = "dgv_doneplan";
+            this.dgv_doneplan.RowHeadersWidth = 51;
             this.dgv_doneplan.RowTemplate.Height = 23;
             this.dgv_doneplan.Size = new System.Drawing.Size(725, 309);
             this.dgv_doneplan.TabIndex = 13;
@@ -196,7 +200,7 @@
             // 
             // Tab_Search
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 798);
             this.Controls.Add(this.label3);
@@ -210,6 +214,7 @@
             this.Controls.Add(this.dt_Time);
             this.Movable = false;
             this.Name = "Tab_Search";
+            this.Padding = new System.Windows.Forms.Padding(23, 75, 23, 25);
             this.Text = "실적확인";
             this.Load += new System.EventHandler(this.Tab_Search_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Search)).EndInit();
