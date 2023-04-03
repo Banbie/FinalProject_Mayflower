@@ -175,6 +175,7 @@
     <Compile Include="Tab_Monitor.Designer.cs">
       <DependentUpon>Tab_Monitor.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsbCamera.cs" />
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>

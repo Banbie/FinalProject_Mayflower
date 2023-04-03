@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using MetroFramework.Controls;
 using ActUtlTypeLib;
+using GitHub.secile.Video;
 
 
 namespace FinalProject_C3
@@ -132,6 +133,31 @@ namespace FinalProject_C3
                 metroTextBox1.Text = "PLC 접속 실패";
 
             }
+            // find device.
+            var devices = UsbCamera.FindDevices();
+            if (devices.Length == 0) return; // no device.
+
+            // get video format.
+            var cameraIndex = 0;
+            var formats = UsbCamera.GetVideoFormat(cameraIndex);
+
+            // select the format you want.
+            foreach (var item in formats) Console.WriteLine(item);
+            var format = formats[0];
+
+            // create instance.
+            var camera = new UsbCamera(cameraIndex, format);
+            // this closing event handler make sure that the instance is not subject to garbage collection.
+            this.FormClosing += (s, ev) => camera.Release(); // release when close.
+
+            // to show preview, there are 3 ways.
+            // 1. use SetPreviewControl. (works light, recommended.)
+            camera.SetPreviewControl(pictureBox1.Handle, pictureBox1.ClientSize);
+            pictureBox1.Resize += (s, ev) => camera.SetPreviewSize(pictureBox1.ClientSize); // support resize.
+
+            // start.
+            camera.Start();
+          
 
         }
 
@@ -293,11 +319,30 @@ namespace FinalProject_C3
         private void SP1_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = Image.FromFile(@"\\192.168.0.10\pi\sta\ra.jpg");
+          //  pictureBox1.Enabled = false;
+            pictureBox2.Enabled = true;
+        }
+        public void Delay(int ms)
+        {
+            DateTime dateTimeNow = DateTime.Now;
+            TimeSpan duration = new TimeSpan(0, 0, 0, 0, ms);
+            DateTime dateTimeAdd = dateTimeNow.Add(duration);
+            while (dateTimeAdd >= dateTimeNow)
+            {
+                System.Windows.Forms.Application.DoEvents();
+                dateTimeNow = DateTime.Now;
+            }
+            return;
         }
 
         private void SP2_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = Image.FromFile(@"\\192.168.0.10\pi\sta\plc.jpg");
+            pictureBox1.Enabled = true;
+
+
+
+
+
         }
     }
 }

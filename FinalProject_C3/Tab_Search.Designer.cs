@@ -52,7 +52,7 @@
             // dt_Time
             // 
             this.dt_Time.Location = new System.Drawing.Point(733, 67);
-            this.dt_Time.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dt_Time.MinimumSize = new System.Drawing.Size(0, 30);
             this.dt_Time.Name = "dt_Time";
             this.dt_Time.Size = new System.Drawing.Size(221, 30);
             this.dt_Time.TabIndex = 2;
