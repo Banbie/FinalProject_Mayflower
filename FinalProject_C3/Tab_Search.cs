@@ -100,7 +100,6 @@ namespace FinalProject_C3
             chart1.ChartAreas[0].AxisX.Title = "날짜";
             chart1.ChartAreas[0].AxisY.Title = "총생산량,갯수";
             chart1.ChartAreas[0].AxisY2.Title = "불량률 (%)";
-            chart1.ChartAreas[0].AxisY2.Maximum = 100;
 
             // 차트 데이터 추가
             Series seriesTotalQuantity = chart1.Series.Add("총 생산량");
@@ -108,7 +107,7 @@ namespace FinalProject_C3
             Series seriesDefectRate = chart1.Series.Add("불량률");
             seriesTotalQuantity.ChartType = SeriesChartType.Column;
             seriesDefectCount.ChartType = SeriesChartType.Column;
-            seriesDefectRate.ChartType = SeriesChartType.Column;
+            seriesDefectRate.ChartType = SeriesChartType.Point;
             seriesDefectRate.YAxisType = AxisType.Secondary;
 
             foreach (DataGridViewRow row in dgv_Search.Rows)
@@ -120,11 +119,22 @@ namespace FinalProject_C3
 
                 seriesTotalQuantity.Points.AddXY(date.ToString("yyyy-MM-dd"), totalProduction);
                 seriesDefectCount.Points.AddXY(date.ToString("yyyy-MM-dd"), defectiveCount);
-                seriesDefectRate.Points.AddXY(date.ToString("yyyy-MM-dd"), defectRate);
+                seriesDefectRate.Points.AddXY(date.ToString("yyyy-MM-dd"), totalProduction * defectRate / 100);
+                chart1.ChartAreas[0].AxisY2.Maximum = totalProduction;
+                seriesDefectRate.MarkerSize = 13;
             }
 
             // 불량률 데이터 포맷 설정
             seriesDefectRate.LabelFormat = "0.00 %";
+
+            // 포인트 옆 수치 표시
+            foreach (DataPoint dp in seriesDefectRate.Points)
+            {
+                DateTime date = DateTime.Parse(dp.AxisLabel);
+                DataPoint totalProductionPoint = seriesTotalQuantity.Points.FirstOrDefault(p => DateTime.Parse(p.AxisLabel) == date);
+                double maxTotalProduction = totalProductionPoint != null ? totalProductionPoint.YValues[0] : 0.0;
+                dp.Label = (dp.YValues[0] * 100 / maxTotalProduction).ToString("0.00") + " %";
+            }
         }
     }
 }
