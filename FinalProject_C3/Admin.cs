@@ -156,7 +156,7 @@ namespace FinalProject_C3
         {
             //string query = $"ALTER TABLE tb_flow MODIFY usernum INT DEFAULT null"; //banbie 왜 여기도 알터테이블?
             //db.alter(query);
-            //Application.Exit();
+            Application.Exit();
         }
 
         private void timerDate_Tick(object sender, EventArgs e)
