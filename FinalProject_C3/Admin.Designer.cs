@@ -90,9 +90,9 @@
             // pn_Center
             // 
             this.pn_Center.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pn_Center.Location = new System.Drawing.Point(20, 60);
+            this.pn_Center.Location = new System.Drawing.Point(23, 75);
             this.pn_Center.Name = "pn_Center";
-            this.pn_Center.Size = new System.Drawing.Size(0, 804);
+            this.pn_Center.Size = new System.Drawing.Size(0, 1002);
             this.pn_Center.TabIndex = 4;
             // 
             // timerDate

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -41,6 +41,7 @@
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SP2 = new MetroFramework.Controls.MetroButton();
             this.external_control_off = new MetroFramework.Controls.MetroLabel();
@@ -80,12 +81,11 @@
             this.metroButton6 = new MetroFramework.Controls.MetroButton();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.metroProgressBar2 = new MetroFramework.Controls.MetroProgressBar();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroStyleManager1
@@ -94,11 +94,11 @@
             // 
             // chart1
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea7);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Left;
-            legend7.Name = "Legend1";
-            this.chart1.Legends.Add(legend7);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(23, 75);
             this.chart1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chart1.Name = "chart1";
@@ -123,10 +123,10 @@
             // 
             // 
             this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(129, 2);
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(113, 2);
             this.metroTextBox1.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(19, 21);
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox1.CustomButton.TabIndex = 1;
             this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -251,6 +251,16 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 11;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Enabled = false;
+            this.pictureBox2.Location = new System.Drawing.Point(679, 385);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(301, 327);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 36;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(679, 86);
@@ -268,7 +278,7 @@
             this.SP2.Name = "SP2";
             this.SP2.Size = new System.Drawing.Size(180, 38);
             this.SP2.TabIndex = 12;
-            this.SP2.Text = "PLC";
+            this.SP2.Text = "Survey_camera";
             this.SP2.UseSelectable = true;
             this.SP2.Click += new System.EventHandler(this.SP2_Click);
             // 
@@ -287,10 +297,10 @@
             // 
             // 
             this.metroTextBox6.CustomButton.Image = null;
-            this.metroTextBox6.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.metroTextBox6.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.metroTextBox6.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTextBox6.CustomButton.Name = "";
-            this.metroTextBox6.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.metroTextBox6.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.metroTextBox6.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox6.CustomButton.TabIndex = 1;
             this.metroTextBox6.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -330,10 +340,10 @@
             // 
             // 
             this.metroTextBox5.CustomButton.Image = null;
-            this.metroTextBox5.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.metroTextBox5.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.metroTextBox5.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTextBox5.CustomButton.Name = "";
-            this.metroTextBox5.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.metroTextBox5.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.metroTextBox5.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox5.CustomButton.TabIndex = 1;
             this.metroTextBox5.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -373,10 +383,10 @@
             // 
             // 
             this.metroTextBox4.CustomButton.Image = null;
-            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.metroTextBox4.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTextBox4.CustomButton.Name = "";
-            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox4.CustomButton.TabIndex = 1;
             this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -416,10 +426,10 @@
             // 
             // 
             this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.metroTextBox3.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTextBox3.CustomButton.Name = "";
-            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox3.CustomButton.TabIndex = 1;
             this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -459,10 +469,10 @@
             // 
             // 
             this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.metroTextBox2.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox2.CustomButton.TabIndex = 1;
             this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -502,10 +512,10 @@
             // 
             // 
             this.external_control3_t.CustomButton.Image = null;
-            this.external_control3_t.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.external_control3_t.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.external_control3_t.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.external_control3_t.CustomButton.Name = "";
-            this.external_control3_t.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.external_control3_t.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.external_control3_t.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.external_control3_t.CustomButton.TabIndex = 1;
             this.external_control3_t.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -545,10 +555,10 @@
             // 
             // 
             this.external_control2_t.CustomButton.Image = null;
-            this.external_control2_t.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.external_control2_t.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.external_control2_t.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.external_control2_t.CustomButton.Name = "";
-            this.external_control2_t.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.external_control2_t.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.external_control2_t.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.external_control2_t.CustomButton.TabIndex = 1;
             this.external_control2_t.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -588,10 +598,10 @@
             // 
             // 
             this.external_control1_t.CustomButton.Image = null;
-            this.external_control1_t.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.external_control1_t.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.external_control1_t.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.external_control1_t.CustomButton.Name = "";
-            this.external_control1_t.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.external_control1_t.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.external_control1_t.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.external_control1_t.CustomButton.TabIndex = 1;
             this.external_control1_t.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -631,10 +641,10 @@
             // 
             // 
             this.Today_t_t.CustomButton.Image = null;
-            this.Today_t_t.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.Today_t_t.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.Today_t_t.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Today_t_t.CustomButton.Name = "";
-            this.Today_t_t.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.Today_t_t.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.Today_t_t.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.Today_t_t.CustomButton.TabIndex = 1;
             this.Today_t_t.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -674,10 +684,10 @@
             // 
             // 
             this.Today_d_t.CustomButton.Image = null;
-            this.Today_d_t.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.Today_d_t.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.Today_d_t.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Today_d_t.CustomButton.Name = "";
-            this.Today_d_t.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.Today_d_t.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.Today_d_t.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.Today_d_t.CustomButton.TabIndex = 1;
             this.Today_d_t.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -717,10 +727,10 @@
             // 
             // 
             this.Today_a_t.CustomButton.Image = null;
-            this.Today_a_t.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.Today_a_t.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.Today_a_t.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Today_a_t.CustomButton.Name = "";
-            this.Today_a_t.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.Today_a_t.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.Today_a_t.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.Today_a_t.CustomButton.TabIndex = 1;
             this.Today_a_t.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -760,10 +770,10 @@
             // 
             // 
             this.Ttot_t.CustomButton.Image = null;
-            this.Ttot_t.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.Ttot_t.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.Ttot_t.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Ttot_t.CustomButton.Name = "";
-            this.Ttot_t.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.Ttot_t.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.Ttot_t.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.Ttot_t.CustomButton.TabIndex = 1;
             this.Ttot_t.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -803,10 +813,10 @@
             // 
             // 
             this.temp_t.CustomButton.Image = null;
-            this.temp_t.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.temp_t.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.temp_t.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.temp_t.CustomButton.Name = "";
-            this.temp_t.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.temp_t.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.temp_t.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.temp_t.CustomButton.TabIndex = 1;
             this.temp_t.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -846,10 +856,10 @@
             // 
             // 
             this.Inverter_state_t.CustomButton.Image = null;
-            this.Inverter_state_t.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.Inverter_state_t.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.Inverter_state_t.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Inverter_state_t.CustomButton.Name = "";
-            this.Inverter_state_t.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.Inverter_state_t.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.Inverter_state_t.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.Inverter_state_t.CustomButton.TabIndex = 1;
             this.Inverter_state_t.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -889,10 +899,10 @@
             // 
             // 
             this.AI3_t.CustomButton.Image = null;
-            this.AI3_t.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.AI3_t.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.AI3_t.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AI3_t.CustomButton.Name = "";
-            this.AI3_t.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.AI3_t.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.AI3_t.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.AI3_t.CustomButton.TabIndex = 1;
             this.AI3_t.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -932,10 +942,10 @@
             // 
             // 
             this.AI2_t.CustomButton.Image = null;
-            this.AI2_t.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.AI2_t.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.AI2_t.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AI2_t.CustomButton.Name = "";
-            this.AI2_t.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.AI2_t.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.AI2_t.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.AI2_t.CustomButton.TabIndex = 1;
             this.AI2_t.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -975,10 +985,10 @@
             // 
             // 
             this.Ai1_t.CustomButton.Image = null;
-            this.Ai1_t.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.Ai1_t.CustomButton.Location = new System.Drawing.Point(68, 1);
             this.Ai1_t.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Ai1_t.CustomButton.Name = "";
-            this.Ai1_t.CustomButton.Size = new System.Drawing.Size(31, 34);
+            this.Ai1_t.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.Ai1_t.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.Ai1_t.CustomButton.TabIndex = 1;
             this.Ai1_t.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1023,16 +1033,6 @@
             this.metroProgressBar2.Size = new System.Drawing.Size(234, 29);
             this.metroProgressBar2.TabIndex = 10;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Enabled = false;
-            this.pictureBox2.Location = new System.Drawing.Point(679, 385);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(301, 327);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 36;
-            this.pictureBox2.TabStop = false;
-            // 
             // Tab_State
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1059,8 +1059,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
