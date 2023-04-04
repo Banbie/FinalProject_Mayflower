@@ -35,7 +35,6 @@
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -166,17 +165,6 @@
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroButton3
-            // 
-            this.metroButton3.Location = new System.Drawing.Point(240, 120);
-            this.metroButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(75, 22);
-            this.metroButton3.TabIndex = 6;
-            this.metroButton3.Text = "확인";
-            this.metroButton3.UseSelectable = true;
-            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
-            // 
             // metroDateTime1
             // 
             this.metroDateTime1.Location = new System.Drawing.Point(26, 249);
@@ -191,7 +179,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1429, 998);
             this.Controls.Add(this.metroDateTime1);
-            this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
@@ -220,7 +207,6 @@
         private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroTextBox metroTextBox2;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
     }
 }
