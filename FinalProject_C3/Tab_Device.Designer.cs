@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dgv_device = new System.Windows.Forms.DataGridView();
             this.bt_devicein = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dgv_cur = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,10 +74,6 @@
             this.bt_devicein.Text = "추가";
             this.bt_devicein.UseVisualStyleBackColor = false;
             this.bt_devicein.Click += new System.EventHandler(this.bt_devicein_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
             // 
             // dgv_cur
             // 
@@ -251,7 +245,6 @@
         #endregion
         private System.Windows.Forms.DataGridView dgv_device;
         private System.Windows.Forms.Button bt_devicein;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridView dgv_cur;
         private System.Windows.Forms.Button bt_deviceup;
         private System.Windows.Forms.Button bt_devicedel;
