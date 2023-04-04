@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using LoginTest;
 using MetroFramework.Forms;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Asn1.X509;
 
 namespace FinalProject_C3
@@ -30,10 +31,24 @@ namespace FinalProject_C3
             db.Connection();
             dgv_device.DataSource = db.SelectAll("tb_device").Tables[0];
             getcb_pro();
-        }
- 
 
-        private void bt_flowupdate_Click(object sender, EventArgs e)
+            
+            try
+            {
+                string cond = "d.devicename as  디바이스이름, d.proname as 공정이름, f.flowdate as 날짜, count(*) as 총가동횟수";
+                string table = "tb_flow f left join tb_device d on f.pronum = d.pronum ";
+                dgv_deflow.DataSource = db.SelectDetail(cond, table, " group by d.devicename, d.proname, f.flowdate ;").Tables[0];
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        
+
+
+private void bt_flowupdate_Click(object sender, EventArgs e)
         {
             //    if (cb_plan.SelectedText != "생산계획" || cb_prod.SelectedText != "제품번호")
             //        {
@@ -109,6 +124,7 @@ namespace FinalProject_C3
         {
             cb_pro.Items.Clear();
             cb_pro.Items.Add("전체");
+            cb_pro.SelectedItem = "전체";
             try
             {
                 string strqry = "select distinct proname from tb_device";

@@ -26,11 +26,6 @@ namespace FinalProject_C3
         {
             InitializeComponent();
 
-            pbgreen.Image = Resources.new_moon__3_;
-            pborange.Image = Resources.new_moon__4_;
-            pbred.Image = Resources.new_moon__2_;
-            timer1.Interval = 1000;
-            timer1.Start();
             ShadowType = MetroFormShadowType.None; //그림자 안생김
             Show();
         }
@@ -38,8 +33,10 @@ namespace FinalProject_C3
         private void Tab_Monitor_Load(object sender, EventArgs e)
         {
             get_picture();
-            get_qual();
             lightdisplay();
+            get_qual("proddate BETWEEN '1000-01-01' AND '9999-12-31' ;");
+            timer1.Interval = 1000;
+            timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -97,14 +94,13 @@ namespace FinalProject_C3
 
         }
 
-        private void get_qual()
+        private void get_qual(string date)
         {
 
             prod_chart.Series.Clear();
-
-            int allprod = CountGood("WHERE ");
-            int goods = CountGood("WHERE spec = 2 AND ");
-            int defect = CountGood("WHERE spec = 1 AND ");
+            int allprod = CountGood("WHERE ",date);
+            int goods = CountGood("WHERE spec = 2 AND ",date);
+            int defect = CountGood("WHERE spec = 1 AND ",date);
             int etc = goods + defect;
             etc -= allprod;
 
@@ -135,14 +131,13 @@ namespace FinalProject_C3
 
         }
 
-        private int CountGood(string where) //알고 싶은 컬럼의 sum값
+        private int CountGood(string where,string date) //알고 싶은 컬럼의 sum값
         {
             DateTime sDate = dtpS.Value.Date;
             DateTime eDate = dtpE.Value.Date.AddDays(1);
 
             var cond = $"count(*)";
             string table = "tb_prod";
-            string date = $"proddate BETWEEN '{sDate:yyyy-MM-dd}' AND '{eDate:yyyy-MM-dd}' ;";
 
             int allProd = Convert.ToInt32(db.SelectDetail(cond, table, where + date).Tables[0].Rows[0][0]);
             return allProd;
@@ -173,19 +168,19 @@ namespace FinalProject_C3
             string count = "SELECT green,orange,red FROM light ORDER BY lightcol DESC LIMIT 1;";
             DataRow ldr = db.Select(count).Rows[0];
             if (ldr[0].ToString() == "0") 
-            { pbgreen.Visible = false; }
+            {   pbgreen.Image = Resources.new_moon__5_; }
             else 
-            { pbgreen.Visible = true; }
+            {   pbgreen.Image = Resources.new_moon__3_; }
 
             if (ldr[1].ToString() == "0") 
-            { pborange.Visible = false; }
-            else 
-            { pborange.Visible = true; }
-
-            if (ldr[2].ToString() == "0") 
-            { pbred.Visible = false; }
+            {   pborange.Image = Resources.new_moon__5_;    }
             else
-            { pbred.Visible = true; }
+            {   pborange.Image = Resources.new_moon__4_;    }
+
+            if (ldr[2].ToString() == "0")
+            {   pbred.Image = Resources.new_moon__5_;   }
+            else
+            {   pbred.Image = Resources.new_moon__2_;   }
         }
 
         private void TF(string where)
@@ -210,15 +205,6 @@ namespace FinalProject_C3
             int planea = Convert.ToInt32(db.Select(plancount).Rows[0][0]);
             string setvalue = $" nowea = {nowea}";
             db.Update("tb_plan", $" nowea = {nowea}", $"WHERE plannum = {dr[1]} ;");
-
-            if (nowea >= planea)
-            {
-
-                string planquery = "ALTER TABLE tb_flow MODIFY COLUNM plannum INT DEFAULT " +
-                    "(select plannum from tb_plan where nowea < planea order by priority,duetime limit 1 );";
-                db.alter(planquery);
-            }
-            else { }
         }
 
         private void tb_pronow_TextChanged(object sender, EventArgs e)
@@ -230,17 +216,23 @@ namespace FinalProject_C3
 
         private void Tab_Monitor_FormClosed(object sender, FormClosedEventArgs e)
         {
-            timer1.Stop();
+            timer1.Dispose();
         }
 
-        private void dtpS_ValueChanged(object sender, EventArgs e)
+        private void dtpS_CloseUp(object sender, EventArgs e)
         {
-            get_qual();
+            DateTime sDate = dtpS.Value.Date;
+            DateTime eDate = dtpE.Value.Date.AddDays(1);
+            string date = $"proddate BETWEEN '{sDate:yyyy-MM-dd}' AND '{eDate:yyyy-MM-dd}' ;";
+            get_qual(date);
         }
 
-        private void dtpE_ValueChanged(object sender, EventArgs e)
+        private void dtpE_CloseUp(object sender, EventArgs e)
         {
-            get_qual();
+            DateTime sDate = dtpS.Value.Date;
+            DateTime eDate = dtpE.Value.Date.AddDays(1);
+            string date = $"proddate BETWEEN '{sDate:yyyy-MM-dd}' AND '{eDate:yyyy-MM-dd}' ;";
+            get_qual(date);
         }
     }
 }

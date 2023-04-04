@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
-
+using MetroFramework.Forms;
 
 namespace FinalProject_C3
 {
@@ -21,15 +21,14 @@ namespace FinalProject_C3
         public Tab_Defect()
         {
             InitializeComponent();
+            Show();
         }
         private DateTime currentDate = DateTime.Now;
         private DateTime currentDate1 = DateTime.Now;
         private void Tab_Defect_Load(object sender, EventArgs e)
         {
          
-       
-           
-
+            this.ShadowType = MetroFormShadowType.None;
             // 오늘 날짜 구하기
         
             // DB 연결
@@ -52,7 +51,7 @@ namespace FinalProject_C3
                 metroTextBox1.Text = $"불량률: {defectRate:F2}%";
             }
 
-            Show();
+            
 
         }
 

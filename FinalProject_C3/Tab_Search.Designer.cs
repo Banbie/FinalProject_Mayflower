@@ -54,7 +54,7 @@
             // 
             // dt_Time
             // 
-            this.dt_Time.Location = new System.Drawing.Point(677, 70);
+            this.dt_Time.Location = new System.Drawing.Point(742, 59);
             this.dt_Time.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dt_Time.MinimumSize = new System.Drawing.Size(0, 30);
             this.dt_Time.Name = "dt_Time";
@@ -63,7 +63,7 @@
             // 
             // dt_Time1
             // 
-            this.dt_Time1.Location = new System.Drawing.Point(928, 70);
+            this.dt_Time1.Location = new System.Drawing.Point(962, 59);
             this.dt_Time1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dt_Time1.MinimumSize = new System.Drawing.Size(0, 30);
             this.dt_Time1.Name = "dt_Time1";
@@ -73,7 +73,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(905, 82);
+            this.label2.Location = new System.Drawing.Point(942, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(18, 15);
             this.label2.TabIndex = 11;
@@ -93,7 +93,7 @@
             this.dgv_Search.Name = "dgv_Search";
             this.dgv_Search.RowHeadersWidth = 51;
             this.dgv_Search.RowTemplate.Height = 23;
-            this.dgv_Search.Size = new System.Drawing.Size(473, 675);
+            this.dgv_Search.Size = new System.Drawing.Size(472, 627);
             this.dgv_Search.TabIndex = 12;
             // 
             // 날짜
@@ -128,12 +128,12 @@
             // 
             this.dgv_doneplan.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dgv_doneplan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_doneplan.Location = new System.Drawing.Point(506, 115);
+            this.dgv_doneplan.Location = new System.Drawing.Point(501, 92);
             this.dgv_doneplan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_doneplan.Name = "dgv_doneplan";
             this.dgv_doneplan.RowHeadersWidth = 51;
             this.dgv_doneplan.RowTemplate.Height = 23;
-            this.dgv_doneplan.Size = new System.Drawing.Size(725, 309);
+            this.dgv_doneplan.Size = new System.Drawing.Size(726, 247);
             this.dgv_doneplan.TabIndex = 13;
             // 
             // chart1
@@ -142,7 +142,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(502, 426);
+            this.chart1.Location = new System.Drawing.Point(501, 341);
             this.chart1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
@@ -159,7 +159,7 @@
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
             this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(725, 350);
+            this.chart1.Size = new System.Drawing.Size(726, 378);
             this.chart1.TabIndex = 14;
             this.chart1.Text = "chart1";
             title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
@@ -170,7 +170,7 @@
             // 
             // btn_Search
             // 
-            this.btn_Search.Location = new System.Drawing.Point(1157, 78);
+            this.btn_Search.Location = new System.Drawing.Point(1162, 65);
             this.btn_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(74, 29);
@@ -183,7 +183,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(498, 94);
+            this.label1.Location = new System.Drawing.Point(498, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 20);
             this.label1.TabIndex = 16;
@@ -203,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1253, 818);
+            this.ClientSize = new System.Drawing.Size(1250, 798);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Search);

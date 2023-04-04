@@ -143,6 +143,16 @@ namespace FinalProject_C3.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        public static System.Drawing.Bitmap new_moon__5_ {
+            get {
+                object obj = ResourceManager.GetObject("new_moon__5_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         public static System.Drawing.Bitmap yacht {
             get {
                 object obj = ResourceManager.GetObject("yacht", resourceCulture);
