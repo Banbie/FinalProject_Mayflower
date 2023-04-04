@@ -28,6 +28,7 @@ namespace FinalProject_C3
         private void Tab_Defect_Load(object sender, EventArgs e)
         {
          
+            this.ShadowType = MetroFormShadowType.None;
             // 오늘 날짜 구하기
         
             // DB 연결
