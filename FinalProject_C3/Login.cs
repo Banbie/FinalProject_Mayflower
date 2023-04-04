@@ -138,7 +138,6 @@ namespace FinalProject_C3
                 if (pw.Equals(savedPw))
                 {
                     MessageBox.Show("로그인 성공");
-                    this.Hide();
                     string userName = row["username"].ToString();
                     string author = row["author"].ToString();
                     string usernum = row["usernum"].ToString();
@@ -148,6 +147,7 @@ namespace FinalProject_C3
                     userData.Add("usernum", usernum);
                     Admin adminForm = new Admin(userData);
                     adminForm.Show();
+                    Hide();
                 }
                 else
                 {
@@ -157,6 +157,15 @@ namespace FinalProject_C3
             else
             {
                 MessageBox.Show("존재하지 않는 아이디입니다.");
+            }
+        }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                LoadUserInfo();
+                CheckID_PW(TB_ID.Text, TB_PW.Text);
             }
         }
 
