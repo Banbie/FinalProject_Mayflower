@@ -46,19 +46,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbtf = new System.Windows.Forms.TextBox();
-            this.pbgreen = new System.Windows.Forms.PictureBox();
-            this.pborange = new System.Windows.Forms.PictureBox();
-            this.pbred = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dtpS = new MetroFramework.Controls.MetroDateTime();
             this.dtpE = new MetroFramework.Controls.MetroDateTime();
             this.label4 = new System.Windows.Forms.Label();
+            this.pbgreen = new System.Windows.Forms.PictureBox();
+            this.pbred = new System.Windows.Forms.PictureBox();
+            this.pborange = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.testTile1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prod_chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbgreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pborange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbred)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pborange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,7 +186,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.prod_chart.Series.Add(series1);
-            this.prod_chart.Size = new System.Drawing.Size(688, 408);
+            this.prod_chart.Size = new System.Drawing.Size(706, 408);
             this.prod_chart.TabIndex = 3;
             this.prod_chart.Text = "chart1";
             // 
@@ -204,7 +204,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(695, 519);
+            this.label3.Location = new System.Drawing.Point(710, 519);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 27);
             this.label3.TabIndex = 8;
@@ -224,46 +224,7 @@
             this.tbtf.ReadOnly = true;
             this.tbtf.Size = new System.Drawing.Size(382, 75);
             this.tbtf.TabIndex = 12;
-            this.tbtf.Text = "불합격";
             this.tbtf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // pbgreen
-            // 
-            this.pbgreen.Image = global::FinalProject_C3.Properties.Resources.new_moon__3_;
-            this.pbgreen.Location = new System.Drawing.Point(1045, 562);
-            this.pbgreen.Name = "pbgreen";
-            this.pbgreen.Size = new System.Drawing.Size(171, 156);
-            this.pbgreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbgreen.TabIndex = 11;
-            this.pbgreen.TabStop = false;
-            // 
-            // pborange
-            // 
-            this.pborange.Image = global::FinalProject_C3.Properties.Resources.new_moon__4_;
-            this.pborange.Location = new System.Drawing.Point(868, 562);
-            this.pborange.Name = "pborange";
-            this.pborange.Size = new System.Drawing.Size(171, 156);
-            this.pborange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pborange.TabIndex = 10;
-            this.pborange.TabStop = false;
-            // 
-            // pbred
-            // 
-            this.pbred.Image = global::FinalProject_C3.Properties.Resources.new_moon__2_;
-            this.pbred.Location = new System.Drawing.Point(691, 562);
-            this.pbred.Name = "pbred";
-            this.pbred.Size = new System.Drawing.Size(171, 156);
-            this.pbred.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbred.TabIndex = 9;
-            this.pbred.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(840, 73);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(382, 340);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // dtpS
             // 
@@ -294,6 +255,44 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "~";
             // 
+            // pbgreen
+            // 
+            this.pbgreen.Image = global::FinalProject_C3.Properties.Resources.new_moon__3_;
+            this.pbgreen.Location = new System.Drawing.Point(1060, 562);
+            this.pbgreen.Name = "pbgreen";
+            this.pbgreen.Size = new System.Drawing.Size(171, 156);
+            this.pbgreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbgreen.TabIndex = 11;
+            this.pbgreen.TabStop = false;
+            // 
+            // pbred
+            // 
+            this.pbred.Image = global::FinalProject_C3.Properties.Resources.new_moon__2_;
+            this.pbred.Location = new System.Drawing.Point(706, 562);
+            this.pbred.Name = "pbred";
+            this.pbred.Size = new System.Drawing.Size(171, 156);
+            this.pbred.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbred.TabIndex = 9;
+            this.pbred.TabStop = false;
+            // 
+            // pborange
+            // 
+            this.pborange.Image = global::FinalProject_C3.Properties.Resources.new_moon__4_;
+            this.pborange.Location = new System.Drawing.Point(883, 562);
+            this.pborange.Name = "pborange";
+            this.pborange.Size = new System.Drawing.Size(171, 156);
+            this.pborange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pborange.TabIndex = 10;
+            this.pborange.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(840, 73);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(382, 340);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // Tab_Monitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -323,8 +322,8 @@
             this.testTile1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prod_chart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbgreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pborange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbred)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pborange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
