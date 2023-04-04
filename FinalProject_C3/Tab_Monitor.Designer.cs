@@ -66,10 +66,11 @@
             // 
             this.tb_pronow.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tb_pronow.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tb_pronow.Location = new System.Drawing.Point(840, 41);
+            this.tb_pronow.Location = new System.Drawing.Point(960, 51);
+            this.tb_pronow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_pronow.Name = "tb_pronow";
             this.tb_pronow.ReadOnly = true;
-            this.tb_pronow.Size = new System.Drawing.Size(382, 26);
+            this.tb_pronow.Size = new System.Drawing.Size(436, 30);
             this.tb_pronow.TabIndex = 0;
             this.tb_pronow.TextChanged += new System.EventHandler(this.tb_pronow_TextChanged);
             // 
@@ -77,9 +78,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 12F);
-            this.label1.Location = new System.Drawing.Point(711, 44);
+            this.label1.Location = new System.Drawing.Point(813, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 16);
+            this.label1.Size = new System.Drawing.Size(157, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "공정 진행 정보 :";
             // 
@@ -87,9 +88,10 @@
             // 
             this.panel1.Controls.Add(this.testTile1);
             this.panel1.Controls.Add(this.mpb_pro);
-            this.panel1.Location = new System.Drawing.Point(13, 73);
+            this.panel1.Location = new System.Drawing.Point(15, 91);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(821, 103);
+            this.panel1.Size = new System.Drawing.Size(938, 129);
             this.panel1.TabIndex = 2;
             // 
             // testTile1
@@ -100,10 +102,10 @@
             this.testTile1.Controls.Add(this.lb_nowplan);
             this.testTile1.Controls.Add(this.lb_nowprod);
             this.testTile1.Controls.Add(this.plannum1);
-            this.testTile1.Location = new System.Drawing.Point(10, 10);
+            this.testTile1.Location = new System.Drawing.Point(11, 12);
             this.testTile1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.testTile1.Name = "testTile1";
-            this.testTile1.Size = new System.Drawing.Size(373, 82);
+            this.testTile1.Size = new System.Drawing.Size(426, 102);
             this.testTile1.TabIndex = 9;
             this.testTile1.UseSelectable = true;
             // 
@@ -112,7 +114,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel2.Location = new System.Drawing.Point(170, 28);
+            this.metroLabel2.Location = new System.Drawing.Point(194, 35);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(22, 25);
             this.metroLabel2.TabIndex = 14;
@@ -124,7 +126,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(347, 28);
+            this.metroLabel1.Location = new System.Drawing.Point(397, 35);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(22, 25);
             this.metroLabel1.TabIndex = 13;
@@ -136,9 +138,9 @@
             this.lb_nowplan.Enabled = false;
             this.lb_nowplan.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lb_nowplan.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lb_nowplan.Location = new System.Drawing.Point(101, 28);
+            this.lb_nowplan.Location = new System.Drawing.Point(115, 35);
             this.lb_nowplan.Name = "lb_nowplan";
-            this.lb_nowplan.Size = new System.Drawing.Size(63, 25);
+            this.lb_nowplan.Size = new System.Drawing.Size(72, 31);
             this.lb_nowplan.TabIndex = 12;
             this.lb_nowplan.Text = "1";
             // 
@@ -147,7 +149,7 @@
             this.lb_nowprod.AutoSize = true;
             this.lb_nowprod.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lb_nowprod.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lb_nowprod.Location = new System.Drawing.Point(221, 28);
+            this.lb_nowprod.Location = new System.Drawing.Point(253, 35);
             this.lb_nowprod.Name = "lb_nowprod";
             this.lb_nowprod.Size = new System.Drawing.Size(91, 25);
             this.lb_nowprod.TabIndex = 4;
@@ -159,18 +161,19 @@
             this.plannum1.Enabled = false;
             this.plannum1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.plannum1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.plannum1.Location = new System.Drawing.Point(7, 28);
+            this.plannum1.Location = new System.Drawing.Point(8, 35);
             this.plannum1.Name = "plannum1";
-            this.plannum1.Size = new System.Drawing.Size(88, 25);
+            this.plannum1.Size = new System.Drawing.Size(101, 31);
             this.plannum1.TabIndex = 11;
             this.plannum1.Text = "현재주문";
             // 
             // mpb_pro
             // 
-            this.mpb_pro.Location = new System.Drawing.Point(389, 20);
+            this.mpb_pro.Location = new System.Drawing.Point(445, 25);
+            this.mpb_pro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mpb_pro.Maximum = 75;
             this.mpb_pro.Name = "mpb_pro";
-            this.mpb_pro.Size = new System.Drawing.Size(420, 64);
+            this.mpb_pro.Size = new System.Drawing.Size(480, 80);
             this.mpb_pro.TabIndex = 0;
             // 
             // prod_chart
@@ -179,14 +182,15 @@
             this.prod_chart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.prod_chart.Legends.Add(legend1);
-            this.prod_chart.Location = new System.Drawing.Point(12, 272);
+            this.prod_chart.Location = new System.Drawing.Point(14, 340);
+            this.prod_chart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.prod_chart.Name = "prod_chart";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.prod_chart.Series.Add(series1);
-            this.prod_chart.Size = new System.Drawing.Size(706, 408);
+            this.prod_chart.Size = new System.Drawing.Size(807, 510);
             this.prod_chart.TabIndex = 3;
             this.prod_chart.Text = "chart1";
             // 
@@ -194,9 +198,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(17, 204);
+            this.label2.Location = new System.Drawing.Point(19, 255);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 27);
+            this.label2.Size = new System.Drawing.Size(117, 34);
             this.label2.TabIndex = 4;
             this.label2.Text = "양품률";
             // 
@@ -204,9 +208,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(710, 519);
+            this.label3.Location = new System.Drawing.Point(811, 649);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 27);
+            this.label3.Size = new System.Drawing.Size(196, 34);
             this.label3.TabIndex = 8;
             this.label3.Text = "상태 표시등";
             // 
@@ -219,29 +223,32 @@
             // 
             this.tbtf.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbtf.Font = new System.Drawing.Font("굴림", 44.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tbtf.Location = new System.Drawing.Point(840, 419);
+            this.tbtf.Location = new System.Drawing.Point(960, 524);
+            this.tbtf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbtf.Name = "tbtf";
             this.tbtf.ReadOnly = true;
-            this.tbtf.Size = new System.Drawing.Size(382, 75);
+            this.tbtf.Size = new System.Drawing.Size(436, 92);
             this.tbtf.TabIndex = 12;
             this.tbtf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dtpS
             // 
-            this.dtpS.Location = new System.Drawing.Point(262, 231);
-            this.dtpS.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpS.Location = new System.Drawing.Point(299, 289);
+            this.dtpS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpS.MinimumSize = new System.Drawing.Size(0, 30);
             this.dtpS.Name = "dtpS";
-            this.dtpS.Size = new System.Drawing.Size(200, 29);
+            this.dtpS.Size = new System.Drawing.Size(228, 30);
             this.dtpS.TabIndex = 13;
             this.dtpS.TabStop = false;
             this.dtpS.CloseUp += new System.EventHandler(this.dtpS_CloseUp);
             // 
             // dtpE
             // 
-            this.dtpE.Location = new System.Drawing.Point(500, 231);
-            this.dtpE.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpE.Location = new System.Drawing.Point(571, 289);
+            this.dtpE.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpE.MinimumSize = new System.Drawing.Size(0, 30);
             this.dtpE.Name = "dtpE";
-            this.dtpE.Size = new System.Drawing.Size(200, 29);
+            this.dtpE.Size = new System.Drawing.Size(228, 30);
             this.dtpE.TabIndex = 14;
             this.dtpE.CloseUp += new System.EventHandler(this.dtpE_CloseUp);
             // 
@@ -249,18 +256,19 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(468, 235);
+            this.label4.Location = new System.Drawing.Point(535, 294);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 21);
+            this.label4.Size = new System.Drawing.Size(33, 27);
             this.label4.TabIndex = 15;
             this.label4.Text = "~";
             // 
             // pbgreen
             // 
             this.pbgreen.Image = global::FinalProject_C3.Properties.Resources.new_moon__3_;
-            this.pbgreen.Location = new System.Drawing.Point(1060, 562);
+            this.pbgreen.Location = new System.Drawing.Point(1211, 702);
+            this.pbgreen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbgreen.Name = "pbgreen";
-            this.pbgreen.Size = new System.Drawing.Size(171, 156);
+            this.pbgreen.Size = new System.Drawing.Size(195, 195);
             this.pbgreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbgreen.TabIndex = 11;
             this.pbgreen.TabStop = false;
@@ -268,9 +276,10 @@
             // pbred
             // 
             this.pbred.Image = global::FinalProject_C3.Properties.Resources.new_moon__2_;
-            this.pbred.Location = new System.Drawing.Point(706, 562);
+            this.pbred.Location = new System.Drawing.Point(807, 702);
+            this.pbred.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbred.Name = "pbred";
-            this.pbred.Size = new System.Drawing.Size(171, 156);
+            this.pbred.Size = new System.Drawing.Size(195, 195);
             this.pbred.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbred.TabIndex = 9;
             this.pbred.TabStop = false;
@@ -278,26 +287,28 @@
             // pborange
             // 
             this.pborange.Image = global::FinalProject_C3.Properties.Resources.new_moon__4_;
-            this.pborange.Location = new System.Drawing.Point(883, 562);
+            this.pborange.Location = new System.Drawing.Point(1009, 702);
+            this.pborange.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pborange.Name = "pborange";
-            this.pborange.Size = new System.Drawing.Size(171, 156);
+            this.pborange.Size = new System.Drawing.Size(195, 195);
             this.pborange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pborange.TabIndex = 10;
             this.pborange.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(840, 73);
+            this.pictureBox1.Location = new System.Drawing.Point(960, 91);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(382, 340);
+            this.pictureBox1.Size = new System.Drawing.Size(437, 425);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // Tab_Monitor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 741);
+            this.ClientSize = new System.Drawing.Size(1429, 926);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtpE);
             this.Controls.Add(this.dtpS);
@@ -312,8 +323,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_pronow);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Movable = false;
             this.Name = "Tab_Monitor";
+            this.Padding = new System.Windows.Forms.Padding(23, 75, 23, 25);
             this.Text = "모니터링";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tab_Monitor_FormClosed);
             this.Load += new System.EventHandler(this.Tab_Monitor_Load);

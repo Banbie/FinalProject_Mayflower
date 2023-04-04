@@ -267,6 +267,7 @@ namespace FinalProject_C3
 
         private void metroButton6_Click(object sender, EventArgs e)
         {
+            timer2.Enabled = true;
             ActUtilType.GetDevice("d100", out DataRead2);
             ActUtilType.GetDevice("d101", out DataRead3);
             ActUtilType.GetDevice("d102", out DataRead4);
@@ -294,6 +295,7 @@ namespace FinalProject_C3
                 Ai1_t.Text = DataRead2.ToString();
                 MessageBox.Show("AI1_S사건 발생 확인 필요.");
                 timer1.Enabled = false;
+                timer2.Enabled = false;
                
             }
             AI2_t.Text= DataRead3.ToString();
@@ -308,7 +310,7 @@ namespace FinalProject_C3
             external_control1_t.Text= e1.ToString();
             external_control2_t.Text = e2.ToString();
             external_control3_t.Text = e3.ToString();
-            external_control_off.Text = e4.ToString();
+            metroTextBox6.Text = e4.ToString();
             metroTextBox2.Text = Da1.ToString();
             metroTextBox3.Text = Da2.ToString();
             metroTextBox4.Text = Da3.ToString();
@@ -320,7 +322,7 @@ namespace FinalProject_C3
         {
             pictureBox1.Image = Image.FromFile(@"\\192.168.0.10\pi\sta\ra.jpg");
           //  pictureBox1.Enabled = false;
-            pictureBox2.Enabled = true;
+         
         }
         public void Delay(int ms)
         {

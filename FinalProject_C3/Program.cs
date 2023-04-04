@@ -18,17 +18,17 @@ namespace FinalProject_C3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Login());
-            Dictionary<string, string> hash = new Dictionary<string, string>
-            {
-                { "username", "TESTER" },
-                { "author", "TESTAUTHOR" },
-                { "usernum", "4885" }
-            };
+         Application.Run(new Login());
+            //Dictionary<string, string> hash = new Dictionary<string, string>
+            //{
+            //    { "username", "TESTER" },
+            //    { "author", "TESTAUTHOR" },
+            //    { "usernum", "4885" }
+            //};
 
-            Admin form = new Admin(hash);
+            //Admin form = new Admin(hash);
 
-            Application.Run(form);
+            //Application.Run(form);
             //form.Show();
 
             //Application.Run();
