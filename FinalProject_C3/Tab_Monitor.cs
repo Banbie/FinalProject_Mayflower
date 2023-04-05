@@ -160,6 +160,11 @@ namespace FinalProject_C3
             {
                 pictureBox1.Image = Image.FromFile(imagePath);
             }
+            else
+            {
+                pictureBox1.Image.Dispose();
+                pictureBox1.Image = null;
+            }
 
         }
 
@@ -167,7 +172,7 @@ namespace FinalProject_C3
         {
             string count = "SELECT green,orange,red FROM light ORDER BY lightcol DESC LIMIT 1;";
             DataRow ldr = db.Select(count).Rows[0];
-            if (ldr[0].ToString() == "0") 
+            if (ldr[2].ToString() == "0") 
             {   pbgreen.Image = Resources.new_moon__5_; }
             else 
             {   pbgreen.Image = Resources.new_moon__3_; }
@@ -177,7 +182,7 @@ namespace FinalProject_C3
             else
             {   pborange.Image = Resources.new_moon__4_;    }
 
-            if (ldr[2].ToString() == "0")
+            if (ldr[0].ToString() == "0")
             {   pbred.Image = Resources.new_moon__5_;   }
             else
             {   pbred.Image = Resources.new_moon__2_;   }
@@ -209,7 +214,7 @@ namespace FinalProject_C3
 
         private void tb_pronow_TextChanged(object sender, EventArgs e)
         {
-            tbtf.Text = "대기";
+            tbtf.Text = "투입대기";
             get_picture();
             progress();
         }
