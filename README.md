@@ -10,4 +10,4 @@ PLC, 아두이노, 유니티와 C# 을 기반으로 한 제품 판별 공정 시
 
 라즈베리파이.zip : 라즈베리파이용 파이썬 파일 - multisensor.py,MySQL-rasp.py
 
-start.py keras 활용  이미지 분류 --> 
+start.py keras 활용  이미지 분류 --> converted_keras.zip 압축 해제 후 파일 위치를 start.py 맞게 하면됨
