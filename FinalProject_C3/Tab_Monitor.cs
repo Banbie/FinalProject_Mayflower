@@ -167,7 +167,7 @@ namespace FinalProject_C3
         {
             string count = "SELECT green,orange,red FROM light ORDER BY lightcol DESC LIMIT 1;";
             DataRow ldr = db.Select(count).Rows[0];
-            if (ldr[0].ToString() == "0") 
+            if (ldr[2].ToString() == "0") 
             {   pbgreen.Image = Resources.new_moon__5_; }
             else 
             {   pbgreen.Image = Resources.new_moon__3_; }
@@ -177,7 +177,7 @@ namespace FinalProject_C3
             else
             {   pborange.Image = Resources.new_moon__4_;    }
 
-            if (ldr[2].ToString() == "0")
+            if (ldr[0].ToString() == "0")
             {   pbred.Image = Resources.new_moon__5_;   }
             else
             {   pbred.Image = Resources.new_moon__2_;   }
