@@ -160,6 +160,11 @@ namespace FinalProject_C3
             {
                 pictureBox1.Image = Image.FromFile(imagePath);
             }
+            else
+            {
+                pictureBox1.Image.Dispose();
+                pictureBox1.Image = null;
+            }
 
         }
 
@@ -209,7 +214,7 @@ namespace FinalProject_C3
 
         private void tb_pronow_TextChanged(object sender, EventArgs e)
         {
-            tbtf.Text = "대기";
+            tbtf.Text = "투입대기";
             get_picture();
             progress();
         }
