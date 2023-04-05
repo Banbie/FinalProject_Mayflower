@@ -184,7 +184,7 @@ namespace FinalProject_C3
         private void metroButton1_Click_1(object sender, EventArgs e)
         {
             
-                ActUtilType.SetDevice("M12", 1);//주황색 on, 빨간색 off 
+                ActUtilType.SetDevice("M200", 1);//주황색 on, 빨간색 off 
                
                 metroTextBox1.Text = "긴급 정지";
          
@@ -242,9 +242,7 @@ namespace FinalProject_C3
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = false;
-            ActUtilType.SetDevice("M3", 1);
-            metroTextBox1.Text = "강풍으로 돌아가는중";
+          
             
         }
 
@@ -345,6 +343,13 @@ namespace FinalProject_C3
 
 
 
+        }
+
+        private void metroButton7_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+            ActUtilType.SetDevice("M3", 1);
+            metroTextBox1.Text = "강풍으로 돌아가는중";
         }
     }
 }

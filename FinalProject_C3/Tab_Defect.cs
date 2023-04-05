@@ -37,7 +37,7 @@ namespace FinalProject_C3
             db.Connection();
 
             // 쿼리 실행
-            DataTable dt = db.Select("SELECT DATE_FORMAT(daytime, '%Y-%m-%d') AS date, CONCAT(DATE_FORMAT(daytime, '%m-%d'), '_', total) as proid \r\nFROM mayflower.tfs \r\nWHERE tf = 1 \r\nAND DATE_FORMAT(daytime, '%Y-%m-%d') = DATE_FORMAT(NOW(), '%Y-%m-%d')");
+            DataTable dt = db.Select("SELECT DATE_FORMAT(daytime, '%Y-%m-%d') AS date, CONCAT(DATE_FORMAT(daytime, '%m-%d'), '_', total) as proid FROM mayflower.tfs WHERE tf = 1 AND DATE_FORMAT(daytime, '%Y-%m-%d') = DATE_FORMAT(NOW(), '%Y-%m-%d') AND total <> 0");
 
             // 데이터 그리드 뷰에 데이터 바인딩
             dataGridView1.DataSource = dt;
@@ -103,7 +103,7 @@ namespace FinalProject_C3
             string formattedDate1 = currentDate.ToString("yyyy-MM-dd");
 
             DBMySql db = new DBMySql();
-            DataTable dt = db.Select($"SELECT DATE_FORMAT(daytime, '%Y-%m-%d') AS date, CONCAT('{formattedDate}', '_', total) as proid FROM mayflower.tfs WHERE DATE_FORMAT(daytime, '%Y-%m-%d') = '{currentDate.ToString("yyyy-MM-dd")}' AND tf = 1");
+            DataTable dt = db.Select($"SELECT DATE_FORMAT(daytime, '%Y-%m-%d') AS date, CONCAT('{formattedDate}', '_', total) as proid FROM mayflower.tfs WHERE DATE_FORMAT(daytime, '%Y-%m-%d') = '{currentDate.ToString("yyyy-MM-dd")}' AND tf = 1 AND total <> 0");
             // 데이터 그리드 뷰에 데이터 바인딩
             dataGridView1.DataSource = dt;
 

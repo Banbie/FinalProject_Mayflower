@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -85,6 +85,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SP2 = new MetroFramework.Controls.MetroButton();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.metroButton7 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -102,11 +103,11 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Left;
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(23, 75);
             this.chart1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chart1.Name = "chart1";
@@ -234,6 +235,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.LightYellow;
+            this.panel6.Controls.Add(this.metroButton7);
             this.panel6.Controls.Add(this.metroButton1);
             this.panel6.Controls.Add(this.metroButton3);
             this.panel6.Controls.Add(this.metroButton2);
@@ -242,7 +244,7 @@
             this.panel6.Controls.Add(this.metroProgressBar2);
             this.panel6.Location = new System.Drawing.Point(19, 414);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(274, 261);
+            this.panel6.Size = new System.Drawing.Size(293, 288);
             this.panel6.TabIndex = 38;
             // 
             // metroProgressBar2
@@ -1056,7 +1058,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(609, 86);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(876, 662);
+            this.pictureBox1.Size = new System.Drawing.Size(804, 604);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
@@ -1077,6 +1079,17 @@
             this.timer2.Enabled = true;
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.metroButton6_Click);
+            // 
+            // metroButton7
+            // 
+            this.metroButton7.Location = new System.Drawing.Point(138, 216);
+            this.metroButton7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.metroButton7.Name = "metroButton7";
+            this.metroButton7.Size = new System.Drawing.Size(99, 22);
+            this.metroButton7.TabIndex = 11;
+            this.metroButton7.Text = "강풍";
+            this.metroButton7.UseSelectable = true;
+            this.metroButton7.Click += new System.EventHandler(this.metroButton7_Click);
             // 
             // Tab_State
             // 
@@ -1166,5 +1179,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel6;
+        private MetroFramework.Controls.MetroButton metroButton7;
     }
 }

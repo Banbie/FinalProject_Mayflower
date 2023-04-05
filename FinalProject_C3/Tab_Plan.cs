@@ -219,7 +219,7 @@ namespace FinalProject_C3
             dataTable.Columns[4].ColumnName = "생산량";
             dataTable.Columns[5].ColumnName = "주문량";
             dataTable.Columns[6].ColumnName = "우선순위";
-            dataTable.Columns[7].ColumnName = "배정/출하시간";
+            //dataTable.Columns[7].ColumnName = "배정/출하시간";
             dgv_plan.DataSource = dataTable;
 
             connection.Close();
@@ -252,6 +252,7 @@ namespace FinalProject_C3
             dataTable.Columns[4].ColumnName = "생산량";
             dataTable.Columns[5].ColumnName = "주문량";
             dataTable.Columns[6].ColumnName = "우선순위";
+            
             dataTable.Columns[7].ColumnName = "배정/출하시간";
 
 
